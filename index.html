@@ -2698,10 +2698,9 @@ document.querySelectorAll('.checklist li').forEach(function(li){
 function num(id){ var v=parseFloat(document.getElementById(id).value); return isFinite(v)?v:0; }
 /* normalize float32 display artifacts in number inputs (e.g. 0.4000000059604645) */
 document.querySelectorAll('input[type="number"]').forEach(function(inp){
-  inp.addEventListener('blur', function(){
-    var v=parseFloat(inp.value);
-    if(isFinite(v)){ var s=String(Math.round(v*100)/100); if(s!==inp.value) inp.value=s; }
-  });
+  var norm=function(){ var v=parseFloat(inp.value);
+    if(isFinite(v)){ var s=String(Math.round(v*100)/100); if(s!==inp.value) inp.value=s; } };
+  norm(); inp.addEventListener('blur', norm);
 });
 function calcRunway(){
   var cash=num('rw-cash'), burn=num('rw-burn');
