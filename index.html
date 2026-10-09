@@ -97,7 +97,7 @@
   .vtag{display:inline-block; font-size:12px; font-weight:700; color:var(--warn);
     background:var(--warn-soft); border-radius:6px; padding:2px 8px; margin-left:8px; vertical-align:middle}
   figure.fig{margin:20px 0; text-align:center}
-  figure.fig img{max-width:100%; border:1px solid var(--line); border-radius:8px; background:#fff}
+  figure.fig img{max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; background:#fff}
   figure.fig figcaption{font-size:13px; color:var(--muted); margin:8px auto 0; max-width:660px; line-height:1.5}
   .mod-covers{font-size:13px; color:var(--muted); margin-top:22px}
   details.toc{border-style:dashed}
@@ -105,6 +105,10 @@
   @media (max-width:640px){
     h1{font-size:30px} section.stage{padding:22px 18px}
     .brand small{display:none} .pct{display:none}
+    .checklist li{padding:12px 14px}
+    .quiz-opt{padding:12px 14px}
+    table{font-size:13px} th,td{padding:6px 8px}
+    .calc input{padding:10px 12px}
   }
   /* quizzes */
   .quiz{margin:22px 0 6px}
@@ -234,7 +238,7 @@
 <div class="quiz" data-quiz="s0">
   <h3>Stage 0 quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 5 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="A $60 stock can open at $35 or $95 because the readout reprices the whole thesis in one go.*">
+  <div class="quiz-q" data-why="A $60 stock can open at $35 or $95 because the readout reprices the whole thesis in one go.">
     <p class="quiz-qtext"><strong>1.</strong> Why do small/mid-cap biotech stocks move in sudden violent jumps instead of drifting on earnings?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Most biotech revenue comes from one-time licensing deals</span></button>
@@ -244,7 +248,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="The primer teaches both — investing through it or trading around the timing — and you pick yours in Stage 5.*">
+  <div class="quiz-q" data-why="The primer teaches both — investing through it or trading around the timing — and you pick yours in Stage 5.">
     <p class="quiz-qtext"><strong>2.</strong> You build a thesis on the science and hold straight through the readout. Which game are you playing?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Trading around the binary</span></button>
@@ -254,7 +258,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Find the target, test in animals (GLP), test in humans (GCP), make it consistently (cGMP), then get approval.*">
+  <div class="quiz-q" data-why="Find the target, test in animals (GLP), test in humans (GCP), make it consistently (cGMP), then get approval.">
     <p class="quiz-qtext"><strong>3.</strong> Put the five stages of drug development in order.</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Discovery → clinical → preclinical → approval → manufacturing</span></button>
@@ -264,7 +268,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="GMP is the manufacturing scaffolding, and a failure in any one GxP can kill a program regardless of the science.*">
+  <div class="quiz-q" data-why="GMP is the manufacturing scaffolding, and a failure in any one GxP can kill a program regardless of the science.">
     <p class="quiz-qtext"><strong>4.</strong> A manufacturing scandal kills an otherwise good program. Which GxP failed?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>GLP — the lab work wasn&#x27;t honest</span></button>
@@ -274,9 +278,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="1 in 10 — which is why a single-asset company is a lottery ticket with a 10% base rate from IND.*
-
----">
+  <div class="quiz-q" data-why="1 in 10 — which is why a single-asset company is a lottery ticket with a 10% base rate from IND.">
     <p class="quiz-qtext"><strong>5.</strong> Of every 10 INDs filed, roughly how many become approved drugs?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>About 5</span></button>
@@ -333,7 +335,7 @@
     <tr><td><strong>Phase 3</strong></td><td>Does it work well enough, safely enough, to approve?</td><td>Hundreds to thousands, multi-site</td><td>~63% → filing</td></tr>
     <tr><td><strong>Phase 4</strong></td><td>Post-approval: longer safety, new uses, payer evidence</td><td>Large, varied</td><td>—</td></tr>
   </table>
-  <p style="font-size:13.5px;color:var(--muted)">*Industry medians across therapeutic areas; oncology and Alzheimer's run lower, some areas higher. Biologics run ~10 pts higher than small molecules per phase.</p>
+  <p style="font-size:13.5px;color:var(--muted)">*Industry medians across therapeutic areas; oncology and Alzheimer's run lower, some areas higher. Biologics have historically run higher than small molecules per phase, though the gap is narrowing — the source book recommends using the same table for valuation purposes.</p>
   <details><summary>Phase 1 details: SAD/MAD, MTD, 3+3 design</summary>
     <p>Outside oncology, Phase 1 runs <span class="term" data-def="Single Ascending Dose: each participant gets one dose; dose rises across cohorts.">SAD</span> then <span class="term" data-def="Multiple Ascending Dose: repeat dosing to reach steady-state drug levels.">MAD</span> studies measuring drug concentration over time (<span class="term" data-def="Pharmacokinetics: what the body does to the drug — absorption, distribution, metabolism, excretion.">PK</span>) and biological effect (<span class="term" data-def="Pharmacodynamics: what the drug does to the body — target engagement, downstream effects.">PD</span>). In oncology, Phase 1 is run in patients, escalating until the <span class="term" data-def="Maximum Tolerated Dose: highest dose with acceptable side effects.">MTD</span> — often via a <strong>3+3 design</strong> (3 patients per dose level; escalate if 0 of 3 have dose-limiting toxicities, expand to 6 if 1 does). The output is the <span class="term" data-def="Recommended Phase 2 Dose.">RP2D</span>.</p>
   </details>
@@ -352,7 +354,7 @@
 <li><strong>Phase IV — "What did we miss?"</strong> Post-approval surveillance. Drugs are often approved on short trials in selected patients, then taken for years by millions — rare and long-term effects surface here.</li>
 </ul>
 <div class="callout"><strong>The investor's question:</strong> <em>What phase is this readout, and what was it designed to prove?</em> A phase I safety readout tells you nothing about efficacy. A phase II signal tells you the drug is worth testing properly. Only phase III answers "does it work."</div>
-<figure class="fig"><img src="figures/recreated/trial-phases-vs-study-types-fig1-1.png" alt="Trial phases against study types: the phases describe research purpose, not a rigid sequence — pharmacology, exploratory, confirmatory, and therapeutic-use stud" loading="lazy"><figcaption>Trial phases (I–IV) against study types: the phases describe research purpose, not a rigid sequence — pharmacology, exploratory, confirmatory, and therapeutic-use studies can each span more than one phase.</figcaption></figure>
+<figure class="fig"><img width="1800" height="760" src="figures/recreated/trial-phases-vs-study-types-fig1-1.png" alt="Trial phases (I–IV) against study types: the phases describe research purpose, not a rigid sequence — pharmacology, exploratory, confirmatory, and therapeutic-use studies can each span more than one phase." loading="lazy"><figcaption>Trial phases (I–IV) against study types: the phases describe research purpose, not a rigid sequence — pharmacology, exploratory, confirmatory, and therapeutic-use studies can each span more than one phase.</figcaption></figure>
 <h3 id="ng-s3">3. What kind of drug is it? (the modality decoder)</h3>
 <p>When a pipeline slide says "siRNA" or "bispecific antibody," this is the decoder:</p>
 <ul>
@@ -409,7 +411,7 @@
 </ul>
 <p>Investors often hear "PK" and tune out. Don't. A huge share of clinical failures are PK failures wearing PD costumes: the drug picked a dose that was never going to put enough drug at the target long enough. The trial failed not because the molecule was wrong, but because the <em>dosing plan</em> was wrong. That is an investment risk you can actually read for in a press release — if you know what to look for.</p>
 <p><strong>The plain-English picture:</strong> think of drug development as delivering water to a house fire. PK is the plumbing — <span class="term" data-def="Private investment in public equity: institutions buy shares directly, often with warrants, at a discount.">pipe</span> diameter (absorption), tank size (distribution), drain rate (clearance). PD is the fire going out. A failed trial might mean the fire extinguisher was useless (bad drug) — or it might mean the water never arrived at the fire (bad PK). These fail differently, and the evidence looks different.</p>
-<figure class="fig"><img src="figures/recreated/pkpd-model-types-diagram-fig20-1.png" alt="How PK and PD connect: DOSE → blood concentration → effect-site concentration → RESPONSE. Simple models link Cp straight to response; mechanism-based models add" loading="lazy"><figcaption>How PK and PD connect: DOSE → blood concentration (Cp) → effect-site concentration → RESPONSE. Simple models link Cp straight to response; mechanism-based models add the biology in between.</figcaption></figure>
+<figure class="fig"><img width="1650" height="1150" src="figures/recreated/pkpd-model-types-diagram-fig20-1.png" alt="How PK and PD connect: DOSE → blood concentration (Cp) → effect-site concentration → RESPONSE. Simple models link Cp straight to response; mechanism-based models add the biology in between." loading="lazy"><figcaption>How PK and PD connect: DOSE → blood concentration (Cp) → effect-site concentration → RESPONSE. Simple models link Cp straight to response; mechanism-based models add the biology in between.</figcaption></figure>
 <h3 id="rosenbaum-s2">2. Absorption and bioavailability: not every pill you swallow gets in</h3>
 <p>When a pill is swallowed, it must survive stomach acid, dissolve, cross the gut wall, and get past the liver (which often destroys a chunk of it on first contact — called <em>first-pass</em> removal) before it ever reaches the bloodstream.</p>
 <p><strong>Bioavailability</strong> is the fraction of the dose that actually makes it into the blood. It ranges from 0% to 100%. A drug with 30% bioavailability means you need roughly three times the IV (intravenous, into a vein) dose as a pill to get the same amount in the blood. This is routine chemistry arithmetic, and it matters commercially: an oral version of an IV drug is worth a fortune in convenience, but only if bioavailability is good enough to keep the dose reasonable.</p>
@@ -419,7 +421,7 @@
 <li>Food effects ("take with food" vs. "on an empty stomach") come from absorption changes — and they constrain the label and the commercial story.</li>
 <li>Drug interactions at the gut wall can multiply or destroy absorption. The classic cautionary tale: grapefruit juice blocks an intestinal enzyme (CYP3A4) and sent one drug's blood levels up <em>nine-fold</em>. Interactions like these are why labels grow warning sections — and why some approved drugs get boxed warnings (the FDA's strongest label warning, literally printed in a black box) years later.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/three-formulations-steady-state-fig14-3.png" alt="Same dose, three formulations, three different blood profiles — bioavailability and absorption speed decide the peak and the total exposure ." loading="lazy"><figcaption>Same dose, three formulations, three different blood profiles — bioavailability (F = the fraction absorbed) and absorption speed (ka = how fast absorption is) decide the peak and the total exposure.</figcaption></figure>
+<figure class="fig"><img width="1600" height="900" src="figures/recreated/three-formulations-steady-state-fig14-3.png" alt="Same dose, three formulations, three different blood profiles — bioavailability (F = the fraction absorbed) and absorption speed (ka = how fast absorption is) decide the peak and the total exposure." loading="lazy"><figcaption>Same dose, three formulations, three different blood profiles — bioavailability (F = the fraction absorbed) and absorption speed (ka = how fast absorption is) decide the peak and the total exposure.</figcaption></figure>
 <h3 id="rosenbaum-s3">3. Half-life: the clock every dosing schedule runs on</h3>
 <p><strong>Half-life</strong> is the time it takes for drug levels in the body to fall by half. A 6-hour half-life means: after 6 hours, half remains; after 12, a quarter; after 24, one-sixteenth.</p>
 <p>The practical rule used across medicine: <strong>it takes about 4–5 half-lives to reach steady state</strong> (the plateau where each new dose just replaces what was eliminated), and the same ~4–5 half-lives to wash the drug out after stopping.</p>
@@ -429,9 +431,9 @@
 <li>Trial designs are built on the 4–5 half-lives rule. When a press release says "patients were assessed at week 4," check: had the drug even reached steady state? If the drug's half-life is a week and they measured at two weeks, they measured mid-ramp, not the plateau.</li>
 <li>Some drugs cheat the half-life clock. Aspirin leaves the body in about 15 minutes — yet it's dosed once daily, because it permanently disables its target (an enzyme in platelets) until new platelets are made. Proton-pump inhibitors (omeprazole) have half-lives under an hour but are also once-daily for the same reason: they <em>destroy</em> their target. These irreversible mechanisms are a competitive advantage — the drug's effect outlasts its presence.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/infusion-steady-state-halflives-fig11-2.png" alt="The 4–5 half-lives rule: drug levels climb toward a plateau on a clock set entirely by the half-life ." loading="lazy"><figcaption>The 4–5 half-lives rule: drug levels climb toward a plateau (steady state) on a clock set entirely by the half-life.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/multiple-iv-accumulation-steady-state-fig12-1.png" alt="Repeated dosing: each dose stacks on what&#x27;s left from the last until peaks and troughs stabilize — accumulation in action ." loading="lazy"><figcaption>Repeated dosing: each dose stacks on what's left from the last until peaks and troughs stabilize — accumulation in action.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/two-compartment-iv-bolus-semilog-fig8-1.png" alt="One injection, two phases: a steep distribution phase, then the straight-line elimination phase on a log scale — that line&#x27;s slope IS the half-life ." loading="lazy"><figcaption>One injection, two phases: a steep distribution phase, then the straight-line elimination phase on a log scale — that line's slope IS the half-life.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/infusion-steady-state-halflives-fig11-2.png" alt="The 4–5 half-lives rule: drug levels climb toward a plateau (steady state) on a clock set entirely by the half-life." loading="lazy"><figcaption>The 4–5 half-lives rule: drug levels climb toward a plateau (steady state) on a clock set entirely by the half-life.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/multiple-iv-accumulation-steady-state-fig12-1.png" alt="Repeated dosing: each dose stacks on what's left from the last until peaks and troughs stabilize — accumulation in action." loading="lazy"><figcaption>Repeated dosing: each dose stacks on what's left from the last until peaks and troughs stabilize — accumulation in action.</figcaption></figure>
+<figure class="fig"><img width="1600" height="690" src="figures/recreated/two-compartment-iv-bolus-semilog-fig8-1.png" alt="One injection, two phases: a steep distribution phase, then the straight-line elimination phase on a log scale — that line's slope IS the half-life." loading="lazy"><figcaption>One injection, two phases: a steep distribution phase, then the straight-line elimination phase on a log scale — that line's slope IS the half-life.</figcaption></figure>
 <h3 id="rosenbaum-s4">4. Clearance and volume of distribution: the two numbers that decide the dose</h3>
 <p>Two body-level numbers determine nearly everything about how a drug behaves:</p>
 <ul>
@@ -442,18 +444,18 @@
 <p><strong>Half-life ≈ 0.693 × Vd ÷ CL</strong></p>
 <p>(0.693 is just the arithmetic of halving — the number ln 2. Don't memorize it; the shape of the formula is what matters.)</p>
 <p>Translation: the drug sticks around longer if it spreads widely (big tank) or drains slowly (small drain).</p>
-<figure class="fig"><img src="figures/recreated/distribution-vs-postdistribution-fig4-1.png" alt="After an IV dose, drug floods out of blood into tissues , then blood and tissue levels fall together — this is what volume of distribution describes ." loading="lazy"><figcaption>After an IV dose, drug floods out of blood into tissues (distribution phase), then blood and tissue levels fall together (postdistribution phase) — this is what volume of distribution describes.</figcaption></figure>
+<figure class="fig"><img width="1600" height="950" src="figures/recreated/distribution-vs-postdistribution-fig4-1.png" alt="After an IV dose, drug floods out of blood into tissues (distribution phase), then blood and tissue levels fall together (postdistribution phase) — this is what volume of distribution describes." loading="lazy"><figcaption>After an IV dose, drug floods out of blood into tissues (distribution phase), then blood and tissue levels fall together (postdistribution phase) — this is what volume of distribution describes.</figcaption></figure>
 <p>Why it matters for investors:</p>
 <ul>
 <li>Clearance sets the maintenance dose. The average drug level in a patient on chronic therapy equals the daily dose divided by clearance. So if a company knows its drug's clearance and knows the target blood level, the dose is basically arithmetic. When a trial tests a dose far below what this arithmetic suggests, ask why.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/average-steady-state-concentration-fig12-4.png" alt="Average steady-state level = dose ÷ . Note it&#x27;s the area under the curve divided by time — not the midpoint of peak and trough ." loading="lazy"><figcaption>Average steady-state level = dose ÷ (clearance × dosing interval). Note it's the area under the curve (AUC) divided by time — not the midpoint of peak and trough.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/auc-steady-state-equals-single-dose-fig14-2.png" alt="Handy identity: the AUC over one steady-state dosing interval equals the AUC from zero to infinity after a single dose ." loading="lazy"><figcaption>Handy identity: the AUC over one steady-state dosing interval equals the AUC from zero to infinity after a single dose.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/average-steady-state-concentration-fig12-4.png" alt="Average steady-state level = dose ÷ (clearance × dosing interval). Note it's the area under the curve (AUC) divided by time — not the midpoint of peak and trough." loading="lazy"><figcaption>Average steady-state level = dose ÷ (clearance × dosing interval). Note it's the area under the curve (AUC) divided by time — not the midpoint of peak and trough.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/auc-steady-state-equals-single-dose-fig14-2.png" alt="Handy identity: the AUC over one steady-state dosing interval equals the AUC from zero to infinity after a single dose." loading="lazy"><figcaption>Handy identity: the AUC over one steady-state dosing interval equals the AUC from zero to infinity after a single dose.</figcaption></figure>
 <ul>
 <li>Kidney or liver disease changes clearance. Trials in elderly or sick populations can show weird results simply because clearance is lower — the same dose gives higher drug levels. Regulators know this; label sections about "dose adjustment in renal impairment" come straight from this math.</li>
 <li>Drug–drug interactions are clearance events. When one drug blocks the liver enzyme that clears another, clearance drops and levels rise — sometimes 5–20×. Many post-marketing disasters and label restrictions (e.g., statin dose caps when combined with certain antibiotics) are clearance stories. A new drug that <em>isn't</em> cleared by the one major liver enzyme everything else uses is more interaction-proof — a real commercial edge.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/elimination-routes-top200-fig5-1.png" alt="Where drugs actually go: for the top 200 drugs, metabolism dominates elimination — which is why liver-enzyme interactions matter so much ." loading="lazy"><figcaption>Where drugs actually go: for the top 200 drugs, metabolism dominates elimination — which is why liver-enzyme interactions matter so much.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/elimination-routes-top200-fig5-1.png" alt="Where drugs actually go: for the top 200 drugs, metabolism dominates elimination — which is why liver-enzyme interactions matter so much." loading="lazy"><figcaption>Where drugs actually go: for the top 200 drugs, metabolism dominates elimination — which is why liver-enzyme interactions matter so much.</figcaption></figure>
 <ul>
 <li><strong>High-extraction vs. low-extraction drugs</strong> behave differently, and the textbook devotes a whole chapter to it. A high-extraction drug is grabbed by the liver so aggressively that its clearance is set by <em>blood flow</em>, not enzyme activity — meaning liver enzyme interactions barely matter, but anything changing blood flow does. A low-extraction drug is the opposite: enzyme interactions can be devastating. Which bucket a company's drug falls in tells you what kinds of interaction studies the FDA will demand.</li>
 </ul>
@@ -477,7 +479,7 @@
 <li><strong>Phase 2 → Phase 3 shrinkage.</strong> Response rates run <strong>12.9 percentage points hotter</strong> in phase 2 than in the subsequent randomized trial of the same drugs (Zia et al.) — regression to the mean plus selection. The graveyard: selumetinib, iniparib, PROSTVAC all posted dramatic phase 2 survival/efficacy signals, then zero in phase 3. Haircut every small or single-arm phase 2 effect size before it enters your model.</li>
 <li><strong>Adaptive.</strong> The trial modifies itself as data accrue — sample size re-estimation, dropping losing arms, seamless phase II/III. Legitimate when preplanned with statistical penalties; mid-trial "efficiency" amendments announced in press releases often signal the trial is under stress.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/noninferiority-outcomes-fig5-5.png" alt="Reading a noninferiority result: A = superior, B/C = noninferior , D = inconclusive , E = inferior. The margin δ is doing all the work — always ask how wide it " loading="lazy"><figcaption>Reading a noninferiority result: A = superior, B/C = noninferior (the CI’s upper bound stays below the margin δ, i.e. on the favorable side of the δ line), D = inconclusive (underpowered), E = inferior. The margin δ is doing all the work — always ask how wide it is.</figcaption></figure>
+<figure class="fig"><img width="1600" height="900" src="figures/recreated/noninferiority-outcomes-fig5-5.png" alt="Reading a noninferiority result: A = superior, B/C = noninferior (the CI’s upper bound stays below the margin δ, i.e. on the favorable side of the δ line), D = inconclusive (underpowered), E = inferior. The margin δ is doing all the work — always ask how wide it is." loading="lazy"><figcaption>Reading a noninferiority result: A = superior, B/C = noninferior (the CI’s upper bound stays below the margin δ, i.e. on the favorable side of the δ line), D = inconclusive (underpowered), E = inferior. The margin δ is doing all the work — always ask how wide it is.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>What design is this, and what does that design assume?</em> A single-arm trial assumes the historical comparison is fair. A noninferiority trial assumes the margin is clinically meaningful. Name the assumption, then check it.</div>
 <h3 id="gap-raredisease-trials">Rare disease trials: what changes when n is small</h3>
 <p>Everything you learned about trial design assumed hundreds of patients. In a disease with 2,000 patients worldwide, you can't run a 1,000-patient trial — there aren't enough patients, and the ones who exist are scattered across continents. Three things follow:</p>
@@ -495,7 +497,7 @@
 <li><strong>The generalizability gap:</strong> applying typical trial eligibility to 400 hospitalized ulcer patients, only 29% would have qualified — and nearly all the deaths occurred among the <em>ineligible</em>. Trial patients are volunteers: healthier, more compliant, more closely monitored than real patients.</li>
 <li><strong>Recruitment reality:</strong> the SHEP hypertension trial contacted ~450,000 people to enroll 4,736 — a 1.1% yield. When a company widens entry criteria mid-trial to fix slow enrollment, it imports lower-risk patients, dilutes event rates, and can force a sample-size increase.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/study-population-flow-fig4-1.png" alt="From the general population to the study sample: each filter narrows who the results actually describe. The trial proves things about the inner circle ." loading="lazy"><figcaption>From the general population to the study sample: each filter (disease definition, eligibility criteria, enrollment) narrows who the results actually describe. The trial proves things about the inner circle.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1440" src="figures/recreated/study-population-flow-fig4-1.png" alt="From the general population to the study sample: each filter (disease definition, eligibility criteria, enrollment) narrows who the results actually describe. The trial proves things about the inner circle." loading="lazy"><figcaption>From the general population to the study sample: each filter (disease definition, eligibility criteria, enrollment) narrows who the results actually describe. The trial proves things about the inner circle.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>How selected is this population?</em> A win in a highly enriched, run-in-purified population is real — but model commercial uptake against the enrollable population, not the diseased population.</div>
 <h3 id="gap-basket">Basket, umbrella, and platform trials</h3>
 <p>Not every trial is the classic two-arm Phase 3. Three newer designs show up constantly in oncology readouts — know which one you're looking at:</p>
@@ -518,8 +520,8 @@
 <div class="callout"><strong>The investor's question:</strong> <em>How were patients randomized, and who was actually blinded?</em> "Centralized interactive web response system" is the green flag. Vague "patients were randomized" with no method is a yellow flag. A signature side effect with no described mitigation means the blind is probably broken.</div>
 
 
-<figure class="fig"><img src="figures/recreated/pharmagellan-trial-durations-table12-4.png" alt="Table of median clinical trial durations by therapeutic area and phase"><figcaption>How long trials actually take, by therapeutic area — Phase 2 runs ~2&ndash;3.7 years, Phase 3 ~1.1&ndash;3 years (total durations). Useful when judging whether a company's guided readout date is realistic. 2006).</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/pharmagellan-trial-sizes-table12-8.png" alt="Table of average patients per trial by therapeutic area and phase"><figcaption>What "big" means: average patients per trial by area and phase, with trial counts in parentheses. A 300-patient Phase 3 is large in psychiatry, routine in cardiology.gov.</figcaption></figure>
+<figure class="fig"><img width="2100" height="1183" loading="lazy" src="figures/recreated/pharmagellan-trial-durations-table12-4.png" alt="How long trials actually take, by therapeutic area — Phase 2 runs ~2&ndash;3.7 years, Phase 3 ~1.1&ndash;3 years (total durations). Useful when judging whether a company's guided readout date is realistic. 2006)."><figcaption>How long trials actually take, by therapeutic area — Phase 2 runs ~2&ndash;3.7 years, Phase 3 ~1.1&ndash;3 years (total durations). Useful when judging whether a company's guided readout date is realistic. 2006).</figcaption></figure>
+<figure class="fig"><img width="2100" height="1511" loading="lazy" src="figures/recreated/pharmagellan-trial-sizes-table12-8.png" alt="What &quot;big&quot; means: average patients per trial by area and phase, with trial counts in parentheses. A 300-patient Phase 3 is large in psychiatry, routine in cardiology.gov."><figcaption>What "big" means: average patients per trial by area and phase, with trial counts in parentheses. A 300-patient Phase 3 is large in psychiatry, routine in cardiology.gov.</figcaption></figure>
   <h3 id="s1-the-fda-machinery">The FDA machinery</h3>
   <ul>
     <li><strong>IND</strong> (Investigational New Drug) — permission to test in humans. FDA can place a <strong>clinical hold</strong> if safety signals emerge.</li>
@@ -575,7 +577,7 @@
 <li><strong>Devices face a lower bar:</strong> many are cleared via 510(k) "substantial equivalence" to an existing device, sometimes with no clinical trial at all. Don't apply drug-trial expectations to device readouts.</li>
 <li>Biosimilars aren't generics. You can't prove two biologics identical, so biosimilars require clinical testing — and biologic franchises keep a structurally stronger post-exclusivity moat than small molecules. That matters when you learn to value the company (Stage 4).</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/fda-org-chart-fig22-1.png" alt="The FDA&#x27;s centers: drugs , biologics , and devices are reviewed under different statutory standards. The first question for any regulatory milestone is which ce" loading="lazy"><figcaption>The FDA's centers: drugs (CDER), biologics (CBER), and devices (CDRH) are reviewed under different statutory standards. The first question for any regulatory milestone is which center — and which rulebook — applies.</figcaption></figure>
+<figure class="fig"><img width="800" height="500" src="figures/recreated/fda-org-chart-fig22-1.png" alt="The FDA's centers: drugs (CDER), biologics (CBER), and devices (CDRH) are reviewed under different statutory standards. The first question for any regulatory milestone is which center — and which rulebook — applies." loading="lazy"><figcaption>The FDA's centers: drugs (CDER), biologics (CBER), and devices (CDRH) are reviewed under different statutory standards. The first question for any regulatory milestone is which center — and which rulebook — applies.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>Where is this program on the regulatory map?</em> Map every holding to IND → readout → NDA → review clock, and flag the expedited-program designations — they're catalysts with their own timelines.</div>
 <h3 id="friedman-s11">11. Reading a protocol like a trialist — the ten-minute checklist</h3>
 <p>For any trial that matters to your capital, run this sequence against the protocol (ClinicalTrials.gov) and the press release:</p>
@@ -633,7 +635,7 @@
 <div class="quiz" data-quiz="s1">
   <h3>Stage 1 quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 5 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="A Phase 1 success means &quot;we found a dose we can test&quot; — nothing more.*">
+  <div class="quiz-q" data-why="A Phase 1 success means &quot;we found a dose we can test&quot; — nothing more.">
     <p class="quiz-qtext"><strong>1.</strong> A company announces a &quot;successful Phase 1.&quot; What does that tell you about whether the drug works?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>It works — that&#x27;s what &quot;successful&quot; means</span></button>
@@ -643,7 +645,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Small, hand-picked Phase 2 studies meet reality in Phase 3 — effect sizes shrink when tested at scale.*">
+  <div class="quiz-q" data-why="Small, hand-picked Phase 2 studies meet reality in Phase 3 — effect sizes shrink when tested at scale.">
     <p class="quiz-qtext"><strong>2.</strong> Which phase transition is the hardest — the valley of death?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Phase 1 → Phase 2 (~60%)</span></button>
@@ -653,7 +655,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Accelerated Approval lets a surrogate endpoint support approval (with a confirmatory trial owed later) — the rest speed up process, not standards.*">
+  <div class="quiz-q" data-why="Accelerated Approval lets a surrogate endpoint support approval (with a confirmatory trial owed later) — the rest speed up process, not standards.">
     <p class="quiz-qtext"><strong>3.</strong> Which special FDA designation actually changes the evidence bar, rather than just speeding up the timeline?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Fast Track</span></button>
@@ -663,7 +665,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Two different shields — patents protect the invention, exclusivity blocks competitors regardless of patents (5 for a new chemical entity, 7 for orphan, 12 for biologics).*">
+  <div class="quiz-q" data-why="Two different shields — patents protect the invention, exclusivity blocks competitors regardless of patents (5 for a new chemical entity, 7 for orphan, 12 for biologics).">
     <p class="quiz-qtext"><strong>4.</strong> A patent lasts 20 years from filing. How long is FDA regulatory exclusivity for a new biologic?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>3 years</span></button>
@@ -673,9 +675,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Bioavailability is the fraction of the dose that reaches the blood — 30% means you need roughly three times the dose.*
-
----">
+  <div class="quiz-q" data-why="Bioavailability is the fraction of the dose that reaches the blood — 30% means you need roughly three times the dose.">
     <p class="quiz-qtext"><strong>5.</strong> A drug has 30% oral bioavailability. Roughly how much bigger must the pill dose be than the IV dose for the same blood exposure?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>About the same</span></button>
@@ -775,7 +775,7 @@
 <li>The validation literature itself is thin: only <strong>14% (5/36)</strong> of surrogate-validation meta-analyses searched for unpublished trials, and those that did could access barely half the relevant data.</li>
 </ul>
 <div class="callout"><strong>The investor's question:</strong> <em>When a company says "PFS is an established surrogate in this setting," ask: established by whom, in exactly this setting, with what r? If r &lt; 0.70, you're betting on a coin flip dressed as science.</em></div>
-<figure class="fig"><img src="figures/recreated/bolero2-censoring-fig3-1.png" alt="Informative censoring in BOLERO-2 : the reported PFS curves vs. best-case vs. worst-case . Under different censoring assumptions the curves can cross — the obse" loading="lazy"><figcaption>Informative censoring in BOLERO-2: the reported PFS curves (thick) vs. best-case (dotted — every censored patient had no progression) vs. worst-case (thin — every censored patient progressed). Under different censoring assumptions the curves can cross — the observed benefit could be entirely explained by <em>who dropped out</em>. PFS can be distorted by loss to follow-up in a way survival cannot.</figcaption></figure>
+<figure class="fig"><img width="2000" height="1400" src="figures/recreated/bolero2-censoring-fig3-1.png" alt="Informative censoring in BOLERO-2: the reported PFS curves (thick) vs. best-case (dashed — every censored patient had no progression) vs. worst-case (thin — every censored patient progressed). Under different censoring assumptions the curves can cross — the observed benefit could be entirely explained by who dropped out. PFS can be distorted by loss to follow-up in a way survival cannot." loading="lazy"><figcaption>Informative censoring in BOLERO-2: the reported PFS curves (thick) vs. best-case (dashed — every censored patient had no progression) vs. worst-case (thin — every censored patient progressed). Under different censoring assumptions the curves can cross — the observed benefit could be entirely explained by <em>who dropped out</em>. PFS can be distorted by loss to follow-up in a way survival cannot.</figcaption></figure>
 <h3 id="prasad-s3">3. The approval machinery — how two-thirds of cancer drugs reach market on surrogates</h3>
 <p>The regulatory facts (FDA, 2009–2014):</p>
 <ul>
@@ -828,10 +828,10 @@
 <li>"Not significant" does not mean "no effect." A trial that fails with p = 0.20 might have tested a great drug in too few patients. Absence of evidence is not evidence of absence. The confidence interval (next section) tells you whether the trial proved the drug <em>doesn't</em> work or just failed to prove it <em>does</em>.</li>
 </ul>
 <div class="callout"><strong>The investor's question:</strong> When a press release trumpets "p &lt; 0.05," ask: <em>what's the effect size, and was this the pre-specified primary endpoint?</em> A p-value on a surprise subgroup analysis is a lottery ticket, not evidence.</div>
-<figure class="fig"><img src="figures/recreated/p005-cliff-fig44-1.png" alt="&quot;P = 0.05&quot; has no magical properties: belief in a hypothesis should not fall off a cliff between p = 0.05 and p = 0.06 ." loading="lazy"><figcaption>"P = 0.05" has no magical properties: belief in a hypothesis should not fall off a cliff between p = 0.05 and p = 0.06.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/pvalue-pileup-histogram-fig45-2.png" alt="Too many published p-values sit just under 0.05 — the fingerprint of p-hacking and publication bias ." loading="lazy"><figcaption>Too many published p-values sit just under 0.05 — the fingerprint of p-hacking and publication bias.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/small-p-large-n-fig33-9.png" alt="Beware small p-values from large samples: n = 500 gives p = 0.03 for a relationship explaining under 1% of the variation — statistically significant, practicall" loading="lazy"><figcaption>Beware small p-values from large samples: n = 500 gives p = 0.03 for a relationship explaining under 1% of the variation (R² = 0.0094 — R-squared is the fraction of the variation the relationship actually explains) — statistically significant, practically nothing.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/one-vs-two-tailed-pvalues-fig15-1.png" alt="One-tailed vs two-tailed, made concrete: with 20 coin flips, a two-tailed test splits the 5% between both extremes ; a one-tailed test puts it all on one side —" loading="lazy"><figcaption>One-tailed vs two-tailed, made concrete: with 20 coin flips, a two-tailed test splits the 5% as evenly as the discrete distribution allows — here 0.59% per tail (panel A), the nearest achievable split to 2.5%; a one-tailed test puts it all on one side (panel B) — which is why "p = 0.04 one-tailed" is really p = 0.08.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1100" src="figures/recreated/p005-cliff-fig44-1.png" alt="&quot;P = 0.05&quot; has no magical properties: belief in a hypothesis should not fall off a cliff between p = 0.05 and p = 0.06." loading="lazy"><figcaption>"P = 0.05" has no magical properties: belief in a hypothesis should not fall off a cliff between p = 0.05 and p = 0.06.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1100" src="figures/recreated/pvalue-pileup-histogram-fig45-2.png" alt="Too many published p-values sit just under 0.05 — the fingerprint of p-hacking and publication bias." loading="lazy"><figcaption>Too many published p-values sit just under 0.05 — the fingerprint of p-hacking and publication bias.</figcaption></figure>
+<figure class="fig"><img width="1600" height="900" src="figures/recreated/small-p-large-n-fig33-9.png" alt="Beware small p-values from large samples: n = 500 gives p = 0.03 for a relationship explaining under 1% of the variation (R² = 0.0094 — R-squared is the fraction of the variation the relationship actually explains) — statistically significant, practically nothing." loading="lazy"><figcaption>Beware small p-values from large samples: n = 500 gives p = 0.03 for a relationship explaining under 1% of the variation (R² = 0.0094 — R-squared is the fraction of the variation the relationship actually explains) — statistically significant, practically nothing.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1100" src="figures/recreated/one-vs-two-tailed-pvalues-fig15-1.png" alt="One-tailed vs two-tailed, made concrete: with 20 coin flips, a two-tailed test splits the 5% as evenly as the discrete distribution allows — here 0.59% per tail (panel A); a one-tailed test puts it all on one side (panel B) — which is why &quot;p = 0.04 one-tailed&quot; is really p = 0.08." loading="lazy"><figcaption>One-tailed vs two-tailed, made concrete: with 20 coin flips, a two-tailed test splits the 5% as evenly as the discrete distribution allows — here 0.59% per tail (panel A); a one-tailed test puts it all on one side (panel B) — which is why "p = 0.04 one-tailed" is really p = 0.08.</figcaption></figure>
 <h3 id="motulsky-s2">2. Confidence intervals — the most useful number in any readout</h3>
 <p>A <strong>95% confidence interval (CI)</strong> is a range of plausible values for the true effect. If a trial reports "the drug lowered LDL by 15 mg/dL (95% CI: 10 to 20)," it means the data are consistent with a true benefit anywhere from 10 to 20 — and inconsistent with anything outside that range.</p>
 <p>Why CIs beat p-values:</p>
@@ -842,7 +842,7 @@
 <li>Rule of thumb: quadrupling the sample size only <em>halves</em> the width of the CI. Precision is expensive — which is why small biotechs run small trials and get wide CIs.</li>
 </ul>
 <div class="callout"><strong>The investor's question:</strong> <em>Does the CI include values that would be clinically meaningless?</em> If the entire CI sits in "who cares" territory, the drug is a dud no matter what the p-value says. If the CI spans from "game-changer" to "useless," the trial answered nothing.</div>
-<figure class="fig"><img src="figures/recreated/ci-width-vs-confidence-fig4-3.png" alt="More confidence costs precision: the 99% interval is much wider than the 90% interval for the same data ." loading="lazy"><figcaption>More confidence costs precision: the 99% interval is much wider than the 90% interval for the same data.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1050" src="figures/recreated/ci-width-vs-confidence-fig4-3.png" alt="More confidence costs precision: the 99% interval is much wider than the 90% interval for the same data." loading="lazy"><figcaption>More confidence costs precision: the 99% interval is much wider than the 90% interval for the same data.</figcaption></figure>
 <h3 id="motulsky-s3">3. Power and sample size — why trials fail even when drugs work</h3>
 <p><strong>Statistical power</strong> is the chance a trial will detect a real effect if one exists. A trial with 80% power will miss a genuinely effective drug 20% of the time — that's one in five.</p>
 <p>The intuition: imagine trying to hear a whisper across a noisy room. The whisper is the drug's effect; the noise is patient-to-patient variability. You can hear it better by (a) making the whisper louder (bigger true effect), (b) quieting the room (less variable patients, better measurements), or (c) listening longer (more patients). Sample size is usually the lever companies pull.</p>
@@ -853,8 +853,8 @@
 <li>Watch for the sample-size creep. If a trial keeps enrolling "a few more patients" until it hits significance, the p-value is cooked. Legitimate trials fix the sample size in advance (or use pre-planned interim rules).</li>
 </ul>
 <div class="callout"><strong>The investor's question:</strong> <em>Was this trial big enough to hear the whisper?</em> A failed 40-patient trial in a noisy indication is not evidence the drug is dead. A failed 800-patient trial usually is.</div>
-<figure class="fig"><img src="figures/recreated/sample-size-vs-pvalue-table44-1.png" alt="Same data, more patients, smaller p: identical results go from p = 0.29 to p = 0.000003 . Sample size manufactures &quot;significance&quot; ." loading="lazy"><figcaption>Same data, more patients, smaller p: identical results go from p = 0.29 (n = 3/group) to p = 0.000003 (n = 50/group). Sample size manufactures "significance".</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/adhoc-sample-size-peeking-fig26-4.png" alt="Peeking at the data and stopping when p dips below 0.05 manufactures false positives — the p-value wanders across the line as patients accumulate ." loading="lazy"><figcaption>Peeking at the data and stopping when p dips below 0.05 manufactures false positives — the p-value wanders across the line as patients accumulate.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1400" src="figures/recreated/sample-size-vs-pvalue-table44-1.png" alt="Same data, more patients, smaller p: identical results go from p = 0.29 (n = 3/group) to p = 0.000003 (n = 50/group). Sample size manufactures &quot;significance&quot;." loading="lazy"><figcaption>Same data, more patients, smaller p: identical results go from p = 0.29 (n = 3/group) to p = 0.000003 (n = 50/group). Sample size manufactures "significance".</figcaption></figure>
+<figure class="fig"><img width="1600" height="850" src="figures/recreated/adhoc-sample-size-peeking-fig26-4.png" alt="Peeking at the data and stopping when p dips below 0.05 manufactures false positives — the p-value wanders across the line as patients accumulate." loading="lazy"><figcaption>Peeking at the data and stopping when p dips below 0.05 manufactures false positives — the p-value wanders across the line as patients accumulate.</figcaption></figure>
 <h3 id="motulsky-s4">4. The three workhorse tests — t-tests, chi-square, ANOVA</h3>
 <p>These are the three statistical tests you'll see named most often. Each answers a different kind of question.</p>
 <p><strong>t-test — "Is the average different between two groups?"</strong> Compares the means of two groups: drug vs. placebo blood pressure, treated vs. untreated tumor shrinkage. It accounts for both the size of the difference and the noisiness of the data. A huge difference in very noisy data can be less convincing than a small difference in very clean data — the t-test weighs both. <em>Investor note:</em> a t-test assumes the data are roughly bell-shaped and the two groups are similarly variable. For things like drug concentrations or antibody levels — which are often lognormal, meaning most values cluster small while a few trail large (like incomes) — the right move is to analyze the <em>logarithms</em>, which straightens the curve so the t-test behaves; a company reporting a plain t-test on such data may be using the wrong tool.</p>
@@ -868,10 +868,10 @@
 <p><strong>The log-rank test</strong> is the p-value for "are these two curves really different?" It gives equal weight to the whole timeline. (A cousin, the Gehan-Breslow test, weights early events more — relevant when early separation matters, since it catches early-separation drugs that the log-rank misses.)</p>
 <p><strong>Censoring traps:</strong> patients who drop out are "censored" — assumed to be no different from those who stayed. If sicker patients drop out of the drug arm because of side effects, the drug arm looks artificially good. Heavy or lopsided dropout is a red flag.</p>
 <p><strong>The investor's questions:</strong> <em>Do the curves separate early and stay separated? Do they cross? Is the HR's confidence interval entirely in meaningful territory? How much censoring is there, and is it balanced?</em></p>
-<figure class="fig"><img src="figures/recreated/kaplan-meier-curves-fig29-1.png" alt="How to read a Kaplan-Meier plot: the steps, the censoring ticks, and how median survival is read off the 50% line ." loading="lazy"><figcaption>How to read a Kaplan-Meier plot: the steps, the censoring ticks, and how median survival is read off the 50% line.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/proportional-hazards-fig29-2.png" alt="What a hazard ratio assumes: the two curves keep a constant proportional gap — when they cross or converge, the single HR number misleads ." loading="lazy"><figcaption>What a hazard ratio assumes: the two curves keep a constant proportional gap — when they cross or converge, the single HR number misleads.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/km-curves-ci-bands-fig29-3.png" alt="Survival curves with their 95% confidence bands — wide bands mean the curve&#x27;s exact position is uncertain, especially late when few patients remain ." loading="lazy"><figcaption>Survival curves with their 95% confidence bands — wide bands mean the curve's exact position is uncertain, especially late when few patients remain.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/same-median-different-curves-fig29-4.png" alt="Identical median survivals, completely different curves: the median compresses the whole story into one number — always look at the curves ." loading="lazy"><figcaption>Identical median survivals, completely different curves: the median compresses the whole story into one number — always look at the curves.</figcaption></figure>
+<figure class="fig"><img width="1600" height="860" src="figures/recreated/kaplan-meier-curves-fig29-1.png" alt="How to read a Kaplan-Meier plot: the steps, the censoring ticks, and how median survival is read off the 50% line." loading="lazy"><figcaption>How to read a Kaplan-Meier plot: the steps, the censoring ticks, and how median survival is read off the 50% line.</figcaption></figure>
+<figure class="fig"><img width="1690" height="1300" src="figures/recreated/proportional-hazards-fig29-2.png" alt="What a hazard ratio assumes: the two curves keep a constant proportional gap — when they cross or converge, the single HR number misleads." loading="lazy"><figcaption>What a hazard ratio assumes: the two curves keep a constant proportional gap — when they cross or converge, the single HR number misleads.</figcaption></figure>
+<figure class="fig"><img width="1600" height="819" src="figures/recreated/km-curves-ci-bands-fig29-3.png" alt="Survival curves with their 95% confidence bands — wide bands mean the curve's exact position is uncertain, especially late when few patients remain." loading="lazy"><figcaption>Survival curves with their 95% confidence bands — wide bands mean the curve's exact position is uncertain, especially late when few patients remain.</figcaption></figure>
+<figure class="fig"><img width="1690" height="1300" src="figures/recreated/same-median-different-curves-fig29-4.png" alt="Identical median survivals, completely different curves: the median compresses the whole story into one number — always look at the curves." loading="lazy"><figcaption>Identical median survivals, completely different curves: the median compresses the whole story into one number — always look at the curves.</figcaption></figure>
 <h3 id="motulsky-s6">6. Noninferiority trials — "not worse" is not "as good"</h3>
 <p>Many trials don't try to prove a drug is <em>better</em> — they try to prove it's <em>not meaningfully worse</em> than an existing treatment. This is the standard design for biosimilars, "me-too" drugs, antibiotics, diabetes and anticoagulation drugs. As an investor you'll see these constantly, and they have their own trapdoors.</p>
 <p>How it works: before the trial starts, the sponsor pre-defines a <strong>noninferiority margin</strong> — the largest difference everyone agrees to call "close enough." The trial succeeds if the <em>entire</em> confidence interval for the treatment difference sits above the lower edge of that margin. Notice what that means: the drug can look numerically <em>worse</em> and still "win."</p>
@@ -883,7 +883,7 @@
 </ul>
 <p><strong>Equivalence</strong> (the stricter cousin, used for biosimilars and generics): the <em>entire</em> CI must fall inside a pre-defined zone on <em>both</em> sides — e.g. the FDA's 80–125% band for peak-concentration ratios. And remember: merely failing to find a difference (p &gt; 0.05) is not equivalence. Equivalence has to be actively demonstrated, usually with two one-sided tests (testing "not too low" and "not too high" separately).</p>
 <div class="callout"><strong>The investor's question:</strong> <em>What was the margin, who chose it, and would a thinking doctor call that margin "close enough"?</em> If the press release doesn't state the margin, that tells you how proud they are of it.</div>
-<div class="callout"><strong>Worked example — the margin in practice:</strong> in a vaccine non-inferiority trial, the bar was set so that for each shared serotype, the lower bound of the 95% CI for the immune-response ratio had to exceed 0.667. All 28 shared serotypes cleared it. Note what this proves: comparable immunity, <em>not</em> better efficacy — the value proposition was the broader strain coverage, not the head-to-head win. And the trap: NI margins are negotiated. A generous margin makes "success" easier. Always ask what the margin was and whether it was clinically justified.</div>
+<div class="callout"><strong>Worked example — the margin in practice:</strong> in a pneumococcal conjugate vaccine non-inferiority trial — the 0.667 bar (lower bound of the 95% CI for the immune-response ratio) is the standard FDA criterion for shared serotypes — the bar was set so that for each shared serotype, the lower bound had to exceed 0.667. All 28 shared serotypes cleared it. Note what this proves: comparable immunity, <em>not</em> better efficacy — the value proposition was the broader strain coverage, not the head-to-head win. And the trap: NI margins are negotiated. A generous margin makes "success" easier. Always ask what the margin was and whether it was clinically justified.</div>
 <h3 id="motulsky-s7">7. The multiple-comparisons problem — why most "exciting findings" are noise</h3>
 <p>Here's the trap that generates more false discoveries than anything else in biotech: if you test enough things, something will look significant by pure luck.</p>
 <p>The math is brutal. At the standard 5% significance level, testing 20 useless hypotheses produces, on average, <em>one</em> false "discovery." Test 100 subgroups, biomarkers, endpoints, and time points — as some trial analyses quietly do — and you'll "find" about 5 significant results from a completely ineffective drug.</p>
@@ -897,7 +897,7 @@
 <p>The defenses have names you'll see in methods sections: <strong>Bonferroni correction</strong> (divide the significance threshold by the number of tests — strict but simple), <strong>false discovery rate control</strong> (allows a known fraction of false positives — common in genomics), and <strong>pre-specification</strong> (writing down the plan before seeing data — the single most important credibility signal in any trial).</p>
 <div class="callout"><strong>The investor's question:</strong> <em>How many things did they test, and which one was the plan all along?</em> If the headline result wasn't the pre-specified primary endpoint, discount it heavily — demand a confirmatory trial before updating your valuation.</div>
 
-<figure class="fig"><img src="figures/recreated/false-significance-vs-comparisons-fig22-1.png" alt="The math behind the joke: with 20 comparisons you have a ~64% chance of at least one false &quot;significant&quot; result; by 60 comparisons it&#x27;s near-certain ." loading="lazy"><figcaption>The math behind the joke: with 20 comparisons you have a ~64% chance of at least one false "significant" result; by 60 comparisons it's near-certain.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/false-significance-vs-comparisons-fig22-1.png" alt="The math behind the joke: with 20 comparisons you have a ~64% chance of at least one false &quot;significant&quot; result; by 60 comparisons it's near-certain." loading="lazy"><figcaption>The math behind the joke: with 20 comparisons you have a ~64% chance of at least one false "significant" result; by 60 comparisons it's near-certain.</figcaption></figure>
 <h3 id="motulsky-s8">8. Bayesian intuition — the prior is the elephant in the room</h3>
 <p>Classical statistics asks: "assuming the drug does nothing, how surprising are these data?" Bayesian thinking asks the more useful question: "given these data AND everything I knew before, how likely is it that the drug works?"</p>
 <p>The key idea is the <strong>prior probability</strong> — your belief <em>before</em> seeing the results. A positive trial result means something completely different depending on the prior:</p>
@@ -908,7 +908,7 @@
 <p>This is the <strong>false positive report probability (FPRP)</strong> — the chance that a "significant" finding is actually bogus, given the prior. The book's framework: low prior + small trial + barely-significant p-value = a finding you should assume is false until replicated.</p>
 <p>Everyday analogy: a medical test for a rare disease. Even a 99%-accurate test produces mostly false positives when the disease affects 1 person in 10,000 — because the <em>prior</em> is so low. Trial results work exactly the same way. This is also why <strong>replication</strong> matters so much: a second positive trial multiplies the prior for the third look.</p>
 <div class="callout"><strong>The investor's question:</strong> <em>Before this readout, how likely was this drug to work?</em> Adjust the prior for: validated vs. novel mechanism, quality of preclinical data, whether similar drugs succeeded or failed, and the disease's history of killing good-looking hypotheses. Then interpret the p-value <em>through</em> that prior — not in isolation.</div>
-<figure class="fig"><img src="figures/recreated/fprp-probability-tree-fig18-1.png" alt="The false-positive math, visualized: of 1,000 drugs where only 10% truly work, a &quot;significant&quot; p &lt; 0.05 still leaves 45 false positives against 80 true ones — 3" loading="lazy"><figcaption>The false-positive math, visualized: of 1,000 drugs where only 10% truly work, a "significant" p &lt; 0.05 still leaves 45 false positives against 80 true ones — 36% of "discoveries" are noise.</figcaption></figure>
+<figure class="fig"><img width="2000" height="1200" src="figures/recreated/fprp-probability-tree-fig18-1.png" alt="The false-positive math, visualized: of 1,000 drugs where only 10% truly work, a &quot;significant&quot; p &lt; 0.05 still leaves 45 false positives against 80 true ones — 36% of &quot;discoveries&quot; are noise." loading="lazy"><figcaption>The false-positive math, visualized: of 1,000 drugs where only 10% truly work, a "significant" p &lt; 0.05 still leaves 45 false positives against 80 true ones — 36% of "discoveries" are noise.</figcaption></figure>
 <h3 id="motulsky-s9">9. Regression to the mean — the invisible force behind fake comebacks</h3>
 <p><strong>Regression to the mean:</strong> extreme measurements tend to move back toward average on retesting — with no treatment at all.</p>
 <p>Blood pressure, pain scores, tumor measurements, depression scales — all fluctuate. If you select patients <em>because</em> they scored extremely badly at screening, their next measurement will usually look better even on placebo. This isn't healing; it's statistics. The more extreme the selection and the noisier the measurement, the stronger the pull.</p>
@@ -919,7 +919,7 @@
 <li>Enrichment designs cut both ways. Enrolling only severe patients makes regression to the mean stronger — which is exactly why the control arm exists and why single-arm trials in fluctuating diseases deserve deep skepticism.</li>
 </ul>
 <div class="callout"><strong>The investor's question:</strong> <em>Is there a concurrent control arm?</em> If the evidence is "patients improved from baseline" with no comparator, assume regression to the mean (and placebo effects) explain most of it.</div>
-<figure class="fig"><img src="figures/recreated/regression-to-mean-fig1-1.png" alt="Regression to the mean, visualized: the highest blood pressures fall on remeasurement and the lowest rise — no treatment needed. Selecting extreme patients manu" loading="lazy"><figcaption>Regression to the mean, visualized: the highest blood pressures fall on remeasurement and the lowest rise — no treatment needed. Selecting extreme patients manufactures "improvement".</figcaption></figure>
+<figure class="fig"><img width="1600" height="1620" src="figures/recreated/regression-to-mean-fig1-1.png" alt="Regression to the mean, visualized: the highest blood pressures fall on remeasurement and the lowest rise — no treatment needed. Selecting extreme patients manufactures &quot;improvement&quot;." loading="lazy"><figcaption>Regression to the mean, visualized: the highest blood pressures fall on remeasurement and the lowest rise — no treatment needed. Selecting extreme patients manufactures "improvement".</figcaption></figure>
 <h3 id="motulsky-s10">10. The common traps — a field guide to misleading trial readouts</h3>
 <p>These are the book's greatest hits, translated into investor language. Pin this list next to every press release you read.</p>
 <ol>
@@ -946,11 +946,11 @@
 <li><strong>The unpronounceable test.</strong> Most basic clinical studies need about a dozen standard statistical tests. An exotic, unpronounceable test on standard data — with no cited reference — is a manipulation flag: someone went test-shopping until a p-value cooperated.</li>
 <li>Per-protocol "efficacy" analyses are cohort studies in disguise. The moment a paper switches from intention-to-treat to per-protocol ("efficacy"), randomization's protection is forfeited — the compared groups are self-selected. Treat any such claim as observational evidence, however large the n. And the mirror image: a "statistically significant" mega-trial can be commercially meaningless — one blood-pressure drug's significant 10 mmHg effect prevented roughly 1 stroke per 850 treated patients. Always convert p &lt; 0.05 into absolute risk reduction or NNT (number needed to treat: how many patients must be treated for one to benefit).</li>
 </ol>
-<figure class="fig"><img src="figures/recreated/sig-vs-ns-difference-ns-fig45-9.png" alt="The trap in one image: &quot;significant&quot; in mutants, &quot;not significant&quot; in wild-type — but the difference between those two results is not itself significant. Demand" loading="lazy"><figcaption>The trap in one image: "significant" in mutants, "not significant" in wild-type — but the difference between those two results is not itself significant. Demand the interaction test.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/observational-vs-experimental-table45-2.png" alt="Six hypotheses from observational studies that experiments overturned or erased — correlation is not causation, with receipts ." loading="lazy"><figcaption>Six hypotheses from observational studies (HRT, vitamin E, low-fat diet...) that experiments overturned or erased — correlation is not causation, with receipts.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1120" src="figures/recreated/sig-vs-ns-difference-ns-fig45-9.png" alt="The trap in one image: &quot;significant&quot; in mutants, &quot;not significant&quot; in wild-type — but the difference between those two results is not itself significant. Demand the interaction test." loading="lazy"><figcaption>The trap in one image: "significant" in mutants, "not significant" in wild-type — but the difference between those two results is not itself significant. Demand the interaction test.</figcaption></figure>
+<figure class="fig"><img width="1800" height="820" src="figures/recreated/observational-vs-experimental-table45-2.png" alt="Six hypotheses from observational studies (HRT, vitamin E, low-fat diet...) that experiments overturned or erased — correlation is not causation, with receipts." loading="lazy"><figcaption>Six hypotheses from observational studies (HRT, vitamin E, low-fat diet...) that experiments overturned or erased — correlation is not causation, with receipts.</figcaption></figure>
 
-<figure class="fig"><img src="figures/recreated/beware-extrapolation-fig33-7.png" alt="Three models fit the same data equally well but predict wildly different futures — extrapolating a regression line beyond the data is guessing ." loading="lazy"><figcaption>Three models fit the same data equally well but predict wildly different futures — extrapolating a regression line beyond the data is guessing.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/simpsons-paradox-regression-fig33-12-13.png" alt="Pooling groups can create a trend that isn&#x27;t there — or hide one that is. Always ask whether the analysis mixed distinct populations ." loading="lazy"><figcaption>Pooling groups can create a trend that isn't there — or hide one that is. Always ask whether the analysis mixed distinct populations.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1030" src="figures/recreated/beware-extrapolation-fig33-7.png" alt="Three models fit the same data equally well but predict wildly different futures — extrapolating a regression line beyond the data is guessing." loading="lazy"><figcaption>Three models fit the same data equally well but predict wildly different futures — extrapolating a regression line beyond the data is guessing.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1305" src="figures/recreated/simpsons-paradox-regression-fig33-12-13.png" alt="Pooling groups can create a trend that isn't there — or hide one that is. Always ask whether the analysis mixed distinct populations." loading="lazy"><figcaption>Pooling groups can create a trend that isn't there — or hide one that is. Always ask whether the analysis mixed distinct populations.</figcaption></figure>
 
 <h3 id="motulsky-s11">11. Putting it together — the five-minute readout checklist</h3>
 <p>For any trial readout, run this sequence:</p>
@@ -968,7 +968,7 @@
 
 
   <div class="callout"><strong>Sample size, from the trialist's angle.</strong> The statistics module above covers power and sample size in full — three trial-design specifics worth adding: in time-to-event trials power lives in <em>events</em>, not patients (~190 control-group events for 90% power in the book's heart-failure example); 20% dropout plus 5% drop-in inflates the required size by ~78%; and halving a noninferiority margin quadruples the required sample size — a suspiciously small noninferiority trial usually means a suspiciously wide margin.</div>
-<figure class="fig"><img src="figures/recreated/sample-size-vs-event-reduction-fig8-2.png" alt="Total sample size vs proportional reduction in event rate" loading="lazy"><figcaption>Total sample size vs. proportional reduction in event rate: at a fixed relative effect, lower baseline event rates demand much larger trials. This is why enrollment of lower-risk patients mid-trial can break the power calculation.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/sample-size-vs-event-reduction-fig8-2.png" alt="Total sample size vs. proportional reduction in event rate: at a fixed relative effect, lower baseline event rates demand much larger trials. This is why enrollment of lower-risk patients mid-trial can break the power calculation." loading="lazy"><figcaption>Total sample size vs. proportional reduction in event rate: at a fixed relative effect, lower baseline event rates demand much larger trials. This is why enrollment of lower-risk patients mid-trial can break the power calculation.</figcaption></figure>
 <h3 id="friedman-s7">7. Interim monitoring — the trial watching itself</h3>
 <p>Large trials have an independent <strong>Data and Safety Monitoring Board (DSMB)</strong> that peeks at unblinded data at planned intervals. It can stop the trial early — for overwhelming benefit, for harm, or for <strong>futility</strong> (the trial can't succeed even if completed).</p>
 <ul>
@@ -976,8 +976,8 @@
 <li>Futility stops are terminal. When conditional power (the chance of eventual success given current data) falls below ~10–20%, the DSMB pulls the plug. A futility stop is strong evidence the drug doesn't work — stronger than a completed "negative" trial, because the decision used the actual accumulating data.</li>
 <li><strong>Alpha-spending</strong> is the statistical price of peeking: each interim look "spends" some of the 5% false-positive budget, so the final bar is stricter than the usual p &lt; 0.05 — each peek raises the bar a little. Legitimate trials preplan this; unplanned peeks cook the p-value.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/alpha-spending-functions-fig17-3.png" alt="Alpha-spending functions: how the significance bar rises at each interim look so the overall false-positive rate stays at 5%. Every peek costs something ." loading="lazy"><figcaption>Alpha-spending functions: how the significance bar rises at each interim look so the overall false-positive rate stays at 5%. Every peek costs something.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/conditional-power-futility-fig17-5.png" alt="Conditional power boundaries with O&#x27;Brien-Fleming efficacy bounds: if the test statistic falls below the futility boundary, the chance of eventual success is un" loading="lazy"><figcaption>Conditional power boundaries with O'Brien-Fleming efficacy bounds: if the test statistic falls below the futility boundary, the chance of eventual success is under 10–30% — the statistical basis for stopping a trial as futile.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/alpha-spending-functions-fig17-3.png" alt="Alpha-spending functions: how the significance bar rises at each interim look so the overall false-positive rate stays at 5%. Every peek costs something." loading="lazy"><figcaption>Alpha-spending functions: how the significance bar rises at each interim look so the overall false-positive rate stays at 5%. Every peek costs something.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/conditional-power-futility-fig17-5.png" alt="Conditional power boundaries with O'Brien-Fleming efficacy bounds: if the test statistic falls below the futility boundary, the chance of eventual success is under 10–30% — the statistical basis for stopping a trial as futile." loading="lazy"><figcaption>Conditional power boundaries with O'Brien-Fleming efficacy bounds: if the test statistic falls below the futility boundary, the chance of eventual success is under 10–30% — the statistical basis for stopping a trial as futile.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>Was there a DSMB, and what did it do?</em> A trial stopped early for efficacy deserves a winner's-curse discount. A futility stop is about as definitive as negative evidence gets.</div>
 <h3 id="friedman-s8">8. Analysis discipline — ITT, subgroups, and missing data</h3>
 <ul>
@@ -987,7 +987,7 @@
 <li>Missing data kills interpretability. In ATLAS ACS 2, ~10% incomplete follow-up plus arm-differential missingness turned a p = 0.045 mortality claim into p = 0.076–0.100 under FDA re-analysis. "Off drug" must not mean "off study" — the Vioxx APPROVe trial stopped following patients 14 days after discontinuation, hiding the cardiovascular signal that extended follow-up later revealed (HR 1.8).</li>
 <li><strong>Regional heterogeneity.</strong> In multinational trials, check the geographic splits: PLATO's ticagrelor showed an overall 16% risk reduction, but the U.S. subgroup (8% of patients) had a hazard ratio of 1.27 — favoring the <em>control</em> — possibly from higher aspirin doses used in the U.S. A "positive global trial" can contain a negative U.S. subgroup, and the FDA is a U.S. audience.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/subgroup-forest-plot-fig18-7.png" alt="A &quot;good&quot; subgroup picture: the MERIT heart-failure trial&#x27;s effect was consistent across ~14 predefined subgroups. Compare any company&#x27;s subgroup slide against t" loading="lazy"><figcaption>A "good" subgroup picture: the MERIT heart-failure trial's effect was consistent across ~27 predefined subgroups. Compare any company's subgroup slide against this — cherry-picked subgroups with inconsistent directions are the norm, not the standard.</figcaption></figure>
+<figure class="fig"><img width="1700" height="2540" src="figures/recreated/subgroup-forest-plot-fig18-7.png" alt="A &quot;good&quot; subgroup picture: the MERIT heart-failure trial's effect was consistent across ~27 predefined subgroups. Compare any company's subgroup slide against this — cherry-picked subgroups with inconsistent directions are the norm, not the standard." loading="lazy"><figcaption>A "good" subgroup picture: the MERIT heart-failure trial's effect was consistent across ~27 predefined subgroups. Compare any company's subgroup slide against this — cherry-picked subgroups with inconsistent directions are the norm, not the standard.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>Is the headline number ITT? Were the subgroups prespecified? How much data is missing, and is it differential by arm?</em></div>
 <p><strong>The sponsor-manipulation screen (the ten-flag checklist).</strong> Run every company readout against this red-flag list: (1) surrogate endpoint the drug moves; (2) trial population/length tuned for maximum response; (3) placebo-only comparator or sub-therapeutic competitor dosing; (4) pilot patients pooled into pivotal figures; (5) trials with fatalities/serious ADRs unpublished; (6) graphics without CIs, unlabeled axes, no patient-level data; (7) hanging comparatives ("better" — than what?); (8) anecdote over RCTs; (9) paid opinion leaders; (10) cost-effectiveness analyses showing the expensive product "works out cheaper." Flags 1, 3, 4, and 6 are directly checkable from the press release plus ClinicalTrials.gov. <em>(The list comes from Greenhalgh's</em> How to Read a Paper<em>, Box 6.1 — you'll meet the full evidence-appraisal toolkit in Stage 6.)</em></p>
 <p><strong>The negative-but-non-definitive rule.</strong> A failed primary (CI crosses zero) is not automatically a dead drug: check the <strong>upper 95% CI bound</strong> — only ~1-in-40 chance the true effect is that large or larger. If the upper bound is clinically meaningful, the trial is negative but <em>non-definitive</em>; if it rules out any meaningful effect, the drug is dead on this question. Mirror image: a "positive" mega-trial whose entire CI sits below clinical relevance is commercially meaningless regardless of the p-value.</p>
@@ -1009,8 +1009,8 @@
 <li>Then it flattens — you've hit the <strong>maximum effect (Emax)</strong>. Doubling the dose from there buys you nothing except side effects.</li>
 </ul>
 <p>The concentration that produces half the maximum effect is called the <strong>EC50</strong> — a single number that measures the drug's <strong>potency</strong>. Lower EC50 = more potent = less drug needed.</p>
-<figure class="fig"><img src="figures/recreated/dose-response-linear-semilog-fig1-4.png" alt="The Emax curve every drug obeys: steep at first, then flattening at the maximum effect. Same curve on a log scale becomes the familiar S-shape ." loading="lazy"><figcaption>The Emax curve every drug obeys: steep at first, then flattening at the maximum effect. Same curve on a log scale becomes the familiar S-shape.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/emax-linear-low-dose-region-fig19-10.png" alt="Zoom in on the bottom of the curve and it looks linear — which is why low doses can appear &#x27;dose-proportional&#x27; right up until they aren&#x27;t ." loading="lazy"><figcaption>Zoom in on the bottom of the curve and it looks linear — which is why low doses can appear 'dose-proportional' right up until they aren't.</figcaption></figure>
+<figure class="fig"><img width="1600" height="720" src="figures/recreated/dose-response-linear-semilog-fig1-4.png" alt="The Emax curve every drug obeys: steep at first, then flattening at the maximum effect. Same curve on a log scale becomes the familiar S-shape." loading="lazy"><figcaption>The Emax curve every drug obeys: steep at first, then flattening at the maximum effect. Same curve on a log scale becomes the familiar S-shape.</figcaption></figure>
+<figure class="fig"><img width="1600" height="700" src="figures/recreated/emax-linear-low-dose-region-fig19-10.png" alt="Zoom in on the bottom of the curve and it looks linear — which is why low doses can appear 'dose-proportional' right up until they aren't." loading="lazy"><figcaption>Zoom in on the bottom of the curve and it looks linear — which is why low doses can appear 'dose-proportional' right up until they aren't.</figcaption></figure>
 <p>Why it matters for investors:</p>
 <ul>
 <li>The dose the company picks must sit on the right part of this curve. If Phase 2 tests a dose on the flat top of the curve, higher doses won't help and lower doses might work just as well (cheaper, safer). If it tests a dose on the steep rising part, small changes in dose swing efficacy — the trial is on a knife's edge, and any PK variability between patients becomes efficacy variability.</li>
@@ -1019,8 +1019,8 @@
 <li><strong>Competitive antagonists</strong> (drugs that block another drug's receptor, like naloxone reversing opioids) work by shifting the curve rightward — you need more agonist to get the same effect. Rescue-medicine companies live on this math.</li>
 </ul>
 <p><strong>The therapeutic window.</strong> Between the concentration where most patients respond and the concentration where toxicity starts lies the drug's usable range. A wide window is forgiving — dosing errors and patient variability stay safe. A narrow window means the trial must thread a needle, and real-world use will be fragile.</p>
-<figure class="fig"><img src="figures/recreated/therapeutic-range-mec-mtc-fig1-10.png" alt="The therapeutic range: bounded below by the minimum effective concentration and above by the maximum tolerated concentration ." loading="lazy"><figcaption>The therapeutic range: bounded below by the minimum effective concentration (MEC) and above by the maximum tolerated concentration (MTC).</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/therapeutic-range-identification-fig1-11.png" alt="How the window is actually set: from population curves of response vs toxicity — the MEC where ~70% respond, the MTC where ~10% show toxicity ." loading="lazy"><figcaption>How the window is actually set: from population curves of response vs toxicity — the MEC where ~70% respond, the MTC where ~10% show toxicity.</figcaption></figure>
+<figure class="fig"><img width="1650" height="850" src="figures/recreated/therapeutic-range-mec-mtc-fig1-10.png" alt="The therapeutic range: bounded below by the minimum effective concentration (MEC) and above by the maximum tolerated concentration (MTC)." loading="lazy"><figcaption>The therapeutic range: bounded below by the minimum effective concentration (MEC) and above by the maximum tolerated concentration (MTC).</figcaption></figure>
+<figure class="fig"><img width="1650" height="850" src="figures/recreated/therapeutic-range-identification-fig1-11.png" alt="How the window is actually set: from population curves of response vs toxicity — the MEC where ~70% respond, the MTC where ~10% show toxicity." loading="lazy"><figcaption>How the window is actually set: from population curves of response vs toxicity — the MEC where ~70% respond, the MTC where ~10% show toxicity.</figcaption></figure>
 <h3 id="rosenbaum-s6">6. Exposure–response: the bridge between the blood level and the outcome</h3>
 <p>"Exposure" = how much drug the body saw (blood levels over time). "Response" = what happened (tumor shrank, pain dropped, LDL fell). The <strong>exposure–response relationship</strong> is the company's core argument: <em>patients with more drug exposure did better, so the drug caused the benefit.</em></p>
 <p>This is where sophisticated investors look when a readout is ambiguous:</p>
@@ -1028,8 +1028,8 @@
 <li>If the trial "failed" overall but high-exposure patients responded beautifully, the molecule may be fine — the dose was too low. That's a very different investment conclusion than "the drug doesn't work." (It also means the company may get another shot with a higher dose — or that the drug is only viable at exposures with toxicity problems.)</li>
 <li><strong>Biomarkers</strong> (measurable body signals like a protein level or blood pressure) are often used as stand-ins when the real outcome takes years. Every biomarker argument rests on the assumption that the exposure→biomarker→outcome chain holds. When it doesn't — when the biomarker moves but patients don't get better — you get some of biotech's most expensive failures.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/auc-concept-dt-shading-fig5-3.png" alt="What &#x27;exposure&#x27; actually is: the area under the concentration–time curve — total drug seen by the body ." loading="lazy"><figcaption>What 'exposure' actually is: the area under the concentration–time curve — total drug seen by the body.</figcaption></figure>
-<figure class="fig"><img src="figures/recreated/emax-response-outlasts-concentration-fig19-14.png" alt="Response can outlast the drug: here the effect persists long after blood levels have fallen — the signature of irreversible or slow-turnover mechanisms ." loading="lazy"><figcaption>Response can outlast the drug: here the effect persists long after blood levels have fallen — because dosing started well above EC50, the response stays near-maximal even as concentration drops.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/auc-concept-dt-shading-fig5-3.png" alt="What 'exposure' actually is: the area under the concentration–time curve — total drug seen by the body." loading="lazy"><figcaption>What 'exposure' actually is: the area under the concentration–time curve — total drug seen by the body.</figcaption></figure>
+<figure class="fig"><img width="1650" height="850" src="figures/recreated/emax-response-outlasts-concentration-fig19-14.png" alt="Response can outlast the drug: here the effect persists long after blood levels have fallen — because dosing started well above EC50, the response stays near-maximal even as concentration drops." loading="lazy"><figcaption>Response can outlast the drug: here the effect persists long after blood levels have fallen — because dosing started well above EC50, the response stays near-maximal even as concentration drops.</figcaption></figure>
 <h3 id="rosenbaum-s7">7. Why dose selection is an investment risk (the binary connection)</h3>
 <p>Here's the through-line for everything above. A clinical trial is a bet on a <em>dose</em>, not just a molecule. The dose must:</p>
 <ol>
@@ -1047,12 +1047,12 @@
 <li><strong>Exposure–response analyses</strong> in the briefing documents: do high-exposure patients clearly do better? If yes, the drug is alive even if the headline failed. If no — if exposure doesn't track response — be much more skeptical.</li>
 <li><strong>Population differences:</strong> does the trial population (elderly, liver-impaired, on interacting meds) have different clearance than the Phase 1 volunteers? If yes, the effective dose in the trial may differ from what was planned.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/pharmacogenomic-biomarkers-pie-fig16-1.png" alt="Genetics matters unevenly: pharmacogenomic biomarkers in FDA labels cluster in oncology and psychiatry — know which therapeutic areas carry PGx dose risk ." loading="lazy"><figcaption>Genetics matters unevenly: pharmacogenomic biomarkers in FDA labels cluster in oncology (30%) and psychiatry (17%) — know which therapeutic areas carry PGx (pharmacogenomic) dose risk.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1000" src="figures/recreated/pharmacogenomic-biomarkers-pie-fig16-1.png" alt="Genetics matters unevenly: pharmacogenomic biomarkers in FDA labels cluster in oncology (30%) and psychiatry (17%) — know which therapeutic areas carry PGx (pharmacogenomic) dose risk." loading="lazy"><figcaption>Genetics matters unevenly: pharmacogenomic biomarkers in FDA labels cluster in oncology (30%) and psychiatry (17%) — know which therapeutic areas carry PGx (pharmacogenomic) dose risk.</figcaption></figure>
 <ul>
 <li><strong>Irreversible mechanisms and long-PD drugs:</strong> these are the pleasant surprises — drugs whose effect outlasts their blood levels (like the once-daily proton-pump inhibitors with sub-hour half-lives). They de-risk dosing frequency commercially.</li>
 <li><strong>Nonlinear PK drugs</strong> (a small club: phenytoin is the textbook case): small dose increases can cause <em>explosive</em> jumps in blood levels. Trials of such drugs live on a knife's edge, and any dose adjustment mid-trial is a red flag worth understanding.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/nonlinear-elimination-chronic-dosing-fig15-5.png" alt="Nonlinear PK is not a gentle curve: doubling the infusion rate more than doubled blood levels — the second doubling sent them up several-fold, toward infinity. " loading="lazy"><figcaption>Nonlinear PK is not a gentle curve: doubling the infusion rate more than doubled blood levels — the second doubling sent them up several-fold, toward infinity. This is the knife's-edge visual.</figcaption></figure>
+<figure class="fig"><img width="1600" height="900" src="figures/recreated/nonlinear-elimination-chronic-dosing-fig15-5.png" alt="Nonlinear PK is not a gentle curve: doubling the infusion rate more than doubled blood levels — the second doubling sent them up several-fold, toward infinity. This is the knife's-edge visual." loading="lazy"><figcaption>Nonlinear PK is not a gentle curve: doubling the infusion rate more than doubled blood levels — the second doubling sent them up several-fold, toward infinity. This is the knife's-edge visual.</figcaption></figure>
 <h3 id="rosenbaum-s8">8. The one-page cheat sheet</h3>
 <table>
 <tr><th>Concept</th><th>One-liner</th><th>Investor question</th></tr>
@@ -1163,7 +1163,7 @@
 <div class="quiz" data-quiz="s2">
   <h3>Stage 2 quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 5 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="A p-value is not the chance the drug works — that&#x27;s the single most common misreading in all of science.*">
+  <div class="quiz-q" data-why="A p-value is not the chance the drug works — that&#x27;s the single most common misreading in all of science.">
     <p class="quiz-qtext"><strong>1.</strong> A trial reports p = 0.03 on its primary endpoint. What does that mean?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>There&#x27;s a 97% chance the drug works</span></button>
@@ -1173,7 +1173,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="If the CI spans &quot;game-changer&quot; to &quot;useless,&quot; the trial answered nothing — read the CI, not just the p-value.*">
+  <div class="quiz-q" data-why="If the CI spans &quot;game-changer&quot; to &quot;useless,&quot; the trial answered nothing — read the CI, not just the p-value.">
     <p class="quiz-qtext"><strong>2.</strong> A trial &quot;failed&quot; with a treatment-effect confidence interval of −2 to +8. What&#x27;s the right read?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>The drug is dead — move on</span></button>
@@ -1183,7 +1183,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Test 100 subgroups and you&#x27;ll &quot;find&quot; about 5 significant results from a completely ineffective drug — that&#x27;s why unplanned subgroup wins are noise.*">
+  <div class="quiz-q" data-why="Test 100 subgroups and you&#x27;ll &quot;find&quot; about 5 significant results from a completely ineffective drug — that&#x27;s why unplanned subgroup wins are noise.">
     <p class="quiz-qtext"><strong>3.</strong> At the 5% significance level, testing 20 useless hypotheses produces, on average…</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Zero false discoveries</span></button>
@@ -1193,7 +1193,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Surrogates that don&#x27;t translate to clinical benefit are the classic trap — 66% of approvals rode surrogates, but only 5 of 36 ever confirmed on survival.*">
+  <div class="quiz-q" data-why="Surrogates that don&#x27;t translate to clinical benefit are the classic trap — 66% of approvals rode surrogates, but only 5 of 36 ever confirmed on survival.">
     <p class="quiz-qtext"><strong>4.</strong> Of surrogate-based cancer drug approvals, roughly what fraction ever showed an actual survival benefit after ~4.5 years of follow-up?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>About two-thirds</span></button>
@@ -1203,9 +1203,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="&quot;Not worse by more than the margin&quot; — always ask how wide the margin is and who chose it.*
-
----">
+  <div class="quiz-q" data-why="&quot;Not worse by more than the margin&quot; — always ask how wide the margin is and who chose it.">
     <p class="quiz-qtext"><strong>5.</strong> A &quot;noninferiority&quot; win means…</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>The drug is just as good as the standard treatment</span></button>
@@ -1451,7 +1449,7 @@
 <div class="quiz" data-quiz="s2b">
   <h3>Stage 2B quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 3 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="Turner 2008 compared the FDA&#x27;s files (38 positive, 36 negative) against the journals (48 &#x27;positive,&#x27; 3 negative) — 11 negative trials were rewritten as positive and 22 vanished.*">
+  <div class="quiz-q" data-why="Turner 2008 compared the FDA&#x27;s files (38 positive, 36 negative) against the journals (48 &#x27;positive,&#x27; 3 negative) — 11 negative trials were rewritten as positive and 22 vanished.">
     <p class="quiz-qtext"><strong>1.</strong> In Turner et al. 2008, 74 antidepressant trials were an even 38-positive / 36-negative split in the FDA&#x27;s files. What did the published literature show?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Roughly the same even split</span></button>
@@ -1461,7 +1459,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="COMPare found only 9 of 67 trials fully reported their registered outcomes — 354 outcomes disappeared and 357 appeared. Always compare the registry entry against the paper.*">
+  <div class="quiz-q" data-why="COMPare found only 9 of 67 trials fully reported their registered outcomes — 354 outcomes disappeared and 357 appeared. Always compare the registry entry against the paper.">
     <p class="quiz-qtext"><strong>2.</strong> The COMPare project audited 67 trials in top journals against their registrations. How many reported everything as registered?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>61 — outcome switching is rare</span></button>
@@ -1471,7 +1469,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="A 2010 review found truncated trials overstate benefit by ~25% on average — and 86% of cancer trials stopped early for benefit were used to support marketing approval.*">
+  <div class="quiz-q" data-why="A 2010 review found truncated trials overstate benefit by ~25% on average — and 86% of cancer trials stopped early for benefit were used to support marketing approval.">
     <p class="quiz-qtext"><strong>3.</strong> Trials stopped early for benefit overstate the true effect by roughly how much, on average?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>About 5% — early stopping barely matters</span></button>
@@ -1552,7 +1550,7 @@
     <li>Declining stock price raises the cost of capital — raises get more dilutive exactly when the company is weakest.</li>
   </ul>
 
-<figure class="fig"><img src="figures/recreated/pharmagellan-per-patient-costs-table12-9.png" alt="Table of derived per-patient clinical trial costs by therapeutic area and phase"><figcaption>Why burn rates are what they are: per-patient trial costs average ~$114K (Phase 1) / $181K (Phase 2) / $58K (Phase 3) — Phase 2 is the most expensive per patient. Multiply by trial size to sanity-check a company's R&amp;D spend.</figcaption></figure>
+<figure class="fig"><img width="2100" height="1331" loading="lazy" src="figures/recreated/pharmagellan-per-patient-costs-table12-9.png" alt="Why burn rates are what they are: per-patient trial costs average ~$114K (Phase 1) / $181K (Phase 2) / $58K (Phase 3) — Phase 2 is the most expensive per patient. Multiply by trial size to sanity-check a company's R&amp;D spend."><figcaption>Why burn rates are what they are: per-patient trial costs average ~$114K (Phase 1) / $181K (Phase 2) / $58K (Phase 3) — Phase 2 is the most expensive per patient. Multiply by trial size to sanity-check a company's R&amp;D spend.</figcaption></figure>
   <div class="calc">
     <h4>Runway calculator</h4>
     <label>Cash on hand ($M)</label><input id="rw-cash" type="number" value="100">
@@ -1587,7 +1585,7 @@
 <div class="quiz" data-quiz="s3">
   <h3>Stage 3 quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 5 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="Fully diluted = basic + options + warrants + convertibles — a per-share fair value on basic shares is a fantasy.*">
+  <div class="quiz-q" data-why="Fully diluted = basic + options + warrants + convertibles — a per-share fair value on basic shares is a fantasy.">
     <p class="quiz-qtext"><strong>1.</strong> Why do you always value a biotech on fully diluted shares, not the basic count?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>The SEC requires it</span></button>
@@ -1597,7 +1595,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Strip out the cash pile and the number left over is the price tag on the actual science.*">
+  <div class="quiz-q" data-why="Strip out the cash pile and the number left over is the price tag on the actual science.">
     <p class="quiz-qtext"><strong>2.</strong> Enterprise value = market cap + debt − cash. For a pre-revenue biotech, EV is useful because…</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>It captures the value of the management team</span></button>
@@ -1607,7 +1605,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Runway = cash ÷ burn — and 9 months of cash against a 12-month readout means dilution is coming first. Price it now.*">
+  <div class="quiz-q" data-why="Runway = cash ÷ burn — and 9 months of cash against a 12-month readout means dilution is coming first. Price it now.">
     <p class="quiz-qtext"><strong>3.</strong> A company has $18M cash and burns $6M per quarter. A readout is guided 12 months out. Does the cash cover it?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Yes — 18 ÷ 6 = 3 years of runway</span></button>
@@ -1617,7 +1615,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="No announcement shock — but check each 10-Q for the sales agreement and remaining capacity; a large unused ATM is future dilution waiting to happen.*">
+  <div class="quiz-q" data-why="No announcement shock — but check each 10-Q for the sales agreement and remaining capacity; a large unused ATM is future dilution waiting to happen.">
     <p class="quiz-qtext"><strong>4.</strong> The company &quot;dribbles shares into the open market over time through a sales agent,&quot; with no single announcement. What financing is that?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Follow-on offering</span></button>
@@ -1627,9 +1625,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Reverse splits change the share count, not the value — companies do them to stay listed or make room under the authorized count before raising.*
-
----">
+  <div class="quiz-q" data-why="Reverse splits change the share count, not the value — companies do them to stay listed or make room under the authorized count before raising.">
     <p class="quiz-qtext"><strong>5.</strong> A company announces a reverse split. Your read?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Great — the stock price is being reset higher</span></button>
@@ -1654,7 +1650,7 @@
 <li><a href="#bogdan-s1">1. Two kinds of uncertainty (the idea everything else hangs on)</a></li>
 <li><a href="#bogdan-s2">2. The rNPV engine — the one formula behind every biotech valuation</a></li>
 <li><a href="#s4-the-core-equation-probability-weighted-value">The core equation: probability-weighted value</a></li>
-<li><a href="#bogdan-s3">3. The probability chain — why 19% is the number that should be in your head</a></li>
+<li><a href="#bogdan-s3">3. The probability chain — why ~30% is the number that should be in your head</a></li>
 <li><a href="#s4-comps-the-quick-and-dirty-methods">Comps: the quick-and-dirty methods</a></li>
 <li><a href="#bogdan-s4">4. Peak sales — the art of not lying to yourself</a></li>
 <li><a href="#bogdan-s5">5. The discount rate — the ladder and the lies</a></li>
@@ -1697,8 +1693,8 @@
 <li><strong>Sum</strong> — the total is the project's value today. Positive means invest; negative means walk away.</li>
 </ol>
 <p>One practical refinement: the <em>investments</em> (trial costs) are only spent if the program gets that far, so they carry the probability of reaching their phase — but they're <em>subtracted at their decision node</em>, not buried in the probability. The cleanest habit is to think in <strong>decision points</strong>: you only pay the Phase 3 bill if Phase 2 succeeded, so model Phase 3 cost as an <em>optional</em> future investment, not committed spend. Treating R&amp;D as optional rather than committed is the biggest mechanical difference between a naive discounted cash flow (DCF) and a professional biotech model — and it systematically raises early-stage pipeline value.</p>
-<p><strong>The simulation version of the same engine.</strong> Instead of multiplying by probabilities, you can roll the dice: simulate a trial outcome (success with probability P), simulate a peak-sales estimate, compute which cash flows actually occur — in full, not probability-adjusted — and repeat 1,000 times. The average converges to the rNPV; the <em>distribution</em> is the bonus — it answers "what's the 10%-worst case?" and "what's the chance the IRR (internal rate of return — the annualized return the project earns) beats 30%?" The book's pipeline simulation of 1,000 scenarios produced exactly that kind of value-at-risk picture: mean ~$2.9 billion, 10% of scenarios below ~$2.2 billion — a $710 million value-at-risk.</p>
-<figure class="fig"><img src="figures/recreated/pipeline-value-at-risk-fig4-12.png" alt="Value-at-risk for a pipeline: the histogram of 1,000 simulated pipeline values, with the cumulative curve . Mean ≈ $2.9B; the 10% worst case sits at ≈ $2.15B — " loading="lazy"><figcaption>Value-at-risk for a pipeline: the histogram of 1,000 simulated pipeline values, with the cumulative curve (right axis). Mean ≈ $2.9B; the 10% worst case sits at ≈ $2.15B — a $710M value-at-risk vs. the mean.</figcaption></figure>
+<p><strong>The simulation version of the same engine.</strong> Instead of multiplying by probabilities, you can roll the dice: simulate a trial outcome (success with probability P), simulate a peak-sales estimate, compute which cash flows actually occur — in full, not probability-adjusted — and repeat 1,000 times. The average converges to the rNPV; the <em>distribution</em> is the bonus — it answers "what's the 10%-worst case?" and "what's the chance the IRR (internal rate of return — the annualized return the project earns) beats 30%?" The book's pipeline simulation of 1,000 scenarios produced exactly that kind of value-at-risk picture: mean $2.86 billion, 10% of scenarios below $2.15 billion — a $710 million value-at-risk.</p>
+<figure class="fig"><img width="1600" height="650" src="figures/recreated/pipeline-value-at-risk-fig4-12.png" alt="Value-at-risk for a pipeline: the histogram of 1,000 simulated pipeline values, with the cumulative curve (right axis). Mean ≈ $2.9B; the 10% worst case sits at ≈ $2.15B — a $710M value-at-risk vs. the mean." loading="lazy"><figcaption>Value-at-risk for a pipeline: the histogram of 1,000 simulated pipeline values, with the cumulative curve (right axis). Mean ≈ $2.9B; the 10% worst case sits at ≈ $2.15B — a $710M value-at-risk vs. the mean.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>Can you lay out every cash flow by year, probability-adjust each one, discount it, and say what each column means?</em></div>
 
 
@@ -1714,15 +1710,14 @@
       <li><strong>Sponsor risk:</strong> has this team run pivotal trials before? Is the company funded through readout?</li>
     </ul>
   </details>
-<h3 id="bogdan-s3">3. The probability chain — why 19% is the number that should be in your head</h3>
-<p>A Phase 2 asset's cash flows don't occur with "the success rate." They occur with the <em>product</em> of every rate in front of them. Using the book's benchmark rates (Ph1 63% → Ph2 42% → Ph3 75% → approval 95%):</p>
+<h3 id="bogdan-s3">3. The probability chain — why ~30% is the number that should be in your head</h3>
+<p>A Phase 2 asset's cash flows don't occur with "the success rate." They occur with the <em>product</em> of every rate still in front of them — and a program already in Phase 2 has survived Phase 1, so the 63% Phase-1 rate no longer applies. Using the book's benchmark rates (Ph2 42% → Ph3 75% → approval 95%):</p>
 <ul>
-<li>Reach Phase 2: 63%</li>
-<li>Reach Phase 3: 63% × 42% ≈ <strong>26%</strong></li>
-<li>Reach approval: × 75% ≈ <strong>20%</strong></li>
-<li>Reach market: × 95% ≈ <strong>19%</strong></li>
+<li>Reach Phase 3: 42%</li>
+<li>Reach approval: 42% × 75% ≈ <strong>32%</strong></li>
+<li>Reach market: × 95% ≈ <strong>30%</strong></li>
 </ul>
-<p>That multiplication is the single most important habit in biotech valuation: <strong>a Phase 2 program's launch cash flows only have ~19% probability.</strong> It explains most of the gap between a company's peak-sales slide and a sober valuation. Three rules:</p>
+<p>That multiplication is the single most important habit in biotech valuation: <strong>a Phase 2 program's launch cash flows only have ~30% probability.</strong> (The book's famous 19% figure is the same chain starting one step earlier — a Phase <em>1</em> program: 63% × 42% × 75% × 95%. Don't apply a rate the program has already survived.) It explains most of the gap between a company's peak-sales slide and a sober valuation. Three rules:</p>
 <ul>
 <li>Use indication-specific rates, never one industry number. The book's table shows Phase-1-to-market cumulative rates ranging from ~5% (women's health) to ~28% (infections). Phase 2 is the value-killer in nearly every indication — it's the lowest rate in the chain.</li>
 <li>Use one source for everything you're comparing. Success rates vary wildly by source (the book itself prints two inconsistent sets — flagged in the notes — precisely because mixing sources breaks comparability).</li>
@@ -1755,7 +1750,7 @@
 <li>Late-stage: switch to bottom-up — indication, dosing, price vs. marketed comparables.</li>
 <li>Then multiply by the sales curve. Drugs don't jump to peak sales; they ramp. The book's standard curve rises to 100% around year 11–12 of market life, then decays with patent expiry to ~1% by year 22.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/sales-curve-fig4-2.png" alt="The standard sales curve : penetration ramps to 100% by year ~11–12, then declines with patent expiry to ~zero by year 22. Every drug DCF&#x27;s revenue line is peak" loading="lazy"><figcaption>The standard sales curve: penetration ramps to 100% by year ~11–12, then declines with patent expiry to ~zero by year 22. Every drug DCF's revenue line is peak sales × this shape.</figcaption></figure>
+<figure class="fig"><img width="1600" height="900" src="figures/recreated/sales-curve-fig4-2.png" alt="The standard sales curve: penetration ramps to 100% by year ~11–12, then declines with patent expiry to ~zero by year 22. Every drug DCF's revenue line is peak sales × this shape." loading="lazy"><figcaption>The standard sales curve: penetration ramps to 100% by year ~11–12, then declines with patent expiry to ~zero by year 22. Every drug DCF's revenue line is peak sales × this shape.</figcaption></figure>
 <ul>
 <li>Then apply the margin. Only a fraction of sales is operating profit — the book's cases use 55–65%. Note the book's worked equivalence: a 10% change in margin has <em>exactly</em> the same value effect as a 10% change in sales.</li>
 </ul>
@@ -1813,7 +1808,7 @@
 </table>
 <p>"The more advanced the product is, the higher the share the licensor gets, because he has borne more risk." Use it as a first-pass sanity check on any deal: a preclinical licensor keeping 50% of the economics is either a great negotiator or a great story.</p>
 <p><strong>The simulation view.</strong> A Phase 3 license contract simulated 1,000 times produces a <em>bimodal</em> value distribution — a lump of abandonment outcomes and a separate success peak. That bimodality is the shape of biotech value: you're buying a draw from two humps, not a point.</p>
-<figure class="fig"><img src="figures/recreated/phase3-license-contract-sim-fig4-24.png" alt="1,000 simulations of a Phase 3 license contract: a bimodal value distribution — the abandonment hump near zero and the success peak near ~$230M . Biotech value " loading="lazy"><figcaption>1,000 simulations of a Phase 3 license contract: a bimodal value distribution — the abandonment hump near zero and the success peak near ~$230M. Biotech value is a draw from two humps, not a point.</figcaption></figure>
+<figure class="fig"><img width="1600" height="650" src="figures/recreated/phase3-license-contract-sim-fig4-24.png" alt="1,000 simulations of a Phase 3 license contract: a bimodal value distribution — the abandonment hump at the ~$60M upfront and the success peak near ~$230M. Biotech value is a draw from two humps, not a point." loading="lazy"><figcaption>1,000 simulations of a Phase 3 license contract: a bimodal value distribution — the abandonment hump at the ~$60M upfront and the success peak near ~$230M. Biotech value is a draw from two humps, not a point.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>How much of this deal's headline is certain upfront cash — and are the milestones probability-weighted?</em></div>
 <h3 id="bogdan-s8">8. Valuing a whole company — the sum-of-parts build-up</h3>
 <p>For a pre-revenue biotech, multiples like P/E (price-to-earnings) or EV/EBITDA (enterprise value to operating profit) are literally not computable — no earnings. The professional template is a build-up:</p>
@@ -1828,7 +1823,7 @@
 <li><strong>Then divide by fully diluted shares</strong> — including ESOPs (employee stock-option plans), convertibles (debt that turns into shares), and ratchet overhang (anti-dilution clauses that can flood new shares). A per-share fair value on basic shares is a fantasy.</li>
 </ul>
 <p><strong>Feed rate vs. terminal value.</strong> Sell-side DCFs often hide most of their value in a terminal value that assumes constant cash flows "to infinity" — applied while a blockbuster is still on the market, it implicitly assumes the company replaces it with an equally powerful product; applied after patent expiry, it comes out far too low. The feed rate is the honest recast: <em>what pipeline productivity does this terminal value imply?</em> Test it against the company's actual output (count new INDs over the last 3–5 years). If the model needs three blockbusters a year from a shop that produced one in a decade, the valuation is fantasy.</p>
-<figure class="fig"><img src="figures/recreated/terminal-value-constant-cashflows-fig4-46.png" alt="The terminal-value trap : assuming constant cash flows &quot;to infinity&quot; misleads badly — applied while a blockbuster still drives revenues it assumes an equally po" loading="lazy"><figcaption>The terminal-value trap: assuming constant cash flows "to infinity" misleads badly — applied while a blockbuster still drives revenues (point A) it assumes an equally powerful replacement; applied after expiry (point B) it comes out far too low. The book's answer is the feed rate instead.</figcaption></figure>
+<figure class="fig"><img width="1600" height="600" src="figures/recreated/terminal-value-constant-cashflows-fig4-46.png" alt="The terminal-value trap: assuming constant cash flows &quot;to infinity&quot; misleads badly — applied while a blockbuster still drives revenues (point A) it assumes an equally powerful replacement; applied after expiry (point B) it comes out far too low. The book's answer is the feed rate instead." loading="lazy"><figcaption>The terminal-value trap: assuming constant cash flows "to infinity" misleads badly — applied while a blockbuster still drives revenues (point A) it assumes an equally powerful replacement; applied after expiry (point B) it comes out far too low. The book's answer is the feed rate instead.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>What pipeline productivity does this valuation's terminal value imply — and does the company's actual IND output support it?</em></div>
 
 
@@ -1841,7 +1836,7 @@
     <li><strong>Risk-adjust</strong> the cash flows by PoS at each remaining stage.</li>
     <li><strong>Discount</strong> to present value: ~10% for large pharma, 15–20% for small biotech. Warning: if you've already risk-adjusted the cash flows, don't also use a sky-high discount rate — that's double-counting the same risk.</li>
   </ol>
-<figure class="fig"><img src="figures/recreated/pharmagellan-launch-curves-fig6-1.png" alt="Chart of median and interquartile drug launch curves showing percent of peak sales by year"><figcaption>The base case for modeling: ~6 years from launch to peak sales, with 50% of peak reached just before year 3. The bands show how wide reality gets.</figcaption></figure>
+<figure class="fig"><img width="2100" height="1718" loading="lazy" src="figures/recreated/pharmagellan-launch-curves-fig6-1.png" alt="The base case for modeling: ~6 years from launch to peak sales, with 50% of peak reached just before year 3. The bands show how wide reality gets."><figcaption>The base case for modeling: ~6 years from launch to peak sales, with 50% of peak reached just before year 3. The bands show how wide reality gets.</figcaption></figure>
   <div class="callout">For a beginner, the PoS-weighted expected value and a comps cross-check will take you 80% of the way. Build the full DCF when a position gets serious — the discipline of the revenue build (patients × share × price) is where most bad theses die, because the numbers won't survive contact with epidemiology.</div>
 <h3 id="bogdan-s9">9. The binary — how trial news moves the stock</h3>
 <p>Now the payoff of the whole module: the arithmetic of the readout.</p>
@@ -1857,9 +1852,9 @@
 <li><strong>Actelion, April 2001:</strong> lead drug Veletri fails its Phase 3 primary endpoint → <strong>CHF 145 (Swiss francs) → CHF 55, −62% in one day</strong>. Three years later, Veletri development is stopped for futility → <strong>−24%</strong> — much smaller, because the second lead (Tracleer) now drove value and expectations had already reset. <em>The second shock is never like the first — don't anchor on it.</em></li>
 <li><strong>Genentech, 2003–2004:</strong> Avastin Phase 3 in metastatic colorectal cancer → <strong>+45%</strong>; breast cancer interim → <strong>+25%</strong>; lung cancer interim → <strong>+18%</strong>. Note the descending pattern: each successive win reprices a smaller residual uncertainty.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/genentech-share-price-trial-results-fig4-52.png" alt="Genentech&#x27;s share price, 2000–2006, with Phase 3 readouts annotated: metastatic colorectal , metastatic breast , non-small-cell lung . Real binary-event stock m" loading="lazy"><figcaption>Genentech's share price, 2000–2006, with Phase 3 readouts annotated — metastatic colorectal, metastatic breast, and non-small-cell lung cancer. Real binary-event stock moves: each win repriced the shares on shrinking residual uncertainty.</figcaption></figure>
+<figure class="fig"><img width="1600" height="950" src="figures/recreated/genentech-share-price-trial-results-fig4-52.png" alt="Genentech's share price, 2000–2006, with Phase 3 readouts annotated — metastatic colorectal, metastatic breast, and non-small-cell lung cancer. Real binary-event stock moves: each win repriced the shares on shrinking residual uncertainty." loading="lazy"><figcaption>Genentech's share price, 2000–2006, with Phase 3 readouts annotated — metastatic colorectal, metastatic breast, and non-small-cell lung cancer. Real binary-event stock moves: each win repriced the shares on shrinking residual uncertainty.</figcaption></figure>
 <p>The book's schematic of the same idea shows the two things that move a biotech's value off its average path: <strong>trial results</strong> (the jump when the success rate resolves to 100% or the project goes to zero) and <strong>discount-rate changes</strong> (a diversified pipeline or an IPO lowers the cost of capital, causing an immediate upward revaluation — multiple expansion with no pipeline news at all).</p>
-<figure class="fig"><img src="figures/recreated/value-jump-trial-success-fig4-49.png" alt="How company value develops: the solid line jumps when trial results resolve uncertainty ; the dashed line jumps when the discount rate falls . Between jumps, va" loading="lazy"><figcaption>How company value develops: the solid line jumps when trial results resolve uncertainty (success rate → 100%); the dashed line jumps when the discount rate falls (e.g., pipeline diversification or an IPO). Between jumps, value grows at roughly the discount rate.</figcaption></figure>
+<figure class="fig"><img width="1600" height="1180" src="figures/recreated/value-jump-trial-success-fig4-49.png" alt="How company value develops: the solid line jumps when trial results resolve uncertainty (success rate → 100%); the dashed line jumps when the discount rate falls (e.g., pipeline diversification or an IPO). Between jumps, value grows at roughly the discount rate." loading="lazy"><figcaption>How company value develops: the solid line jumps when trial results resolve uncertainty (success rate → 100%); the dashed line jumps when the discount rate falls (e.g., pipeline diversification or an IPO). Between jumps, value grows at roughly the discount rate.</figcaption></figure>
 <div class="callout"><strong>The investor's question:</strong> <em>At this pre-readout PoS, is the priced-in move fair — or is the market betting on the wrong jump?</em></div>
 
 
@@ -1895,7 +1890,7 @@
 <li>The R&amp;D-cost debate: Prasad's SEC-filing analysis put the cost per drug at <strong>$648M</strong> ($757M at 7% cost of capital) vs. the industry's $2.6B figure — while the 10 single-drug companies studied earned <strong>$67B on $9.1B of R&amp;D</strong>. Price is not cost recovery; it's what the market bears.</li>
 <li>Value frameworks exist (QALYs — quality-adjusted life years, one QALY = one year of healthy life; $200K/QALY as a permissive threshold) — drugs routinely launch at <strong>$470K–$900K/QALY</strong>.</li>
 </ul>
-<figure class="fig"><img src="figures/recreated/drug-price-vs-household-income-fig1-1.png" alt="Median monthly launch price of new anticancer drugs vs. median US household income, 1975–2014 : drug prices cross above household income around 2000 and reach ~" loading="lazy"><figcaption>Median monthly launch price of new anticancer drugs vs. median US household income, 1975–2014: drug prices cross above household income around 2000 and reach ~$10,000/month by 2010–2014 while incomes flatline near $4,300.</figcaption></figure>
+<figure class="fig"><img width="1600" height="950" src="figures/recreated/drug-price-vs-household-income-fig1-1.png" alt="Median monthly launch price of new anticancer drugs vs. median US household income, 1975–2014: drug prices cross above household income around 2000 and reach ~$10,000/month by 2010–2014 while incomes flatline near $4,300." loading="lazy"><figcaption>Median monthly launch price of new anticancer drugs vs. median US household income, 1975–2014: drug prices cross above household income around 2000 and reach ~$10,000/month by 2010–2014 while incomes flatline near $4,300.</figcaption></figure>
 <p>Why this matters for valuation: oncology supports the highest prices in medicine <em>because</em> payers pay for hope and regulators approve on surrogates — but that same structure is the regulatory risk. A portfolio of surrogate-approved drugs with unconfirmed OS is a portfolio of assets the FDA could revisit. Conversely, a drug with a large, early OS separation (bortezomib: death risk 22% → 13% at 16 months; rituximab + CHOP: 2-year OS 57% → 70%) is the durable kind of value — "a true advance shows a large, early survival gain."</p>
 <div class="callout"><strong>The investor's question:</strong> <em>Keep a mental note for Stage 4 (valuation): what fraction of this company's value rests on unconfirmed surrogate approvals? Price the regulatory risk alongside the revenue. And does the efficacy look like bortezomib/rituximab (large, early OS separation) or like the median (2 months, surrogate-only)?</em></div>
 <h3 id="gap-payer">Payer reality: why list price isn't revenue</h3>
@@ -1916,7 +1911,7 @@
 <li><strong>Discount rate stated?</strong> If not disclosed, it's non-credible. Is it on the ladder (12–20% by pipeline risk), or is risk double-counted (high rate <em>plus</em> success-rate haircuts)?</li>
 <li><strong>Growth rate checked?</strong> Is any growth assumed on peak sales? The book's rule: none with comparable-based estimates. One percent added +200% to a borderline project.</li>
 <li><strong>Peak sales source?</strong> Median of comparables (early) or bottom-up (late)? Mean used without blockbuster evidence = inflated.</li>
-<li><strong>Success rates stated, single source, indication-specific?</strong> Phase-2 cash flows at ~19% cumulative, not 63%. Second indications haircut, not repeated.</li>
+<li><strong>Success rates stated, single source, indication-specific?</strong> Phase-2 cash flows at ~30% cumulative, not 42%. Second indications haircut, not repeated.</li>
 <li><strong>R&amp;D modeled as optional?</strong> Phase costs gated on prior success, floored at zero — or committed spend (which understates early-stage value)?</li>
 <li><strong>Deal headlines haircut?</strong> Upfront vs. bio-dollars; milestones probability-weighted; royalty tiers modeled, not averaged.</li>
 <li><strong>Platform value tested?</strong> Feed rate × prototype value vs. the implied terminal value — does the company's actual IND output support it?</li>
@@ -1943,7 +1938,7 @@
 <div class="quiz" data-quiz="s4">
   <h3>Stage 4 quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 5 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="It&#x27;s the one formula behind every biotech valuation: probability-weight the cash flows, discount them, subtract what you pay.*">
+  <div class="quiz-q" data-why="It&#x27;s the one formula behind every biotech valuation: probability-weight the cash flows, discount them, subtract what you pay.">
     <p class="quiz-qtext"><strong>1.</strong> What does the &quot;r&quot; in rNPV stand for?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Real</span></button>
@@ -1953,7 +1948,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="0.3 × 10 + 0.7 × 1 = $3.70 — and PoS is the whole game, built from base rates and the risk buckets, not vibes.*">
+  <div class="quiz-q" data-why="0.3 × 10 + 0.7 × 1 = $3.70 — and PoS is the whole game, built from base rates and the risk buckets, not vibes.">
     <p class="quiz-qtext"><strong>2.</strong> PoS is 30%, value-if-success is $10/share, value-if-failure is $1/share. Expected value?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>$10.00</span></button>
@@ -1963,7 +1958,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Never both — double-counting risk is the single most common valuation error, and it makes assets look cheaper than they are.*">
+  <div class="quiz-q" data-why="Never both — double-counting risk is the single most common valuation error, and it makes assets look cheaper than they are.">
     <p class="quiz-qtext"><strong>3.</strong> Technical risk (will it get approved?) goes in the ___. Estimate uncertainty (how big will sales be?) goes in the ___.</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Discount rate / probabilities</span></button>
@@ -1973,19 +1968,17 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Multiply the chain — 0.63 × 0.42 × 0.75 × 0.95 ≈ 19%. Phase 2 is the value-killer, so price the chain, not the phase rate.*">
-    <p class="quiz-qtext"><strong>4.</strong> Using benchmark rates (Phase 1 63% → Phase 2 42% → Phase 3 75% → approval 95%), a Phase 2 program&#x27;s launch cash flows carry roughly what cumulative probability?</p>
+  <div class="quiz-q" data-why="Multiply the remaining chain — 0.42 × 0.75 × 0.95 ≈ 30%. The 63% Phase-1 rate is already survived, so don't include it. Phase 2 is the value-killer, so price the chain, not the phase rate.">
+    <p class="quiz-qtext"><strong>4.</strong> Using benchmark rates (Phase 2 42% → Phase 3 75% → approval 95%), a Phase 2 program&#x27;s launch cash flows carry roughly what cumulative probability?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>~42%</span></button>
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">B</span><span>~63%</span></button>
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">C</span><span>~26%</span></button>
-      <button type="button" class="quiz-opt" data-ok="1"><span class="quiz-letter">D</span><span>~19%</span></button>
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">C</span><span>~19%</span></button>
+      <button type="button" class="quiz-opt" data-ok="1"><span class="quiz-letter">D</span><span>~30%</span></button>
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="From 10% of value to 100% — then scale by the project&#x27;s share of company value, net of cash, since cash doesn&#x27;t jump on trial news.*
-
----">
+  <div class="quiz-q" data-why="From 10% of value to 100% — then scale by the project&#x27;s share of company value, net of cash, since cash doesn&#x27;t jump on trial news.">
     <p class="quiz-qtext"><strong>5.</strong> A 10%-PoS readout succeeds. By the jump formula (1−p)/p, the asset should reprice roughly…</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>2×</span></button>
@@ -2168,7 +2161,7 @@
 <div class="quiz" data-quiz="s5">
   <h3>Stage 5 quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 4 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="Never buy event options without knowing what move is priced in — direction-right can still mean money-lost.*">
+  <div class="quiz-q" data-why="Never buy event options without knowing what move is priced in — direction-right can still mean money-lost.">
     <p class="quiz-qtext"><strong>1.</strong> You bought calls into a readout. The data was good, the stock went up — and you still lost money. What happened?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>The options were fake</span></button>
@@ -2178,7 +2171,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Size so the maximum loss — not the investment — equals your fraction, using defined-risk structures only.*">
+  <div class="quiz-q" data-why="Size so the maximum loss — not the investment — equals your fraction, using defined-risk structures only.">
     <p class="quiz-qtext"><strong>2.</strong> You risk 2% of a $10,000 account on a binary. Your max loss per trade is…</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>$10,000</span></button>
@@ -2188,7 +2181,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Hard dates (PDUFA, AdCom, conference presentations) go on the calendar as tradeable — the rest are guidance windows or inferred, and the date is part of the trade.*">
+  <div class="quiz-q" data-why="Hard dates (PDUFA, AdCom, conference presentations) go on the calendar as tradeable — the rest are guidance windows or inferred, and the date is part of the trade.">
     <p class="quiz-qtext"><strong>3.</strong> Which of these is a hard date?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>&quot;Topline H1 2027&quot;</span></button>
@@ -2198,9 +2191,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="CVRs bridge valuation gaps — the headline number is the optimistic case, not the expected one.*
-
----">
+  <div class="quiz-q" data-why="CVRs bridge valuation gaps — the headline number is the optimistic case, not the expected one.">
     <p class="quiz-qtext"><strong>4.</strong> A takeover bid is mostly CVRs — payments only if milestones hit. What does that tell you?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>The buyer is being generous</span></button>
@@ -2386,7 +2377,7 @@
 <div class="quiz" data-quiz="s6">
   <h3>Stage 6 quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 4 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="Work top-down — SEC → FDA → ClinicalTrials.gov → papers → company materials → trade press. Marketing sits below the filings.*">
+  <div class="quiz-q" data-why="Work top-down — SEC → FDA → ClinicalTrials.gov → papers → company materials → trade press. Marketing sits below the filings.">
     <p class="quiz-qtext"><strong>1.</strong> A press release and the 10-Q disagree on the cash number. Which wins?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>The press release — it&#x27;s newer</span></button>
@@ -2396,7 +2387,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Never let an interpretation wear a fact&#x27;s clothes — that&#x27;s how bad theses survive contact with reality.*">
+  <div class="quiz-q" data-why="Never let an interpretation wear a fact&#x27;s clothes — that&#x27;s how bad theses survive contact with reality.">
     <p class="quiz-qtext"><strong>2.</strong> &quot;Management has a strong track record&quot; — that&#x27;s your read of their history. Which bucket does it go in?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>FACT</span></button>
@@ -2406,7 +2397,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="If the &quot;question&quot; is actually &quot;can we get a p-value under 0.05 on something,&quot; stop reading and discount everything that follows.*">
+  <div class="quiz-q" data-why="If the &quot;question&quot; is actually &quot;can we get a p-value under 0.05 on something,&quot; stop reading and discount everything that follows.">
     <p class="quiz-qtext"><strong>3.</strong> Before reading any paper a company cites, the 60-second trash test starts with…</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Who funded the study</span></button>
@@ -2416,9 +2407,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="Sens/spec describe the test; PPV/NPV describe the patient — and those are prevalence-driven. A 99%-accurate test for a 1%-prevalence disease is a coin flip with marketing.*
-
----">
+  <div class="quiz-q" data-why="Sens/spec describe the test; PPV/NPV describe the patient — and those are prevalence-driven. A 99%-accurate test for a 1%-prevalence disease is a coin flip with marketing.">
     <p class="quiz-qtext"><strong>4.</strong> A diagnostics company brags about a 99%-accurate test for a disease affecting 1% of people. Your response?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Impressive — buy the stock</span></button>
@@ -2466,7 +2455,7 @@
 <div class="quiz" data-quiz="cap">
   <h3>Capstone quiz</h3>
   <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 3 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="Write the thesis down before the event — that&#x27;s what makes the after-action review honest.*">
+  <div class="quiz-q" data-why="Write the thesis down before the event — that&#x27;s what makes the after-action review honest.">
     <p class="quiz-qtext"><strong>1.</strong> Before the binary event, your journal must contain…</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Your gut feeling about the outcome</span></button>
@@ -2476,7 +2465,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="One draw tells you nothing — the process is the only thing you control.*">
+  <div class="quiz-q" data-why="One draw tells you nothing — the process is the only thing you control.">
     <p class="quiz-qtext"><strong>2.</strong> After the readout, how do you grade yourself?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>By whether you made money</span></button>
@@ -2486,9 +2475,7 @@
     </div>
     <p class="quiz-fb" hidden></p>
   </div>
-  <div class="quiz-q" data-why="If the process is sound and the journaling is honest, you&#x27;re ready to size real positions. If you keep skipping steps, the market charges tuition.*
-
----">
+  <div class="quiz-q" data-why="If the process is sound and the journaling is honest, you&#x27;re ready to size real positions. If you keep skipping steps, the market charges tuition.">
     <p class="quiz-qtext"><strong>3.</strong> How many full paper binaries before real money is involved?</p>
     <div class="quiz-opts">
       <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>One is enough</span></button>
