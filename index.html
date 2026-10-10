@@ -244,6 +244,21 @@
   h3 .h3toggle::before{content:""; width:0; height:0; border-left:5px solid transparent;
     border-right:5px solid transparent; border-top:6px solid currentColor; transition:transform .15s}
   h3.collapsed .h3toggle::before{transform:rotate(-90deg)}
+  /* ---- reading pipeline stepper ---- */
+  .pipeline{margin:18px 0 8px; padding:0; list-style:none}
+  .pipeline li{position:relative; padding:0 0 18px 44px}
+  .pipeline li::before{content:attr(data-step); position:absolute; left:0; top:0; width:30px; height:30px;
+    border-radius:50%; background:var(--accent); color:#fff; font-size:14px; font-weight:700;
+    display:flex; align-items:center; justify-content:center}
+  .pipeline li::after{content:""; position:absolute; left:14px; top:34px; bottom:0; width:2px; background:var(--line)}
+  .pipeline li:last-child::after{display:none}
+  .pipeline li strong{display:block; margin-bottom:2px}
+  .pipeline li p{margin:4px 0 0; color:var(--muted); font-size:14.5px}
+  .res-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px; margin:12px 0}
+  .res-card{border:1px solid var(--line); border-radius:var(--radius); padding:12px 14px; background:var(--wash)}
+  .res-card strong{display:block; margin-bottom:4px}
+  .res-card p{margin:0; font-size:13.5px; color:var(--muted)}
+  .res-card a{font-size:13.5px}
   /* ---- dark mode ---- */
   html[data-theme="light"]{
     --ink:#1a1a1a; --muted:#5b6470; --line:#e5e7eb; --bg:#ffffff;
@@ -341,7 +356,45 @@
     <li><strong>Health and medicine</strong> — physiology, very high yield for understanding what drugs actually do.</li>
     <li><strong>Organic chemistry</strong> — optional, but recommended if you have the time.</li>
   </ol>
-  <p>Once that base exists: <em>Intuitive Biostatistics</em> and <em>Basic PK/PD</em> (both Pharmagellan) are the next two books. <em>Fundamentals of Clinical Trials</em> is excellent though written more for people running trials. After that, the reading list fans out — <em>Drug-like Properties</em>, <em>Valuation in Life Sciences</em>, Rick Ng's <em>Drugs: From Discovery to Approval</em> (the pipeline bible), the skepticism shelf (<em>Bad Pharma</em>, <em>Doctored</em>, <em>Science Fictions</em>, Vinay Prasad's <em>Malignant</em>, <em>How to Read a Paper</em>) — and finally the tomes (<em>Thompson &amp; Thompson</em>, <em>Goodman &amp; Gilman</em>, <em>Remington</em>). A couple of diligent months gets you through the Khan Academy pipeline; the books are a longer project. Be reasonable with timelines — knowledge base plus real reps in the market is what gets you past intermediate.</p>
+  <h3 id="s0-reading-pipeline">The reading pipeline</h3>
+  <p>Once the science foundation is in place, read in this order — investor-focused first, textbooks second, reference tomes last. Each step assumes the ones before it.</p>
+  <ol class="pipeline">
+    <li data-step="1"><strong>Frank David's Pharmagellan guides</strong>
+      <p><em>The Pharmagellan Guide to Analyzing Biotech Clinical Trials</em> — how to read a readout, a press release, and an investor deck without getting spun. <em>The Pharmagellan Guide to Biotech Forecasting and Valuation</em> — how to build and sanity-check financial models for R&amp;D-stage companies. Plain English, written for investors, no PhD required. Start here.</p></li>
+    <li data-step="2"><strong><em>Malignant</em> — Vinay Prasad</strong>
+      <p>How bad policy and bad evidence harm cancer patients. Reads like an investigation, teaches you to distrust surrogate endpoints and hype — the skepticism mindset every later step depends on.</p></li>
+    <li data-step="3"><strong><em>Intuitive Biostatistics</em> — Harvey Motulsky</strong>
+      <p>The statistics you need, without the math wall. P-values, confidence intervals, power, multiple comparisons — everything Stage 2 assumes you know.</p></li>
+    <li data-step="4"><strong><em>Basic Pharmacokinetics and Pharmacodynamics</em> — Sara Rosenbaum</strong>
+      <p>What the drug does to the body and what the body does to the drug. Half-life, clearance, dose-response — the vocabulary of every trial readout.</p></li>
+    <li data-step="5"><strong>Go deeper</strong>
+      <p><em>Fundamentals of Clinical Trials</em> (Friedman — written for trialists, but the design chapters are gold), <em>Valuation in Life Sciences</em> (Bogdan &amp; Villiger — the rNPV bible), <em>How to Read a Paper</em> (Greenhalgh), Rick Ng's <em>Drugs: From Discovery to Approval</em> (the pipeline bible), then the skepticism shelf: <em>Bad Pharma</em>, <em>Doctored</em>, <em>Science Fictions</em>. For the statistically ambitious: Shein-Chung Chow's <em>Controversial Statistical Issues in Clinical Trials</em> — the expert-level companion to Motulsky.</p></li>
+    <li data-step="6"><strong>Reference tomes</strong>
+      <p><em>Thompson &amp; Thompson</em>, <em>Goodman &amp; Gilman</em>, <em>Remington</em> — not reading, shelving. You consult these; you don't read them cover to cover.</p></li>
+  </ol>
+  <p>A couple of diligent months gets you through the Khan Academy ladder; the books are a longer project. Work the primer's stages in parallel — don't wait until you've "finished reading" to start. Knowledge base plus real reps in the market is what gets you past intermediate.</p>
+  <h3 id="s0-highest-signal-resources">Highest-signal resources</h3>
+  <p>Bookmark these now. They are the working tools of professional biotech analysis — free, and useful from day one:</p>
+  <div class="res-grid">
+    <div class="res-card"><strong>Learning the industry</strong>
+      <p><a href="https://www.pharmagellan.com/blog/how-to-learn-about-biotech-and-pharma">How to learn about biotech &amp; pharma</a> — Frank David's curated starting list: overviews, books, newsletters, groups.<br>
+      <a href="https://www.pharmagellan.com/blog/clinical-trial-resources">Intro resources for analyzing trial results</a> — the trial-analysis learning ladder, including gentler stats on-ramps.</p></div>
+    <div class="res-card"><strong>How the pros actually work</strong>
+      <p><a href="https://substack.com/@adus/note/p-165586456">Tacit knowledge in biotech</a> — the hidden toolkit: FDA review docs, insurance coverage PDFs, FOIA requests, base-rate heuristics.<br>
+      <a href="https://adus.substack.com/p/biotech-analysis-from-0-to-1">Biotech analysis from 0 to 1</a> — a full research workflow: start from the value-driving questions, not the data.</p></div>
+    <div class="res-card"><strong>Trial registries</strong>
+      <p><a href="https://clinicaltrials.gov">ClinicalTrials.gov</a> — every U.S. trial: protocols, endpoints, status. Your first stop for any readout.<br>
+      <a href="https://www.clinicaltrialsregister.eu">EU Clinical Trials Register</a> — often posts data before U.S. equivalents.</p></div>
+    <div class="res-card"><strong>Regulatory &amp; filings</strong>
+      <p><a href="https://www.sec.gov">SEC EDGAR</a> — 10-Ks, S-1s, 8-Ks. <a href="https://efts.sec.gov">Full-text filing search</a>.<br>
+      <a href="https://www.fda.gov">FDA.gov</a> — AdCom transcripts, review documents, labels via <a href="https://dailymed.nlm.nih.gov">DailyMed</a>.</p></div>
+    <div class="res-card"><strong>Calls &amp; news</strong>
+      <p><a href="https://quartr.com">Quartr</a> — earnings calls and IR documents, searchable.<br>
+      STAT News and Endpoints News daily newsletters — read at least one article a day.</p></div>
+    <div class="res-card"><strong>Spotting spin</strong>
+      <p><a href="https://www.pharmagellan.com/blog/red-flags-biotech-pr">Red flags in biotech press releases</a> — the four PR tells, with a worked spin example.<br>
+      <a href="https://www.pharmagellan.com/blog/clinical-pos">Thinking about clinical-trial risk</a> — the four-bucket PoS framework.</p></div>
+  </div>
 <p><em>From</em> <cite>Drugs: From Discovery to Approval</cite> <em>(Rick Ng) — the industry map every catalyst lives on.</em></p>
 <h3 id="ng-s1">Ng · 1. The five-stage map</h3>
 <p>Every drug travels the same five stages. Learn the map before you evaluate any company:</p>
