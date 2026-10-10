@@ -244,6 +244,18 @@
   h3 .h3toggle::before{content:""; width:0; height:0; border-left:5px solid transparent;
     border-right:5px solid transparent; border-top:6px solid currentColor; transition:transform .15s}
   h3.collapsed .h3toggle::before{transform:rotate(-90deg)}
+  /* ---- inline citations ---- */
+  sup.cite{font-size:11px; font-weight:600; margin-left:2px}
+  sup.cite a{color:var(--accent); text-decoration:none; padding:1px 2px}
+  sup.cite a:hover{text-decoration:underline}
+  #references ol{padding-left:22px}
+  #references li{margin-bottom:8px; font-size:14px}
+  #references li:target{background:var(--wash); border-radius:4px}
+  /* ---- part divider (merged stages) ---- */
+  .part-divider{margin:32px 0 20px; padding:20px; background:var(--wash); border-radius:var(--radius); border-left:4px solid var(--accent)}
+  .part-divider .part-num{font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--accent)}
+  .part-divider h2{margin:4px 0 8px; font-size:22px}
+  .part-divider .stage-sub{margin:0}
   /* ---- reading pipeline stepper ---- */
   .pipeline{margin:18px 0 8px; padding:0; list-style:none}
   .pipeline li{position:relative; padding:0 0 18px 44px}
@@ -306,7 +318,7 @@
     <button id="menuBtn" class="iconbtn" aria-label="Open stage menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <div class="brand">BIOTECH PRIMER<small>ZERO → HERO</small></div>
     <nav class="stages" id="stageNav">
-      <a href="#s0">0 · Orientation</a><a href="#s1">1 · Approval</a><a href="#s2">2 · Trial Data</a><a href="#s2b">2B · Data Skepticism</a>
+      <a href="#s0">0 · Orientation</a><a href="#s1">1 · Approval</a><a href="#s2">2 · Trial Data</a>
       <a href="#s3">3 · Money</a><a href="#s4">4 · Valuation</a><a href="#s5">5 · The Binary</a>
       <a href="#s6">6 · Research Desk</a><a href="#cap">Capstone</a>
     </nav>
@@ -336,6 +348,7 @@
 <li><a href="#s0-what-competent-means-here">What "competent" means here</a></li>
 <li><a href="#s0-the-background-track-science">The background track: science</a></li>
 <li><a href="#ng-s1">Ng · 1. The five-stage map</a></li>
+<li><a href="#s1-validating-the-target">Validating the target: human genetics first</a></li>
 <li><a href="#ng-s2">Ng · 2. The attrition funnel (why biotech is a portfolio game)</a></li>
 </ul></details>
 
@@ -357,18 +370,18 @@
     <li><strong>Organic chemistry</strong> — optional, but recommended if you have the time.</li>
   </ol>
   <h3 id="s0-reading-pipeline">The reading pipeline</h3>
-  <p>Once the science foundation is in place, read in this order — investor-focused first, textbooks second, reference tomes last. Each step assumes the ones before it.</p>
+  <p>Once the science foundation is in place, read in this order — investor-focused first, textbooks second, reference tomes last. Each step assumes the ones before it. Frank David gives the mental model for self-education<sup class="cite"><a href="#ref-1">[1]</a></sup>: three buckets — <strong>narrative non-fiction</strong> (story-driven, behind-the-scenes), <strong>"big idea" books</strong> (opinionated, well-referenced, written for smart non-experts), and <strong>intermediate references</strong> (the rabbit holes you go down when a topic grabs you). This pipeline follows that shape.</p>
   <ol class="pipeline">
     <li data-step="1"><strong>Frank David's Pharmagellan guides</strong>
       <p><em>The Pharmagellan Guide to Analyzing Biotech Clinical Trials</em> — how to read a readout, a press release, and an investor deck without getting spun. <em>The Pharmagellan Guide to Biotech Forecasting and Valuation</em> — how to build and sanity-check financial models for R&amp;D-stage companies. Plain English, written for investors, no PhD required. Start here.</p></li>
     <li data-step="2"><strong><em>Malignant</em> — Vinay Prasad</strong>
       <p>How bad policy and bad evidence harm cancer patients. Reads like an investigation, teaches you to distrust surrogate endpoints and hype — the skepticism mindset every later step depends on.</p></li>
     <li data-step="3"><strong><em>Intuitive Biostatistics</em> — Harvey Motulsky</strong>
-      <p>The statistics you need, without the math wall. P-values, confidence intervals, power, multiple comparisons — everything Stage 2 assumes you know.</p></li>
+      <p>Read <em>Statistics at Square One</em> first — the gentler on-ramp: short, beginner-friendly stats without the math wall. Then Motulsky for the statistics you need — p-values, confidence intervals, power, multiple comparisons — everything Stage 2 assumes you know.</p></li>
     <li data-step="4"><strong><em>Basic Pharmacokinetics and Pharmacodynamics</em> — Sara Rosenbaum</strong>
       <p>What the drug does to the body and what the body does to the drug. Half-life, clearance, dose-response — the vocabulary of every trial readout.</p></li>
     <li data-step="5"><strong>Go deeper</strong>
-      <p><em>Fundamentals of Clinical Trials</em> (Friedman — written for trialists, but the design chapters are gold), <em>Valuation in Life Sciences</em> (Bogdan &amp; Villiger — the rNPV bible), <em>How to Read a Paper</em> (Greenhalgh), Rick Ng's <em>Drugs: From Discovery to Approval</em> (the pipeline bible), then the skepticism shelf: <em>Bad Pharma</em>, <em>Doctored</em>, <em>Science Fictions</em>. For the statistically ambitious: Shein-Chung Chow's <em>Controversial Statistical Issues in Clinical Trials</em> — the expert-level companion to Motulsky.</p></li>
+      <p><em>Fundamentals of Clinical Trials</em> (Friedman — written for trialists, but the design chapters are gold), <em>Valuation in Life Sciences</em> (Bogdan &amp; Villiger — the rNPV bible), <em>How to Read a Paper</em> (Greenhalgh), Rick Ng's <em>Drugs: From Discovery to Approval</em> (the pipeline bible), then the skepticism shelf: <em>Bad Pharma</em>, <em>Doctored</em>, <em>Science Fictions</em>. Between the investor books and the textbooks sits the <strong>narrative shelf</strong> <sup class="cite"><a href="#ref-1">[1]</a></sup>: <em>The Billion Dollar Molecule</em> (the Vertex story), <em>For Blood and Money</em> (M&amp;A and deal-making), <em>In Pursuit of Unicorns</em>. For the statistically ambitious: Shein-Chung Chow's <em>Controversial Statistical Issues in Clinical Trials</em> — the expert-level companion to Motulsky.</p></li>
     <li data-step="6"><strong>Reference tomes</strong>
       <p><em>Thompson &amp; Thompson</em>, <em>Goodman &amp; Gilman</em>, <em>Remington</em> — not reading, shelving. You consult these; you don't read them cover to cover.</p></li>
   </ol>
@@ -377,8 +390,9 @@
   <p>Bookmark these now. They are the working tools of professional biotech analysis — free, and useful from day one:</p>
   <div class="res-grid">
     <div class="res-card"><strong>Learning the industry</strong>
-      <p><a href="https://www.pharmagellan.com/blog/how-to-learn-about-biotech-and-pharma">How to learn about biotech &amp; pharma</a> — Frank David's curated starting list: overviews, books, newsletters, groups.<br>
-      <a href="https://www.pharmagellan.com/blog/clinical-trial-resources">Intro resources for analyzing trial results</a> — the trial-analysis learning ladder, including gentler stats on-ramps.</p></div>
+      <p><a href="https://www.pharmagellan.com/blog/how-to-learn-about-biotech-and-pharma">How to learn about biotech &amp; pharma</a> — Frank David's curated starting list<sup class="cite"><a href="#ref-1">[1]</a></sup>: overviews, books, newsletters, groups.<br>
+      <a href="https://www.pharmagellan.com/blog/clinical-trial-resources">Intro resources for analyzing trial results</a> — the trial-analysis learning ladder, including gentler stats on-ramps.<br>
+      The overview ladder, short to long<sup class="cite"><a href="#ref-1">[1]</a></sup>: Matthew Herper's Forbes piece <em>The Truly Staggering Cost of Inventing New Drugs</em> — the cost-of-development canon; Bay Bridge Bio's <a href="https://www.baybridgebio.com/blog.html">Basics of Drug Development</a>; Robert Plenge's <a href="https://plengegen.com/blog/poker-vs-chess/">"Is drug R&amp;D more like poker or chess?"</a> — R&amp;D strategy; Alex Telford's <a href="https://atelfo.github.io/2023/12/23/biopharma-from-janssen-to-today.html">The pharma industry from Paul Janssen to today</a> — the full history.</p></div>
     <div class="res-card"><strong>How the pros actually work</strong>
       <p><a href="https://substack.com/@adus/note/p-165586456">Tacit knowledge in biotech</a> — the hidden toolkit: FDA review docs, insurance coverage PDFs, FOIA requests, base-rate heuristics.<br>
       <a href="https://adus.substack.com/p/biotech-analysis-from-0-to-1">Biotech analysis from 0 to 1</a> — a full research workflow: start from the value-driving questions, not the data.</p></div>
@@ -407,6 +421,13 @@
 </ol>
 <p>The three GxPs are the regulatory scaffolding: <strong>GLP</strong> = the lab work was honest, <strong>GCP</strong> = the human trials were ethical and credible, <strong>GMP</strong> = every pill/vial is the same as the one that was tested. A failure in any one can kill a program regardless of the science.</p>
 <div class="callout"><strong>The investor's question:</strong> <em>Where in the five stages does this company's value actually sit — and which GxP governs the next catalyst? A "great Phase 2 readout" means little if the CMC (chemistry, manufacturing, controls) package can't support an NDA.</em></div>
+  <h3 id="s1-validating-the-target">Validating the target: human genetics first</h3>
+  <p>Before you care about the molecule, ask whether the <em>target</em> is real. One of the easiest ways to validate a hypothesis is human genetic evidence — if people carrying mutations in your target gene get the disease (or are protected from it), the biology is speaking directly. Adu Subramanian's rule<sup class="cite"><a href="#ref-7">[7]</a></sup>: genetic validation is huge.</p>
+  <ul>
+    <li><strong>Sequence and variant checks:</strong> BLAST (compare sequences), dbSNP and dbVar (allele frequencies, structural variants — e.g. DMD deletions) — check what's actually in the gene before you trust the story about it.</li>
+    <li><strong>Drug-likeness sanity checks:</strong> SwissADME and pkCSM — free ADMET/tox predictors that take a chemical structure and flag whether the "drug-like" claim holds water.</li>
+    <li><strong>Tissue expression:</strong> the Human Protein Atlas shows where the target is expressed — on-target/off-tumor risk and normal-tissue toxicity flags live here.</li>
+  </ul>
 <h3 id="ng-s2">Ng · 2. The attrition funnel (why biotech is a portfolio game)</h3>
 <p>The book's quantitative spine (Exhibit 1.2):</p>
 <ul>
@@ -724,7 +745,7 @@
     <li><strong>IND</strong> (Investigational New Drug) — permission to test in humans. FDA can place a <strong>clinical hold</strong> if safety signals emerge.</li>
     <li><strong>NDA</strong> (small molecules) / <strong>BLA</strong> (biologics) — the marketing application. Includes all clinical data, manufacturing info, proposed label.</li>
     <li><strong>CRL</strong> (Complete Response Letter) — a rejection. Can be about efficacy, safety, <em>or manufacturing</em> — always check which.</li>
-    <li><strong>AdCom</strong> (Advisory Committee) — public panel of outside experts; FDA follows their vote ~80% of the time but isn't bound to. The briefing documents, released ~2 days before, are often the real catalyst.</li>
+    <li><strong>AdCom</strong> (Advisory Committee) — public panel of outside experts; FDA follows their vote ~80% of the time but isn't bound to. The briefing documents, released ~2 days before, are often the real catalyst. Do the prep at <a href="https://www.fda.gov/advisory-committees">fda.gov/advisory-committees</a> — the meeting calendar, briefing documents, transcripts, and webcasts all live there. Key binary-event prep: read the briefing package before the meeting, not the vote after it.</li>
     <li><strong>PDUFA date</strong> — the FDA's deadline to act on an application. Hard calendar events; the single most tradeable regulatory catalyst.</li>
     <li><strong>SPA</strong> (Special Protocol Assessment) — written FDA agreement that a trial's design can support approval. Rescinded &lt;1% of the time — a meaningful de-risking signal when disclosed.</li>
     <li><strong>sNDA / sBLA</strong> — supplements for <em>new indications</em> of an already-approved drug. Shorter reviews than original applications, same binary-event dynamics: the stock still gaps on the decision.</li>
@@ -756,6 +777,8 @@
     <li><strong>Priority Review</strong> — 6-month review clock instead of 10. No change to the bar.</li>
   </ul>
   <div class="callout">Notice the pattern: most "special" designations speed up <em>process</em>, not <em>standards</em>. Only Accelerated Approval changes what evidence can support approval — and it does so by accepting more uncertainty, which becomes your risk.</div>
+  <div class="callout"><strong>Don't over-weight the labels.</strong> Adu Subramanian's demystification<sup class="cite"><a href="#ref-7">[7]</a></sup>: Fast Track means more FDA interaction; Breakthrough means a bit more; Priority Review means a faster review clock once the application is in. They are merely FDA programs — speed, not better odds — and beyond the speed, he "wouldn't put much stock into them."</div>
+  <div class="callout"><strong>Watch the language change.</strong> When a company quietly shifts from "pursuing accelerated approval" to "exploring expedited pathways" — the exact move Adu Subramanian flagged at Dyne<sup class="cite"><a href="#ref-7">[7]</a></sup> — that's a subtle downgrade: expedited pathways are <em>not</em> accelerated approval. Track how companies describe their regulatory path over time; the wording changes are where the downgrade hides.</div>
 
 <h3 id="ng-s6">Ng · 6. The regulatory path in detail — applications, review clocks, and where filings stall</h3>
 <p><strong>IND (Investigational New Drug):</strong> the 12-item application that must exist before human trials. After submission, the <strong>FDA has 30 days</strong> to object — silence is clearance ("IND cleared," "may proceed"). Grounds for clinical hold: unreasonable risk, unqualified investigators, misleading/bogus data, insufficient information to assess risk.</p>
@@ -895,6 +918,7 @@
   <p class="stage-sub">The press release is marketing. The data is the truth. Learn to tell them apart.</p>
 <details class="toc"><summary>In this stage</summary><ul>
 <li><a href="#s2-endpoints-what-worked-means">Endpoints: what "worked" means</a></li>
+<li><a href="#s2-data-quality-checks">The five data-quality checks</a></li>
 <li><a href="#gap-cns">CNS: the brain's delivery problem and the endpoint problem</a></li>
 <li><a href="#prasad-s1">Prasad · 1. The endpoints — what cancer trials actually measure</a></li>
 <li><a href="#prasad-s2">Prasad · 2. Surrogate validation — the framework and the dismal numbers</a></li>
@@ -918,16 +942,319 @@
 <li><a href="#friedman-s9">Friedman · 9. Safety — what "no new safety signals" actually means</a></li>
 <li><a href="#rosenbaum-s5">Rosenbaum · 5. Dose–response and the Emax model: why more drug isn't always more effect</a></li>
 <li><a href="#rosenbaum-s6">Rosenbaum · 6. Exposure–response: the bridge between the blood level and the outcome</a></li>
+<li><a href="#s2-cidara-demo">Worked example: CD388 — the concentration question</a></li>
 <li><a href="#rosenbaum-s7">Rosenbaum · 7. Why dose selection is an investment risk (the binary connection)</a></li>
+<li><a href="#s2-dose-response-heuristic">The dose-response smell test</a></li>
 <li><a href="#rosenbaum-s8">Rosenbaum · 8. The one-page cheat sheet</a></li>
 <li><a href="#s2-spin-detection-the-press-release-vs-the-data">Spin detection: the press release vs the data</a></li>
 <li><a href="#s2-topline-pr-checklist">The topline press-release checklist</a></li>
 <li><a href="#prasad-s4">Prasad · 4. Reading an oncology readout — the design games</a></li>
 <li><a href="#prasad-s5">Prasad · 5. Precision oncology — the numbers behind the narrative</a></li>
 <li><a href="#s2-red-flags-in-trial-design">Red flags in trial design</a></li>
+<li><a href="#s2-open-label-caveats">Open-label caveats</a></li>
 <li><a href="#prasad-s7">Prasad · 7. What good looks like — the ideal oncology trial</a></li>
+<li class="toc-part-label"><strong>Part 2: When the data lies to you</strong></li>
+<li><a href="#s2b-published-not-true">Published ≠ true</a></li>
+<li><a href="#s2b-file-drawer">The file drawer: what you read is the winners</a></li>
+<li><a href="#s2b-hype-pr">Hype: reading the press release like a skeptic</a></li>
+<li><a href="#s2b-outcome-switching">Outcome switching: the registry check</a></li>
+<li><a href="#s2b-p-hacking">P-hacking: the two flavors</a></li>
+<li><a href="#s2b-spin-numbers">Spin, quantified</a></li>
+<li><a href="#s2b-clene-teardown">Case study: Clene — the anatomy of spin</a></li>
+<li><a href="#s2b-replimune-orr">Replimune: endpoint-definition gaming</a></li>
+<li><a href="#s2b-pyxis-cherry-picking">Pyxis: the cherry-picked tumor type</a></li>
+<li><a href="#s2b-design-red-flags">The design red-flags catalog</a></li>
+<li><a href="#s2b-protocol-amendments">The moving target: protocol amendments</a></li>
+<li><a href="#s2b-every-change-matters">Every change matters</a></li>
+<li><a href="#s2b-blinding">Did the blind actually hold?</a></li>
+<li><a href="#s2b-pilot-variance">The power calculation's dirty secret</a></li>
+<li><a href="#s2b-funding-bias">Follow the funding line</a></li>
+<li><a href="#s2b-ghostwriting">Who actually wrote this paper?</a></li>
+<li><a href="#s2b-tamiflu">Capstone: the Tamiflu saga</a></li>
+<li><a href="#s2b-missing-data">Missing data: the methods that make or break a trial</a></li>
+<li><a href="#s2b-dmc">Who picked the referee?</a></li>
+<li><a href="#s2b-enrichment">Enrichment cuts both ways</a></li>
+<li><a href="#s2b-three-plus-three">The 3+3 problem</a></li>
+<li><a href="#s2b-seeding">Seeding trials: marketing wearing a lab coat</a></li>
+<li><a href="#s2b-fraud-forensics">Forensic statistics: know these exist</a></li>
+<li><a href="#s2b-adaptive-alpha">Adaptive designs and the alpha bill</a></li>
 </ul></details>
-<p class="toc-next">Next: <a href="#s2b">→ Stage 2B: When the Data Lies to You</a></p>
+
+<div class="part-divider" id="s2-part2">
+  <span class="part-num">PART 2</span>
+  <h2>When the Data Lies to You</h2>
+  <p class="stage-sub">You've learned to read trial data. This is the dark side of that skill: the systematic ways the published record misleads investors — and the specific checks that catch it. It runs beginner to expert. Every item below is something you can actually <em>do</em>, not just know.</p>
+</div>
+
+<h3 id="s2b-published-not-true">Published ≠ true</h3>
+<p>Start here, because everything else in this section is downstream of one fact: <strong>a published study is a claim, not a fact.</strong> The replication record is brutal:</p>
+<ul>
+<li><strong>Amgen</strong> tried to replicate 53 landmark preclinical cancer studies. <strong>6 replicated — 11%.</strong> Bayer ran a similar exercise: ~20%.</li>
+<li>The Reproducibility Project re-ran 100 psychology studies from top journals: <strong>39% replicated.</strong></li>
+<li>Prasad and Cifu's review of 3,000+ papers in three top medical journals found <strong>396 medical reversals</strong> — established practices overturned by better evidence. The bispectral-index brain monitor was used in 40 million operations worldwide before a trial found it useless. Peanut-avoidance advice for infants turned out to be exactly backwards.</li>
+<li><strong>45% of Cochrane reviews</strong> conclude there's insufficient evidence to say whether the treatment works at all.</li>
+</ul>
+<p>For a biotech investor, the translation is direct: the "exciting mechanism" slide in a company deck usually traces back to preclinical work with roughly a <strong>1-in-9 replication rate</strong>. Treat every published finding as provisional until a second, independent group confirms it — and discount anything that has never been replicated at all.</p>
+
+<h3 id="s2b-file-drawer">The file drawer: what you read is the winners</h3>
+<p>Negative results don't get published. What you read is the winners' circle. The canonical demonstration is <strong>Turner et al. 2008</strong> (New England Journal of Medicine): the FDA's files on 12 antidepressants, 1987–2004 — <strong>74 trials, 12,500 patients.</strong></p>
+<ul>
+<li><strong>Reality:</strong> 38 positive trials, 36 negative. An even split.</li>
+<li><strong>The published literature:</strong> 37 of 38 positives published. Only 3 of 36 negatives published. 22 vanished entirely. <strong>11 negative trials were rewritten as positive</strong> in the journals.</li>
+<li><strong>What a doctor reading the literature saw:</strong> 48 "positive" vs 3 negative.</li>
+</ul>
+<p>The best estimate across medicine: <strong>roughly half of all trials go unpublished</strong>, and negative results are about twice as likely to disappear. The cleanest proof of the distortion's size comes from <strong>Registered Reports</strong> — journals that accept studies before results are known: <strong>61% null results</strong>, vs ~10% in the regular literature. Same science, different publication filter, completely different picture of reality.</p>
+<p>Whole trials vanish, not just negative ones — with body counts:</p>
+<ul>
+<li><strong>Reboxetine:</strong> 1 published trial (254 patients, positive) vs 6 unpublished trials (~2,500 patients) showing no benefit over placebo — plus 1,657 patients of unpublished head-to-head data showing it was <em>worse</em> than comparators, with more side effects and dropouts.</li>
+<li><strong>Lorcainide:</strong> a 1980 trial in under 100 post-heart-attack men showed <strong>9 deaths on drug vs 1 on placebo</strong>. Never published (dropped for commercial reasons). The whole drug class kept being prescribed after heart attacks through the 1980s — <strong>over 100,000 deaths</strong> before the harm was recognized.</li>
+<li><strong>TGN1412:</strong> six healthy volunteers nearly died in a 2006 first-in-human trial. A researcher had tested a similar antibody in a single human <strong>ten years earlier</strong> with parallel effects — never published.</li>
+</ul>
+<div class="callout"><strong>The investor's question:</strong> <em>For any drug with a thin publication record, ask what's missing — not just what's shown. A program with two glowing phase 2 papers and no visible failures is more suspicious than one with a mixed record. Absence of evidence is not evidence of absence; in biotech, it's often evidence of a file drawer.</em></div>
+
+<h3 id="s2b-hype-pr">Hype: reading the press release like a skeptic</h3>
+<p>Scientists write their own companies' press releases — and exaggeration there gets amplified. A Cardiff study found that when a press release exaggerated, the media coverage was <strong>6.5× more likely</strong> to exaggerate advice claims, <strong>20×</strong> for causal claims, and <strong>56×</strong> for "this animal finding applies to humans" claims. And the "IN MICE" problem is real: animal studies routinely get reported as human-relevant breakthroughs.</p>
+<p>The discipline: find the actual numbers, ignore the adjectives. "Encouraging," "robust," "durable," "practice-changing" are not data. <a href="#s2-spin-detection-the-press-release-vs-the-data">The spin-detection patterns in Stage 2</a> are the companion skill — this is the <em>why</em> behind them: the hype pipeline starts at the company, not the journalist.</p>
+
+<h3 id="s2b-outcome-switching">Outcome switching: the registry check</h3>
+<p>The single most usable investor skill in this entire section. Trials pre-register their primary outcomes on ClinicalTrials.gov. Then, when the results come in, <strong>the outcomes change</strong>:</p>
+<ul>
+<li>The <strong>COMPare project</strong> audited 67 trials in the five highest-impact journals: <strong>only 9</strong> reported everything as registered. <strong>354 outcomes disappeared</strong> between registration and publication; <strong>357 unregistered outcomes appeared</strong> from nowhere.</li>
+<li>An anesthesia audit: <strong>92% of trials switched at least one outcome</strong> — always toward statistically significant results.</li>
+<li><strong>Gabapentin:</strong> 21 pre-specified primary outcomes → only 11 reported; ~half the 28 "primary" outcomes in the paper were newly introduced.</li>
+<li><strong>Paroxetine trial 329:</strong> the protocol specified 2 primary + 6 secondary outcomes — the drug failed on all of them. 27 outcomes were measured in total; 4 were positive; those 4 were reported as if they'd been the main outcomes all along.</li>
+</ul>
+<p>The check takes five minutes and you should run it before trusting any readout:</p>
+<ul class="checklist">
+<li><input type="checkbox"><span>Pull the trial's ClinicalTrials.gov entry (NCT number is usually in the press release or paper)</span></li>
+<li><input type="checkbox"><span>Read the <em>registered</em> primary outcome — the one specified before the trial started</span></li>
+<li><input type="checkbox"><span>Compare it against the <em>reported</em> primary in the paper or PR — same measure, same timepoint?</span></li>
+<li><input type="checkbox"><span>If they differ, or the headline leads with a secondary: assume the registered primary missed, and discount everything accordingly</span></li>
+<li><input type="checkbox"><span>Check the "History of Changes" tab — late changes to the primary outcome are outcome switching with a paper trail</span></li>
+</ul>
+<div class="warn">Positive outcomes are more than twice as likely to survive from registration to publication as negative ones. A "positive" trial whose registered primary quietly changed is not a positive trial — it's a negative trial wearing a costume.</div>
+
+<h3 id="s2b-p-hacking">P-hacking: the two flavors</h3>
+<p>There are two ways to manufacture significance, and both are common:</p>
+<ol>
+<li><strong>Re-run until significant.</strong> Drop inconvenient datapoints, recalculate subgroups, switch statistical tests, keep collecting data until p dips under 0.05 ("optional stopping"). The math: if the hypothesis is false, running 5 tests gives a <strong>23% chance</strong> of at least one false positive; 20 tests gives <strong>64%</strong>. (<a href="#motulsky-s7">The multiple-comparisons module</a> covers the math; this is the behavior.)</li>
+<li><strong>HARKing</strong> — Hypothesizing After the Results are Known. Run dozens of ad-hoc tests, report only the significant ones as if they were the plan all along. The Texas sharpshooter: fire at the barn, then paint the target around the bullet holes.</li>
+</ol>
+<p>This isn't rare or theoretical. A 2012 poll of 2,000+ psychologists found <strong>65%</strong> had collected outcome data they didn't report, <strong>40%</strong> had excluded datapoints after peeking at results, and <strong>57%</strong> had collected more data after an unsatisfactory analysis. The Wansink food-lab scandal and the power-posing researcher's admission ("recruited in chunks and checked the effects along the way") are the pattern, not the exception.</p>
+<p><strong>The detection heuristic:</strong> p-values clustering just under 0.05 — a pile of p = 0.04s and p = 0.048s with nothing at p = 0.06 — is the fingerprint. Real effects produce a spread; manufactured ones produce a traffic jam at the threshold.</p>
+
+<h3 id="s2b-spin-numbers">Spin, quantified</h3>
+<p><a href="#s2-spin-detection-the-press-release-vs-the-data">Stage 2's spin patterns</a> tell you <em>what</em> to look for. Here's <em>how bad it is</em>:</p>
+<ul>
+<li>An Oxford/Paris study of <strong>72 trials with negative results</strong>: only <strong>9</strong> reported the effect size and significance properly in the abstract; <strong>28 gave no numerical results at all</strong> for the main outcome; only 16 reported the main negative outcome properly <em>anywhere</em> in the paper.</li>
+<li>Prostaglandin eyedrops: <strong>18 of 20 industry-funded trials</strong> had abstract conclusions misrepresenting the main outcome. All non-industry trials were fine.</li>
+<li>Industry-funded vs Cochrane reviews of the same drugs reached <strong>identical numerical conclusions</strong> — but every industry review recommended the drug without reservation, and none of the Cochrane reviews did. The narrative carried the bias, not the numbers.</li>
+</ul>
+<p>Learn the weasel-word glossary: <strong>"trend toward significance," "numerically favored," "approaching significance," "encouraging trend," "directionally consistent"</strong> — all mean <em>not significant</em>. "Generally well tolerated" means <em>we're not showing you the safety table</em>. When the abstract has adjectives instead of numbers, the numbers lost.</p>
+<p>Go deeper: Frank David's <a href="https://www.pharmagellan.com/blog/red-flags-biotech-pr">red flags in biotech press releases</a><sup class="cite"><a href="#ref-2">[2]</a></sup> — the four PR tells (no "primary endpoint" language, misdirection to secondary endpoints, post-hoc subgroups, non-standard stats), with a worked spin example.</p>
+
+<h3 id="s2b-clene-teardown">Case study: Clene — the anatomy of spin</h3>
+<p>The worked example from Frank David's <em>Red flags in biotech press releases</em><sup class="cite"><a href="#ref-2">[2]</a></sup>: <strong>Clene's (CLNN) VISIONARY-MS trial</strong>. Count the moved goalposts:</p>
+<ul>
+<li>The headline said the trial <strong>met its primary endpoint</strong> — at <strong>p = 0.056</strong>. That only works because the bar had been moved to <strong>p &lt; 0.10</strong>, with only <strong>73 of 150</strong> planned patients enrolled (COVID disruptions cut enrollment short).</li>
+<li>The "win" came from an <strong>mITT analysis that excluded an entire n=9 site</strong> — testing errors at that site, so the company simply dropped it. Nine patients in a 73-patient trial is not a rounding error.</li>
+<li>The full ITT analysis failed. The press release called the failed analysis <strong>"directionally consistent"</strong> — a failed trial in a costume.</li>
+</ul>
+<p>David's honest-rewrite template is the standard to hold every PR to: <strong>report the failure plainly, state what you still believe, and propose a Phase 3 with better site vetting.</strong> Anything else is spin.</p>
+<div class="warn"><strong>Adu Subramanian's rule<sup class="cite"><a href="#ref-7">[7]</a></sup>:</strong> any post hoc, secondary analysis, or subgroup rescue is the same thing — the trial failed. If the headline isn't "Phase 3 hit statistical significance," that's a failed trial.</div>
+<p>The bridge to valuation: <strong>spinning failed data destroys management credibility, and credibility affects real diligence outcomes.</strong> A team that re-labels a miss as a win is showing you how it behaves when it counts. That's sponsor-dependent risk — and it belongs in how you size the asset.</p>
+
+<h3 id="s2b-replimune-orr">Replimune: endpoint-definition gaming</h3>
+<p>The Phase 2 headline (from Adu Subramanian's <em>Biotech Analysis: From 0 to 1</em><sup class="cite"><a href="#ref-7">[7]</a></sup> series): <strong>46% CR (7/15)</strong>, reported as "best overall response." Read it again — the Phase 3 would measure <strong>1-year response</strong>. Patients who responded and then relapsed still counted as positive. Strip the gaming and the reality was closer to <strong>8/15 ORR</strong>.</p>
+<p>The arithmetic of small trials: at <strong>n=15, each patient swings the rate ~7%</strong>. One patient changes the story. The Phase 3 failed.</p>
+
+<h3 id="s2b-pyxis-cherry-picking">Pyxis: the cherry-picked tumor type</h3>
+<p>The highlight <sup class="cite"><a href="#ref-7">[7]</a></sup>: a <strong>50% response rate in head-and-neck cancer</strong>, set against <strong>37% for the BAT (best available therapy) control</strong> — while the drug failed every other tumor type it was tested in. Then the denominator games: <strong>only 6 of 8 patients reported</strong>, with post-cutoff confirmations counted.</p>
+<p>When a company spotlights one tumor type, pull the full table. The slice they show you is the slice that worked.</p>
+
+<h3 id="s2b-design-red-flags">The design red-flags catalog</h3>
+<p><a href="#s2-red-flags-in-trial-design">Stage 2's red flags</a> are the starter set. Here's the extended catalog, each with the case that proves it:</p>
+<ul>
+<li><strong>Wrong comparator.</strong> Placebo when an effective treatment exists sets a "better than nothing" bar — and across 2000–2010, only 70% of FDA approvals had data against existing treatments. Worse: rigged dosing. Paroxetine was tested against amitriptyline <strong>dosed morning and night</strong> — guaranteeing drowsiness that made paroxetine look clean. Antipsychotics were tested against haloperidol at 20 mg and risperidone at 8 mg — doses chosen to maximize side effects in the control arm.</li>
+<li><strong>Freakishly ideal patients.</strong> Asthma treatment guidelines were built on trials that excluded <strong>94% of real patients</strong>. Depression trials excluded roughly two-thirds. The commercial sting: trial patients on coxibs bled at 50/1,000 per year → $20,000 per avoided bleed; real GP patients bled at 10/1,000 → <strong>$100,000</strong> per avoided bleed. The cost-effectiveness case was wrong by 5× because the patients weren't real.</li>
+<li><strong>Early stopping.</strong> The CLASS/celecoxib trial published at 6 months showing benefit — it was designed for 12+ months and showed none. Bisoprolol was stopped early on <strong>2 vs 18 events</strong> and hailed as a massive life-saver; two larger trials then showed nothing. Truncated trials overstate benefit by <strong>~25%</strong> on average, early stopping has doubled since 1990, and <strong>86% of cancer trials stopped early for benefit</strong> were used to support marketing approval.</li>
+<li><strong>Late stopping (dilution).</strong> The salmeterol SMART trial's protocol specified 28-week outcomes: asthma-death relative risk <strong>4.33</strong>. The company reported 12-month figures including 6 months of passive follow-up: RR <strong>2.50</strong> — the signal diluted below significance. Always check the reported follow-up window against the protocol's.</li>
+<li><strong>Dropout handling.</strong> A Swedish regulator study found papers routinely reported the flattering <strong>per-protocol</strong> analysis alone while submissions contained both ITT and per-protocol. And the imputation method matters enormously — <a href="#s2b-missing-data">see the missing-data section below</a> — but the short version: if the paper doesn't tell you the dropout rate <em>by arm</em>, it's hiding something.</li>
+<li><strong>Composite outcomes.</strong> UKPDS reported a 12% reduction in a composite endpoint — driven mostly by <strong>laser eye-treatment referrals</strong>, with no benefit on death. Of 35 review papers, 28 reported only the composite; 1 mentioned the components were trivial. Always demand the component breakdown: which part of the composite actually moved?</li>
+<li><strong>Subgroup dredging.</strong> In a famous demonstration, researchers ran a <strong>completely fake 1,073-patient trial</strong> (both arms did nothing) and found a "significant" survival benefit in a 397-patient subgroup. ISIS-2 showed aspirin doesn't work in <strong>Libra and Gemini</strong> (your star sign) — the joke that proves the point. Real damage: aspirin was withheld from women for a decade based on a subgroup finding. Rule: post-hoc subgroups generate hypotheses; they never confirm them.</li>
+<li><strong>Equivalence claims from superiority trials.</strong> "No significant difference" is not "equivalent" — proving equivalence needs a much bigger trial. When a company claims its drug is "just as good" off a failed superiority comparison, the statistics don't support the sentence.</li>
+</ul>
+<ul class="checklist">
+<li><input type="checkbox"><span>Comparator check: is the control what a doctor would actually prescribe today, at a fair dose?</span></li>
+<li><input type="checkbox"><span>Population check: what fraction of real patients would have been eligible? (Under 20% is a flag)</span></li>
+<li><input type="checkbox"><span>Timing check: was the trial stopped early for benefit, or reported on a longer window than the protocol specified?</span></li>
+<li><input type="checkbox"><span>Dropout check: dropout rate by arm, and which analysis (ITT vs per-protocol) is shown</span></li>
+<li><input type="checkbox"><span>Composite check: if the primary is a composite, which component drove the result?</span></li>
+<li><input type="checkbox"><span>Subgroup check: was the winning subgroup pre-specified? If not, it's a hypothesis, not a result</span></li>
+</ul>
+
+<h3 id="s2b-protocol-amendments">The moving target: protocol amendments</h3>
+<p>Three to five protocol amendments per trial is <em>normal</em>. The dangerous ones change the inclusion/exclusion criteria mid-trial — because then <strong>the patients at the end aren't the patients the trial was designed for</strong>. Each amendment is a chance to move the goalposts: enrich for easier-to-treat patients, drop the sick ones, narrow to a biomarker-positive slice after seeing early data.</p>
+<p>The subtle version: a location shift (sicker → healthier population) can be offset by a scale shift (less variability), leaving the headline statistics looking stable while the population has moved underneath them. Standard analyses miss it entirely.</p>
+<div class="callout"><strong>The investor's question:</strong> <em>Open the ClinicalTrials.gov history tab and count the amendments. If inclusion criteria changed three times, ask in which direction — toward easier or harder patients? Amendments that make the population easier to treat are the ones that flatter the drug.</em></div>
+
+<h3 id="s2b-every-change-matters">Every change matters</h3>
+<p>From Adu Subramanian<sup class="cite"><a href="#ref-7">[7]</a></sup>: track <strong>every change in wording, deck, website, and commentary</strong> — not just protocol amendments. The quiet edit is often the confession:</p>
+<ul>
+<li><strong>Dyne</strong> — wording changes told the story before the press release did.</li>
+<li><strong>Capricor</strong> — commentary around a Q3 timeline slip, then a <strong>+200%</strong> move.</li>
+<li><strong>ANAB</strong> — the stock ran <strong>$20 → $40</strong>, then dropped <strong>75%</strong> when the data actually landed.</li>
+</ul>
+<p>Archive the deck. Screenshot the website. Diff the commentary quarter to quarter. Management edits history; your job is to keep the original.</p>
+
+<h3 id="s2b-blinding">Did the blind actually hold?</h3>
+<p>"Double-blind" is a design intention, not a verified fact. Three ways it breaks:</p>
+<ul>
+<li><strong>Small block sizes.</strong> With block size 2, an investigator who sees the first assignment <em>knows</em> the next one — and can steer sicker patients toward one arm. Larger blocks protect unpredictability; tiny ones invite selection bias.</li>
+<li><strong>Obvious side effects.</strong> A drug that causes a distinctive rash or infusion reaction effectively unblinds the trial. Efficacy readouts from functionally unblinded trials — especially subjective endpoints — are softer than they look.</li>
+<li><strong>Mix-ups.</strong> Treatment codes get mixed up in practice more than anyone admits. A 5% mix-up rate drops an 80%-powered trial to <strong>70%</strong>; 10% drops it to <strong>61%</strong>. You'd need 23% more patients to compensate for a 5% mix-up — and nobody adds them.</li>
+</ul>
+<p>There is an actual published method for testing whether the blind held (Chow &amp; Shao 2004): <strong>ask patients and investigators to guess their treatment assignment</strong>, and test whether the guesses beat chance. Its absence isn't proof of failure — but if a guess-test was run and failed, that's a red flag sitting in the supplementary appendix.</p>
+
+<h3 id="s2b-pilot-variance">The power calculation's dirty secret</h3>
+<p>Sample-size formulas depend on the variance and effect size — which are usually estimated from <strong>small pilot studies</strong>. When the pilot is tiny, the variance estimate is unstable, so the "adequately powered" trial may be badly under- or over-powered. A power calculation built on a 12-patient pilot is a guess wearing a lab coat.</p>
+<p>The investor version: when a company says "the trial is 90% powered," ask <strong>what the variance and effect assumptions were estimated from, and how many patients</strong>. If the answer is a phase 1b with 15 people, the 90% is decorative.</p>
+
+<h3 id="s2b-funding-bias">Follow the funding line</h3>
+<p>Industry-funded trials are systematically more positive — and the gap is too big to be innocent:</p>
+<ul>
+<li>500+ trials across 5 drug classes: <strong>85% of industry-funded positive vs 50% of government-funded.</strong></li>
+<li>192 statin trials: industry-funded <strong>20× more likely</strong> to favor the test drug after controlling for confounders.</li>
+<li>542 psychiatric-drug outcomes: <strong>78% industry-favorable vs 48% independent</strong> — and when two drugs were compared, the <em>sponsor's</em> drug won 72% of the time.</li>
+<li>45 out of 45 industry RCT abstracts at one rheumatology conference favored the sponsor's drug.</li>
+</ul>
+<p>The mechanisms are the ones you've already learned: weak comparators, selected patients, early stopping, non-publication. The point isn't "industry = lies" — it's that <strong>the funding line tells you which direction the deck is stacked</strong>, so you know which checks to run hardest. An industry-funded trial with a placebo comparator, a surrogate endpoint, and no published protocol deserves the full gauntlet from this section. An NIH-funded trial with an active comparator and pre-registered outcomes starts from a better place.</p>
+
+<h3 id="s2b-ghostwriting">Who actually wrote this paper?</h3>
+<p>Ghost authorship is common: a 2011 survey of 896 corresponding authors found <strong>8% of top-journal articles</strong> involved it (likely an underestimate given 30% non-response), while a Danish ethics-committee study of industry trials put the figure at <strong>75%</strong>. Company statisticians, designers, and writers vanish from the author list. One Lancet editor called it "standard operating procedure."</p>
+<p>The tells, from leaked cases:</p>
+<ul>
+<li><strong>Publication-planning choreography.</strong> Before launch: prevalence papers ("the disease is common"), then "current treatments are dangerous" reviews, then the trial papers — a coordinated narrative arc, not independent science.</li>
+<li><strong>The Keller letter.</strong> In the paroxetine litigation, a manuscript arrived at an academic's desk with a cover note: <em>"Please retype on your letterhead and revise as you like."</em> The "author" hadn't written a word.</li>
+<li><strong>KOL selection memos.</strong> Leaked Lilly documents on Zyprexa laid out briefing aims — "prepare the market," "create a need" — with guidance on selecting and paying key opinion leaders to front the papers.</li>
+<li><strong>The authorship criteria are gameable.</strong> A ghostwriter can do 90% of the design, analysis, and drafting yet miss the all-three-criteria bar for authorship. No academic has ever been disciplined for guest authorship.</li>
+</ul>
+<p>The extreme endpoint: <strong>Elsevier was caught running six industry-sponsored journals made to look like real ones</strong> (the <em>Australasian Journal of Bone &amp; Joint Medicine</em> and friends) — marketing literature with peer-review branding. When a paper's conclusions feel like an ad, check the acknowledgments for "editorial assistance" from a named medical-communications firm, and check whether the first author's publication record in this drug area started suspiciously recently.</p>
+
+<h3 id="s2b-tamiflu">Case study: the Tamiflu saga</h3>
+<p>Everything in this section, in one story. The UK stockpiled Tamiflu for <strong>80% of the population</strong> — hundreds of millions of pounds — on Roche's claim of a <strong>67% reduction</strong> in complications. The Cochrane reviewers' 2008 analysis trusted a published meta-analysis pooling data from 10 trials. <strong>Only 2 of those 10 trials were themselves published.</strong></p>
+<p>What followed was a three-year battle for the data: Roche demanded a <strong>secret confidentiality agreement</strong> (forbidding researchers from even acknowledging its existence), then claimed another group already had the data, then handed over 7 short excerpts. Meanwhile the regulators disagreed with each other about the same drug: the <strong>FDA said no complication benefit; the CDC said benefit; the EMA said benefit; Japan made no claim</strong>. Same molecule, four verdicts — cross-regulator disagreement is itself a signal that the evidence is thin.</p>
+<p>When the clinical study reports finally emerged, they showed:</p>
+<ul>
+<li><strong>An enriched population:</strong> two-thirds of trial participants were flu-positive, vs ~one-third in peak flu season and ~one-eighth in normal practice. The benefits were measured in a population that barely exists in the real world.</li>
+<li><strong>A non-inert placebo:</strong> it contained dehydrocholic acid (a gallbladder stimulant) and was a <strong>different color</strong> from the drug — undermining both the blind and the safety comparison.</li>
+<li><strong>Hidden harms:</strong> the published paper said "no drug-related serious adverse events." The study report listed <strong>10 serious adverse events, 3 possibly drug-related.</strong></li>
+<li><strong>The largest phase 3 trial was never published at all.</strong></li>
+</ul>
+<div class="callout"><strong>The investor's lesson:</strong> <em>A multi-billion-dollar public-health decision rested on 2 published trials out of 10 — and the unpublished 8 contained the enrichment, the safety signals, and the non-inert placebo. Whenever you see a "settled" evidence base for a drug, ask the Tamiflu question: settled on how many of the trials?</em></div>
+
+<h3 id="s2b-missing-data">Missing data: the methods that make or break a trial</h3>
+<p>Patients drop out of trials. What the analysts do about it can matter more than the drug:</p>
+<ul>
+<li><strong>LOCF (last observation carried forward)</strong> — the dropout's last measurement is frozen and carried to the end. It has been "widely used in clinical trials for years" even though <strong>its validity has been challenged by researchers and the FDA</strong>, which prefers BOCF (baseline carried forward: dropouts count as no benefit). In Pfizer's pregabalin pain trials, LOCF <strong>overestimated the pain benefit by ~25%</strong> — and all four published papers used LOCF without acknowledging the issue.</li>
+<li><strong>The philosophical split:</strong> "When the data are missing, the data are missing — how can we make up data for the missing data?" versus the statistician's "we estimate under assumptions." Both sides have a point; the investor's job is to know <em>which</em> assumptions a given trial made.</li>
+<li><strong>Dropout asymmetry is the tell.</strong> If 25% dropped out of the drug arm vs 10% on placebo, the "efficacy" may be a dropout artifact — the sickest drug-arm patients vanished, flattering the average of those who remained.</li>
+<li><strong>The tipping-point question.</strong> The best sensitivity analysis asks: <em>how bad would the missing data have to be to overturn the conclusion?</em> If the answer is "barely bad at all," the result is fragile. If a paper has no tipping-point or sensitivity analysis on missing data, treat the headline effect as the optimistic case.</li>
+</ul>
+<div class="warn">If the primary analysis uses LOCF in a high-dropout trial, be skeptical — and if the paper doesn't report dropout rates <em>by arm</em>, assume the asymmetry is unfavorable.</div>
+
+<h3 id="s2b-dmc">Who picked the referee?</h3>
+<p>Data Monitoring Committees — the "independent" bodies that peek at interim data and can stop a trial — are <strong>appointed by the sponsor</strong>. Some sponsors direct or influence the DMC's function, and sometimes they succeed. An "independent" committee hired by the sponsor deserves the same skepticism as any other hired gun. Two questions: does the sponsor see interim <em>efficacy</em> data (not just safety)? And who exactly sat on the committee?</p>
+
+<h3 id="s2b-enrichment">Enrichment cuts both ways</h3>
+<p>Enrichment — selecting patients more likely to respond — is a legitimate design tool and a distortion vector, depending on direction:</p>
+<ul>
+<li><strong>Enriched "win" → discount for the real world.</strong> If the trial selected biomarker-positive, less-sick, fewer-comorbidity patients, the headline effect size doesn't generalize to all-comers. The Tamiflu enrichment (two-thirds flu-positive vs one-eighth in practice) is the template.</li>
+<li><strong>Unenriched "failure" → check the subgroup.</strong> A targeted drug tested in an unselected population can fail overall while working in the biomarker-positive slice — the treatment is effective for patients with positive disease targets, but the combined effect size buries it. (Herceptin/HER2 is the canonical example.) A "failed" trial of a targeted drug deserves a second look at the biomarker story before you write it off.</li>
+</ul>
+
+<h3 id="s2b-three-plus-three">The 3+3 problem</h3>
+<p>The classic phase 1 dose-escalation design (3 patients, then 3 more) is simple — and <strong>inefficient, systematically underestimating the maximum tolerated dose</strong>, especially when the starting dose was very low. Modern model-based designs (CRM) put more patients near the true MTD and estimate it more precisely with fewer patients.</p>
+<p>The investor read: if the phase 1 used 3+3 from a very low starting dose, the recommended phase 2 dose may sit <em>below</em> the true MTD — and a soft phase 2 readout may understate what the drug can do at the right dose. Conversely, a CRM-designed phase 1 gives more confidence the dose is right, so a phase 2 miss is more informative.</p>
+
+<h3 id="s2b-seeding">Seeding trials: marketing wearing a lab coat</h3>
+<p>Some "trials" are sales operations with protocols. The pattern:</p>
+<ul>
+<li><strong>ADVANTAGE</strong> (Vioxx): <strong>600 doctors, a handful of patients each</strong>. An internal memo said it was "executed in the spirit of the Merck marketing principles" — rationale: target family doctors, demonstrate the drug's value, <strong>track prescriptions afterward</strong>. The data was handled by the marketing division. The lead author later told the New York Times he had <strong>no role in collecting or analyzing</strong> the data.</li>
+<li><strong>STEPS</strong> (Neurontin): <strong>~4 patients per doctor</strong>; doctors supervised by <strong>sales reps</strong> who filled out forms and handed out promotional gifts during data collection. 73 serious adverse events, 997 patients with side effects, 11 deaths among 2,759 patients.</li>
+</ul>
+<p><strong>The detection heuristic:</strong> many sites × tiny patients-per-site, on a recently marketed drug, with vague or soft endpoints. If the "trial" looks designed to put the drug in front of prescribers rather than answer a question, it was.</p>
+
+<h3 id="s2b-fraud-forensics">Forensic statistics: know these exist</h3>
+<p>Outright fraud is rare; the tools for catching it are worth knowing because they teach you what "too clean" looks like:</p>
+<ul>
+<li><strong>Carlisle's randomization check.</strong> In a properly randomized trial, baseline characteristics should differ between arms by <em>chance</em> — a little messiness is expected. Data that's <em>too perfectly balanced</em> is suspicious: fraudsters can't imitate nature's disorder. Applied to 5,087 trials, ~5% had suspicious randomization. The extreme case: anesthesiologist Yoshitaka Fujii's invented trial data had odds of <strong>less than 1 in 10³³</strong> of being real.</li>
+<li><strong>The GRIM test.</strong> A reported mean must be arithmetically possible given the sample size and scale. In 71 psychology papers, <strong>half</strong> contained at least one impossible mean. (A mean of 3.08 from 20 people on a 0–10 whole-number scale is impossible — the increments only allow steps of 0.05.)</li>
+<li><strong>Statcheck.</strong> Recomputes p-values from the reported test statistics and degrees of freedom. Across 30,000+ papers, <strong>~50% had at least one numerical inconsistency</strong> and 13% had mistakes serious enough to flip conclusions — and the errors skewed <em>in the authors' favor</em>.</li>
+<li><strong>Zombie citations.</strong> 83% of post-retraction citations are positive and don't mention the retraction. A paper that's been retracted keeps getting cited as evidence for years.</li>
+</ul>
+<p>You will probably never run these yourself. But knowing they exist changes how you read: when a small company's pivotal data looks <em>implausibly clean</em> — every endpoint hit, no messy subgroups, baseline tables balanced to the decimal — remember that real trial data is lumpy, and perfect balance is a signal, not a virtue.</p>
+
+<h3 id="s2b-adaptive-alpha">Adaptive designs and the alpha bill</h3>
+<p>Seamless phase 2/3 and adaptive designs trade statistical rigor for speed — and the bill is real. The arithmetic: two separate trials hold the false-positive rate at roughly α₂ × α₃; a seamless design's actual false-positive rate is just α₃ alone — <strong>1/α₂ times larger</strong>. Same for power. That's the price of skipping the white space between phases, and it's only paid if the trial's combination method properly accounts for the adaptation.</p>
+<p>The investor questions: was the adaptation <strong>pre-specified</strong> with a proper Type I error adjustment (not invented after peeking)? And who saw the unblinded interim data — because operational bias (subtle changes in trial conduct after an interim look) doesn't show up in any p-value. An unblinded interim look without a pre-specified adjustment is a red flag; a pre-specified adaptive design with proper error control is just efficient drug development. Learn to tell them apart.</p>
+
+  <ul class="checklist">
+    <li><input type="checkbox"><span>I treat every published finding as a claim, not a fact — and I know the replication numbers (11% Amgen, 39%, 61%-null-in-Registered-Reports)</span></li>
+    <li><input type="checkbox"><span>I run the registry check (registered vs reported primary outcome) before trusting any readout</span></li>
+    <li><input type="checkbox"><span>I can spot p-hacking's two flavors and the p-clustering-under-0.05 fingerprint</span></li>
+    <li><input type="checkbox"><span>I run the design red-flag checks (comparator, population, timing, dropouts, composite, subgroups) on every pivotal trial</span></li>
+    <li><input type="checkbox"><span>I count protocol amendments and ask which direction the population moved</span></li>
+    <li><input type="checkbox"><span>I check the dropout method (LOCF vs BOCF/MMRM) and dropout asymmetry by arm</span></li>
+    <li><input type="checkbox"><span>I know the Tamiflu lesson: a "settled" evidence base can rest on 2 of 10 trials</span></li>
+    <li><input type="checkbox"><span>I can name the seeding-trial pattern (many sites × few patients) and the ghostwriting tells</span></li>
+</ul>
+  <div class="stage-status"></div>
+<h3>Do this now</h3>
+<ul class="checklist">
+  <li><input type="checkbox"><span>Pick a recent biotech readout: pull its ClinicalTrials.gov entry and compare the registered primary outcome against the reported one</span></li>
+  <li><input type="checkbox"><span>Find the dropout rate by arm in the latest 10-K trial description or paper — then check which imputation method the primary analysis used</span></li>
+</ul>
+<div class="quiz" data-quiz="s2-skepticism">
+  <h3>Data-skepticism quiz</h3>
+  <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 3 right to check off the quiz below.</p>
+  <div class="quiz-q" data-why="Turner 2008 compared the FDA&#x27;s files (38 positive, 36 negative) against the journals (48 &#x27;positive,&#x27; 3 negative) — 11 negative trials were rewritten as positive and 22 vanished.">
+    <p class="quiz-qtext"><strong>1.</strong> In Turner et al. 2008, 74 antidepressant trials were an even 38-positive / 36-negative split in the FDA&#x27;s files. What did the published literature show?</p>
+    <div class="quiz-opts">
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Roughly the same even split</span></button>
+      <button type="button" class="quiz-opt" data-ok="1"><span class="quiz-letter">B</span><span>48 &#x27;positive&#x27; vs 3 negative — 11 negatives rewritten, 22 vanished</span></button>
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">C</span><span>74 positive — every trial published as a win</span></button>
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">D</span><span>36 negative vs 38 positive — journals favored negative results</span></button>
+    </div>
+    <p class="quiz-fb" hidden></p>
+  </div>
+  <div class="quiz-q" data-why="COMPare found only 9 of 67 trials fully reported their registered outcomes — 354 outcomes disappeared and 357 appeared. Always compare the registry entry against the paper.">
+    <p class="quiz-qtext"><strong>2.</strong> The COMPare project audited 67 trials in top journals against their registrations. How many reported everything as registered?</p>
+    <div class="quiz-opts">
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>61 — outcome switching is rare</span></button>
+      <button type="button" class="quiz-opt" data-ok="1"><span class="quiz-letter">B</span><span>9 — with 354 outcomes disappearing and 357 appearing</span></button>
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">C</span><span>33 — about half</span></button>
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">D</span><span>All 67 — registration solved the problem</span></button>
+    </div>
+    <p class="quiz-fb" hidden></p>
+  </div>
+  <div class="quiz-q" data-why="A 2010 review found truncated trials overstate benefit by ~25% on average — and 86% of cancer trials stopped early for benefit were used to support marketing approval.">
+    <p class="quiz-qtext"><strong>3.</strong> Trials stopped early for benefit overstate the true effect by roughly how much, on average?</p>
+    <div class="quiz-opts">
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>About 5% — early stopping barely matters</span></button>
+      <button type="button" class="quiz-opt" data-ok="1"><span class="quiz-letter">B</span><span>About 25%</span></button>
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">C</span><span>About 50%</span></button>
+      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">D</span><span>They understate it — early data is conservative</span></button>
+    </div>
+    <p class="quiz-fb" hidden></p>
+  </div>
+</div>
+
+<ul class="checklist quiz-check">
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s2-skepticism-done" tabindex="-1" aria-hidden="true"><span>Data-skepticism quiz: all 3 answered correctly</span></li>
+</ul>
+
+<p class="toc-next">Next: <a href="#s3">→ Stage 3: Where the Money Comes From</a></p>
 
 
   <h3 id="s2-endpoints-what-worked-means">Endpoints: what "worked" means</h3>
@@ -938,6 +1265,16 @@
     <li><strong>Surrogate endpoints</strong> — biomarkers or intermediate measures (tumor shrinkage, a lab value) accepted as reasonably likely to predict real benefit. Useful, but a surrogate that doesn't translate to clinical benefit is a classic trap.</li>
   </ul>
   <div class="warn">Endpoint switching is a red flag. If the primary endpoint at readout differs from the one registered on ClinicalTrials.gov at trial start — or the press release leads with a secondary endpoint while burying the primary — assume the primary didn't deliver. Always check the registry entry.</div>
+
+<h3 id="s2-data-quality-checks">The five data-quality checks</h3>
+<p>Adu Subramanian's checklist<sup class="cite"><a href="#ref-7">[7]</a></sup> — run all five before you trust any trial number:</p>
+<ul class="checklist">
+<li><input type="checkbox"><span><strong>BICR vs investigator-assessed.</strong> Was the endpoint read by blinded independent central review (BICR), or by the site's own investigators? Investigators with a stake in the trial read scans more generously. If the investigator-assessed number is the headline, go find the BICR number.</span></li>
+<li><input type="checkbox"><span><strong>ITT vs per-protocol.</strong> Intention-to-treat counts everyone randomized; per-protocol counts only the ones who took the drug properly. Per-protocol always looks better — it's missing the people who quit. The company shows the flattering one.</span></li>
+<li><input type="checkbox"><span><strong>Protocol changes mid-trial.</strong> Every amendment is a chance to move the goalposts — enrich for easier patients, drop inconvenient sites, narrow the endpoint. Check the registry's history tab.</span></li>
+<li><input type="checkbox"><span><strong>Censoring balance.</strong> Who dropped out of each arm, and when? Unequal censoring can manufacture a PFS benefit out of nothing. If dropout-by-arm isn't shown, assume it's bad.</span></li>
+<li><input type="checkbox"><span><strong>Pre-specified vs post hoc.</strong> Was the winning analysis written down before the data existed? If not, it's a hypothesis wearing a result's clothes.</span></li>
+</ul>
 <h3 id="gap-cns">CNS: the brain's delivery problem and the endpoint problem</h3>
 <p>Neurology is where good science goes to die slowly and expensively. Two structural reasons:</p>
 <p><strong>The blood-brain barrier.</strong> The brain is fenced off by a tight layer of endothelial cells that keeps most molecules out of the central nervous system. Monoclonal antibodies — the workhorse modality of modern biotech — cross it very poorly, so CNS drugs skew toward small molecules, and any biologic program aimed at the brain has a <em>delivery</em> problem before it has a biology problem. Delivery technologies (shuttle constructs, intrathecal injection) are themselves unproven, carrying their own risk. If a company pitches a CNS biologic without explaining how it gets into the brain, that's the first question to ask.</p>
@@ -1198,6 +1535,7 @@
 <li><strong>"No new safety signals"</strong> in a 500-patient trial rules out almost nothing. It's a statement about the trial's power, not the drug's safety.</li>
 <li>Solicitation matters: checklist-based adverse-event collection finds far more events than spontaneous reporting (46.5% vs 1–2% for sexual dysfunction on fluoxetine). A drug looks worse on safety in a trial that asks than in one that waits.</li>
 <li><strong>Dropout asymmetry</strong> is the safety signal hiding in plain sight: more (or sicker) dropouts in the drug arm corrupts both efficacy and safety. Read the discontinuation table, not the headline.</li>
+<li><strong>Hy's law.</strong> Per Adu Subramanian<sup class="cite"><a href="#ref-7">[7]</a></sup>: liver-injury signals (ALT/AST elevations with rising bilirubin) kill programs — <strong>"don't care if it's 1/2 patient."</strong> Never wave away a liver blip because n is small.</li>
 </ul>
 <div class="callout"><strong>The investor's question:</strong> <em>How many patients were actually exposed, for how long, and how were adverse events collected?</em> A clean safety profile in a small, short, checklist-free trial is the absence of evidence — price it accordingly, especially for first-in-class mechanisms.</div>
 <p><em>Continued from Stage 1 — the PK/PD module's second half: dose–response, exposure–response, and why dose selection is an investment risk.</em></p>
@@ -1230,6 +1568,15 @@
 </ul>
 <figure class="fig"><img width="1600" height="1000" src="figures/recreated/auc-concept-dt-shading-fig5-3.png" alt="What 'exposure' actually is: the area under the concentration–time curve — total drug seen by the body." loading="lazy"><figcaption>What 'exposure' actually is: the area under the concentration–time curve — total drug seen by the body.</figcaption></figure>
 <figure class="fig"><img width="1650" height="850" src="figures/recreated/emax-response-outlasts-concentration-fig19-14.png" alt="Response can outlast the drug: here the effect persists long after blood levels have fallen — because dosing started well above EC50, the response stays near-maximal even as concentration drops." loading="lazy"><figcaption>Response can outlast the drug: here the effect persists long after blood levels have fallen — because dosing started well above EC50, the response stays near-maximal even as concentration drops.</figcaption></figure>
+
+<h3 id="s2-cidara-demo">Worked example: CD388 — the concentration question</h3>
+<p>A miniature of how Adu Subramanian<sup class="cite"><a href="#ref-7">[7]</a></sup> reasons through a drug before the readout — three questions:</p>
+<ul>
+<li><strong>Concentration vs potency.</strong> Compare expected tissue concentration against the <strong>EC50</strong>. For CD388 (Cidara's flu prophylactic), serum levels sat far above the ~10 nM EC50 — then apply the haircut: only <strong>~30% respiratory penetration</strong> in mice. If the multiple over EC50 survives the haircut, the pharmacology has room to breathe; if it doesn't, the trial is a coin flip.</li>
+<li><strong>The bar.</strong> Ask what "success" actually requires — here, roughly a <strong>50% reduction vs placebo</strong>. A huge concentration multiple means nothing if the trial demands an effect size the biology can't deliver.</li>
+<li><strong>The endpoint definition.</strong> Ask whether the trial's infection definition is stricter than competitors' (e.g., Vir's). Stricter definitions filter out marginal cases — and change what the same efficacy number means.</li>
+</ul>
+<p><em>The full version of this workup anchors the capstone.</em></p>
 <h3 id="rosenbaum-s7">Rosenbaum · 7. Why dose selection is an investment risk (the binary connection)</h3>
 <p>Here's the through-line for everything above. A clinical trial is a bet on a <em>dose</em>, not just a molecule. The dose must:</p>
 <ol>
@@ -1253,6 +1600,10 @@
 <li><strong>Nonlinear PK drugs</strong> (a small club: phenytoin is the textbook case): small dose increases can cause <em>explosive</em> jumps in blood levels. Trials of such drugs live on a knife's edge, and any dose adjustment mid-trial is a red flag worth understanding.</li>
 </ul>
 <figure class="fig"><img width="1600" height="900" src="figures/recreated/nonlinear-elimination-chronic-dosing-fig15-5.png" alt="Nonlinear PK is not a gentle curve: doubling the infusion rate more than doubled blood levels — the second doubling sent them up several-fold, toward infinity. This is the knife's-edge visual." loading="lazy"><figcaption>Nonlinear PK is not a gentle curve: doubling the infusion rate more than doubled blood levels — the second doubling sent them up several-fold, toward infinity. This is the knife's-edge visual.</figcaption></figure>
+
+<h3 id="s2-dose-response-heuristic">The dose-response smell test</h3>
+<p>From Adu Subramanian<sup class="cite"><a href="#ref-7">[7]</a></sup>: in an early-phase trial, <strong>efficacy should rise with dose</strong> — if the drug is doing something real, more drug does more. A flat or scrambled dose-efficacy pattern means the signal could be noise. It's the quickest way to ask whether the data is just a fluke.</p>
+<p>The caveat: inverted patterns exist (an NKTR-style case where higher doses did worse) — so a clean dose-response is reassuring, not proof, and a weird one is a question, not a verdict. Pair it with the <a href="#s2-red-flags-in-trial-design">red flag</a>: no dose-response at all, and you should question whether the drug is doing anything.</p>
 <h3 id="rosenbaum-s8">Rosenbaum · 8. The one-page cheat sheet</h3>
 <table>
 <tr><th>Concept</th><th>One-liner</th><th>Investor question</th></tr>
@@ -1330,6 +1681,9 @@
       <li>What would the regulator and payer think? Approvable and reimbursable are different bars from "interesting."</li>
     </ol>
   </details>
+
+<h3 id="s2-open-label-caveats">Open-label caveats</h3>
+<p>From Adu Subramanian<sup class="cite"><a href="#ref-7">[7]</a></sup>: in open-label trials, <strong>sponsors "get a feel" from the researchers</strong> — everyone knows who's getting what, and the information leaks. Expect <strong>regression to the mean</strong> when the controlled follow-up arrives: the patients who looked miraculous in the open-label study drift back toward average under proper randomization. A stunning open-label readout is a hint, not a result.</p>
 <h3 id="prasad-s7">Prasad · 7. What good looks like — the ideal oncology trial</h3>
 <p>Prasad's framework for credible cancer evidence, distilled as an investor's positive screen:</p>
 <ol>
@@ -1421,272 +1775,7 @@
 </ul>
 </section>
 <!-- ============ STAGE 2B ============ -->
-<section class="stage" id="s2b" data-stage="2b">
-  <div class="stage-head"><span class="stage-num">STAGE 2B</span><h2>When the Data Lies to You</h2></div>
-  <p class="stage-sub">Stage 2 taught you to read trial data. This is the dark side of that skill: the systematic ways the published record misleads investors — and the specific checks that catch it. It runs beginner to expert. Every item below is something you can actually <em>do</em>, not just know.</p>
-<details class="toc"><summary>In this stage</summary><ul>
-<li><a href="#s2b-published-not-true">Published ≠ true</a></li>
-<li><a href="#s2b-file-drawer">The file drawer: what you read is the winners</a></li>
-<li><a href="#s2b-hype-pr">Hype: reading the press release like a skeptic</a></li>
-<li><a href="#s2b-outcome-switching">Outcome switching: the registry check</a></li>
-<li><a href="#s2b-p-hacking">P-hacking: the two flavors</a></li>
-<li><a href="#s2b-spin-numbers">Spin, quantified</a></li>
-<li><a href="#s2b-design-red-flags">The design red-flags catalog</a></li>
-<li><a href="#s2b-protocol-amendments">The moving target: protocol amendments</a></li>
-<li><a href="#s2b-blinding">Did the blind actually hold?</a></li>
-<li><a href="#s2b-pilot-variance">The power calculation's dirty secret</a></li>
-<li><a href="#s2b-funding-bias">Follow the funding line</a></li>
-<li><a href="#s2b-ghostwriting">Who actually wrote this paper?</a></li>
-<li><a href="#s2b-tamiflu">Capstone: the Tamiflu saga</a></li>
-<li><a href="#s2b-missing-data">Missing data: the methods that make or break a trial</a></li>
-<li><a href="#s2b-dmc">Who picked the referee?</a></li>
-<li><a href="#s2b-enrichment">Enrichment cuts both ways</a></li>
-<li><a href="#s2b-three-plus-three">The 3+3 problem</a></li>
-<li><a href="#s2b-seeding">Seeding trials: marketing wearing a lab coat</a></li>
-<li><a href="#s2b-fraud-forensics">Forensic statistics: know these exist</a></li>
-<li><a href="#s2b-adaptive-alpha">Adaptive designs and the alpha bill</a></li>
-</ul></details>
 
-<h3 id="s2b-published-not-true">Published ≠ true</h3>
-<p>Start here, because everything else in this section is downstream of one fact: <strong>a published study is a claim, not a fact.</strong> The replication record is brutal:</p>
-<ul>
-<li><strong>Amgen</strong> tried to replicate 53 landmark preclinical cancer studies. <strong>6 replicated — 11%.</strong> Bayer ran a similar exercise: ~20%.</li>
-<li>The Reproducibility Project re-ran 100 psychology studies from top journals: <strong>39% replicated.</strong></li>
-<li>Prasad and Cifu's review of 3,000+ papers in three top medical journals found <strong>396 medical reversals</strong> — established practices overturned by better evidence. The bispectral-index brain monitor was used in 40 million operations worldwide before a trial found it useless. Peanut-avoidance advice for infants turned out to be exactly backwards.</li>
-<li><strong>45% of Cochrane reviews</strong> conclude there's insufficient evidence to say whether the treatment works at all.</li>
-</ul>
-<p>For a biotech investor, the translation is direct: the "exciting mechanism" slide in a company deck usually traces back to preclinical work with roughly a <strong>1-in-9 replication rate</strong>. Treat every published finding as provisional until a second, independent group confirms it — and discount anything that has never been replicated at all.</p>
-
-<h3 id="s2b-file-drawer">The file drawer: what you read is the winners</h3>
-<p>Negative results don't get published. What you read is the winners' circle. The canonical demonstration is <strong>Turner et al. 2008</strong> (New England Journal of Medicine): the FDA's files on 12 antidepressants, 1987–2004 — <strong>74 trials, 12,500 patients.</strong></p>
-<ul>
-<li><strong>Reality:</strong> 38 positive trials, 36 negative. An even split.</li>
-<li><strong>The published literature:</strong> 37 of 38 positives published. Only 3 of 36 negatives published. 22 vanished entirely. <strong>11 negative trials were rewritten as positive</strong> in the journals.</li>
-<li><strong>What a doctor reading the literature saw:</strong> 48 "positive" vs 3 negative.</li>
-</ul>
-<p>The best estimate across medicine: <strong>roughly half of all trials go unpublished</strong>, and negative results are about twice as likely to disappear. The cleanest proof of the distortion's size comes from <strong>Registered Reports</strong> — journals that accept studies before results are known: <strong>61% null results</strong>, vs ~10% in the regular literature. Same science, different publication filter, completely different picture of reality.</p>
-<p>Whole trials vanish, not just negative ones — with body counts:</p>
-<ul>
-<li><strong>Reboxetine:</strong> 1 published trial (254 patients, positive) vs 6 unpublished trials (~2,500 patients) showing no benefit over placebo — plus 1,657 patients of unpublished head-to-head data showing it was <em>worse</em> than comparators, with more side effects and dropouts.</li>
-<li><strong>Lorcainide:</strong> a 1980 trial in under 100 post-heart-attack men showed <strong>9 deaths on drug vs 1 on placebo</strong>. Never published (dropped for commercial reasons). The whole drug class kept being prescribed after heart attacks through the 1980s — <strong>over 100,000 deaths</strong> before the harm was recognized.</li>
-<li><strong>TGN1412:</strong> six healthy volunteers nearly died in a 2006 first-in-human trial. A researcher had tested a similar antibody in a single human <strong>ten years earlier</strong> with parallel effects — never published.</li>
-</ul>
-<div class="callout"><strong>The investor's question:</strong> <em>For any drug with a thin publication record, ask what's missing — not just what's shown. A program with two glowing phase 2 papers and no visible failures is more suspicious than one with a mixed record. Absence of evidence is not evidence of absence; in biotech, it's often evidence of a file drawer.</em></div>
-
-<h3 id="s2b-hype-pr">Hype: reading the press release like a skeptic</h3>
-<p>Scientists write their own companies' press releases — and exaggeration there gets amplified. A Cardiff study found that when a press release exaggerated, the media coverage was <strong>6.5× more likely</strong> to exaggerate advice claims, <strong>20×</strong> for causal claims, and <strong>56×</strong> for "this animal finding applies to humans" claims. And the "IN MICE" problem is real: animal studies routinely get reported as human-relevant breakthroughs.</p>
-<p>The discipline: find the actual numbers, ignore the adjectives. "Encouraging," "robust," "durable," "practice-changing" are not data. <a href="#s2-spin-detection-the-press-release-vs-the-data">The spin-detection patterns in Stage 2</a> are the companion skill — this is the <em>why</em> behind them: the hype pipeline starts at the company, not the journalist.</p>
-
-<h3 id="s2b-outcome-switching">Outcome switching: the registry check</h3>
-<p>The single most usable investor skill in this entire section. Trials pre-register their primary outcomes on ClinicalTrials.gov. Then, when the results come in, <strong>the outcomes change</strong>:</p>
-<ul>
-<li>The <strong>COMPare project</strong> audited 67 trials in the five highest-impact journals: <strong>only 9</strong> reported everything as registered. <strong>354 outcomes disappeared</strong> between registration and publication; <strong>357 unregistered outcomes appeared</strong> from nowhere.</li>
-<li>An anesthesia audit: <strong>92% of trials switched at least one outcome</strong> — always toward statistically significant results.</li>
-<li><strong>Gabapentin:</strong> 21 pre-specified primary outcomes → only 11 reported; ~half the 28 "primary" outcomes in the paper were newly introduced.</li>
-<li><strong>Paroxetine trial 329:</strong> the protocol specified 2 primary + 6 secondary outcomes — the drug failed on all of them. 27 outcomes were measured in total; 4 were positive; those 4 were reported as if they'd been the main outcomes all along.</li>
-</ul>
-<p>The check takes five minutes and you should run it before trusting any readout:</p>
-<ul class="checklist">
-<li><input type="checkbox"><span>Pull the trial's ClinicalTrials.gov entry (NCT number is usually in the press release or paper)</span></li>
-<li><input type="checkbox"><span>Read the <em>registered</em> primary outcome — the one specified before the trial started</span></li>
-<li><input type="checkbox"><span>Compare it against the <em>reported</em> primary in the paper or PR — same measure, same timepoint?</span></li>
-<li><input type="checkbox"><span>If they differ, or the headline leads with a secondary: assume the registered primary missed, and discount everything accordingly</span></li>
-<li><input type="checkbox"><span>Check the "History of Changes" tab — late changes to the primary outcome are outcome switching with a paper trail</span></li>
-</ul>
-<div class="warn">Positive outcomes are more than twice as likely to survive from registration to publication as negative ones. A "positive" trial whose registered primary quietly changed is not a positive trial — it's a negative trial wearing a costume.</div>
-
-<h3 id="s2b-p-hacking">P-hacking: the two flavors</h3>
-<p>There are two ways to manufacture significance, and both are common:</p>
-<ol>
-<li><strong>Re-run until significant.</strong> Drop inconvenient datapoints, recalculate subgroups, switch statistical tests, keep collecting data until p dips under 0.05 ("optional stopping"). The math: if the hypothesis is false, running 5 tests gives a <strong>23% chance</strong> of at least one false positive; 20 tests gives <strong>64%</strong>. (<a href="#motulsky-s7">The multiple-comparisons module</a> covers the math; this is the behavior.)</li>
-<li><strong>HARKing</strong> — Hypothesizing After the Results are Known. Run dozens of ad-hoc tests, report only the significant ones as if they were the plan all along. The Texas sharpshooter: fire at the barn, then paint the target around the bullet holes.</li>
-</ol>
-<p>This isn't rare or theoretical. A 2012 poll of 2,000+ psychologists found <strong>65%</strong> had collected outcome data they didn't report, <strong>40%</strong> had excluded datapoints after peeking at results, and <strong>57%</strong> had collected more data after an unsatisfactory analysis. The Wansink food-lab scandal and the power-posing researcher's admission ("recruited in chunks and checked the effects along the way") are the pattern, not the exception.</p>
-<p><strong>The detection heuristic:</strong> p-values clustering just under 0.05 — a pile of p = 0.04s and p = 0.048s with nothing at p = 0.06 — is the fingerprint. Real effects produce a spread; manufactured ones produce a traffic jam at the threshold.</p>
-
-<h3 id="s2b-spin-numbers">Spin, quantified</h3>
-<p><a href="#s2-spin-detection-the-press-release-vs-the-data">Stage 2's spin patterns</a> tell you <em>what</em> to look for. Here's <em>how bad it is</em>:</p>
-<ul>
-<li>An Oxford/Paris study of <strong>72 trials with negative results</strong>: only <strong>9</strong> reported the effect size and significance properly in the abstract; <strong>28 gave no numerical results at all</strong> for the main outcome; only 16 reported the main negative outcome properly <em>anywhere</em> in the paper.</li>
-<li>Prostaglandin eyedrops: <strong>18 of 20 industry-funded trials</strong> had abstract conclusions misrepresenting the main outcome. All non-industry trials were fine.</li>
-<li>Industry-funded vs Cochrane reviews of the same drugs reached <strong>identical numerical conclusions</strong> — but every industry review recommended the drug without reservation, and none of the Cochrane reviews did. The narrative carried the bias, not the numbers.</li>
-</ul>
-<p>Learn the weasel-word glossary: <strong>"trend toward significance," "numerically favored," "approaching significance," "encouraging trend"</strong> — all mean <em>not significant</em>. "Generally well tolerated" means <em>we're not showing you the safety table</em>. When the abstract has adjectives instead of numbers, the numbers lost.</p>
-<p>Go deeper: Frank David's <a href="https://www.pharmagellan.com/blog/red-flags-biotech-pr">red flags in biotech press releases</a> — the four PR tells (no "primary endpoint" language, misdirection to secondary endpoints, post-hoc subgroups, non-standard stats), with a worked spin example.</p>
-
-<h3 id="s2b-design-red-flags">The design red-flags catalog</h3>
-<p><a href="#s2-red-flags-in-trial-design">Stage 2's red flags</a> are the starter set. Here's the extended catalog, each with the case that proves it:</p>
-<ul>
-<li><strong>Wrong comparator.</strong> Placebo when an effective treatment exists sets a "better than nothing" bar — and across 2000–2010, only 70% of FDA approvals had data against existing treatments. Worse: rigged dosing. Paroxetine was tested against amitriptyline <strong>dosed morning and night</strong> — guaranteeing drowsiness that made paroxetine look clean. Antipsychotics were tested against haloperidol at 20 mg and risperidone at 8 mg — doses chosen to maximize side effects in the control arm.</li>
-<li><strong>Freakishly ideal patients.</strong> Asthma treatment guidelines were built on trials that excluded <strong>94% of real patients</strong>. Depression trials excluded roughly two-thirds. The commercial sting: trial patients on coxibs bled at 50/1,000 per year → $20,000 per avoided bleed; real GP patients bled at 10/1,000 → <strong>$100,000</strong> per avoided bleed. The cost-effectiveness case was wrong by 5× because the patients weren't real.</li>
-<li><strong>Early stopping.</strong> The CLASS/celecoxib trial published at 6 months showing benefit — it was designed for 12+ months and showed none. Bisoprolol was stopped early on <strong>2 vs 18 events</strong> and hailed as a massive life-saver; two larger trials then showed nothing. Truncated trials overstate benefit by <strong>~25%</strong> on average, early stopping has doubled since 1990, and <strong>86% of cancer trials stopped early for benefit</strong> were used to support marketing approval.</li>
-<li><strong>Late stopping (dilution).</strong> The salmeterol SMART trial's protocol specified 28-week outcomes: asthma-death relative risk <strong>4.33</strong>. The company reported 12-month figures including 6 months of passive follow-up: RR <strong>2.50</strong> — the signal diluted below significance. Always check the reported follow-up window against the protocol's.</li>
-<li><strong>Dropout handling.</strong> A Swedish regulator study found papers routinely reported the flattering <strong>per-protocol</strong> analysis alone while submissions contained both ITT and per-protocol. And the imputation method matters enormously — <a href="#s2b-missing-data">see the missing-data section below</a> — but the short version: if the paper doesn't tell you the dropout rate <em>by arm</em>, it's hiding something.</li>
-<li><strong>Composite outcomes.</strong> UKPDS reported a 12% reduction in a composite endpoint — driven mostly by <strong>laser eye-treatment referrals</strong>, with no benefit on death. Of 35 review papers, 28 reported only the composite; 1 mentioned the components were trivial. Always demand the component breakdown: which part of the composite actually moved?</li>
-<li><strong>Subgroup dredging.</strong> In a famous demonstration, researchers ran a <strong>completely fake 1,073-patient trial</strong> (both arms did nothing) and found a "significant" survival benefit in a 397-patient subgroup. ISIS-2 showed aspirin doesn't work in <strong>Libra and Gemini</strong> (your star sign) — the joke that proves the point. Real damage: aspirin was withheld from women for a decade based on a subgroup finding. Rule: post-hoc subgroups generate hypotheses; they never confirm them.</li>
-<li><strong>Equivalence claims from superiority trials.</strong> "No significant difference" is not "equivalent" — proving equivalence needs a much bigger trial. When a company claims its drug is "just as good" off a failed superiority comparison, the statistics don't support the sentence.</li>
-</ul>
-<ul class="checklist">
-<li><input type="checkbox"><span>Comparator check: is the control what a doctor would actually prescribe today, at a fair dose?</span></li>
-<li><input type="checkbox"><span>Population check: what fraction of real patients would have been eligible? (Under 20% is a flag)</span></li>
-<li><input type="checkbox"><span>Timing check: was the trial stopped early for benefit, or reported on a longer window than the protocol specified?</span></li>
-<li><input type="checkbox"><span>Dropout check: dropout rate by arm, and which analysis (ITT vs per-protocol) is shown</span></li>
-<li><input type="checkbox"><span>Composite check: if the primary is a composite, which component drove the result?</span></li>
-<li><input type="checkbox"><span>Subgroup check: was the winning subgroup pre-specified? If not, it's a hypothesis, not a result</span></li>
-</ul>
-
-<h3 id="s2b-protocol-amendments">The moving target: protocol amendments</h3>
-<p>Three to five protocol amendments per trial is <em>normal</em>. The dangerous ones change the inclusion/exclusion criteria mid-trial — because then <strong>the patients at the end aren't the patients the trial was designed for</strong>. Each amendment is a chance to move the goalposts: enrich for easier-to-treat patients, drop the sick ones, narrow to a biomarker-positive slice after seeing early data.</p>
-<p>The subtle version: a location shift (sicker → healthier population) can be offset by a scale shift (less variability), leaving the headline statistics looking stable while the population has moved underneath them. Standard analyses miss it entirely.</p>
-<div class="callout"><strong>The investor's question:</strong> <em>Open the ClinicalTrials.gov history tab and count the amendments. If inclusion criteria changed three times, ask in which direction — toward easier or harder patients? Amendments that make the population easier to treat are the ones that flatter the drug.</em></div>
-
-<h3 id="s2b-blinding">Did the blind actually hold?</h3>
-<p>"Double-blind" is a design intention, not a verified fact. Three ways it breaks:</p>
-<ul>
-<li><strong>Small block sizes.</strong> With block size 2, an investigator who sees the first assignment <em>knows</em> the next one — and can steer sicker patients toward one arm. Larger blocks protect unpredictability; tiny ones invite selection bias.</li>
-<li><strong>Obvious side effects.</strong> A drug that causes a distinctive rash or infusion reaction effectively unblinds the trial. Efficacy readouts from functionally unblinded trials — especially subjective endpoints — are softer than they look.</li>
-<li><strong>Mix-ups.</strong> Treatment codes get mixed up in practice more than anyone admits. A 5% mix-up rate drops an 80%-powered trial to <strong>70%</strong>; 10% drops it to <strong>61%</strong>. You'd need 23% more patients to compensate for a 5% mix-up — and nobody adds them.</li>
-</ul>
-<p>There is an actual published method for testing whether the blind held (Chow &amp; Shao 2004): <strong>ask patients and investigators to guess their treatment assignment</strong>, and test whether the guesses beat chance. Its absence isn't proof of failure — but if a guess-test was run and failed, that's a red flag sitting in the supplementary appendix.</p>
-
-<h3 id="s2b-pilot-variance">The power calculation's dirty secret</h3>
-<p>Sample-size formulas depend on the variance and effect size — which are usually estimated from <strong>small pilot studies</strong>. When the pilot is tiny, the variance estimate is unstable, so the "adequately powered" trial may be badly under- or over-powered. A power calculation built on a 12-patient pilot is a guess wearing a lab coat.</p>
-<p>The investor version: when a company says "the trial is 90% powered," ask <strong>what the variance and effect assumptions were estimated from, and how many patients</strong>. If the answer is a phase 1b with 15 people, the 90% is decorative.</p>
-
-<h3 id="s2b-funding-bias">Follow the funding line</h3>
-<p>Industry-funded trials are systematically more positive — and the gap is too big to be innocent:</p>
-<ul>
-<li>500+ trials across 5 drug classes: <strong>85% of industry-funded positive vs 50% of government-funded.</strong></li>
-<li>192 statin trials: industry-funded <strong>20× more likely</strong> to favor the test drug after controlling for confounders.</li>
-<li>542 psychiatric-drug outcomes: <strong>78% industry-favorable vs 48% independent</strong> — and when two drugs were compared, the <em>sponsor's</em> drug won 72% of the time.</li>
-<li>45 out of 45 industry RCT abstracts at one rheumatology conference favored the sponsor's drug.</li>
-</ul>
-<p>The mechanisms are the ones you've already learned: weak comparators, selected patients, early stopping, non-publication. The point isn't "industry = lies" — it's that <strong>the funding line tells you which direction the deck is stacked</strong>, so you know which checks to run hardest. An industry-funded trial with a placebo comparator, a surrogate endpoint, and no published protocol deserves the full gauntlet from this section. An NIH-funded trial with an active comparator and pre-registered outcomes starts from a better place.</p>
-
-<h3 id="s2b-ghostwriting">Who actually wrote this paper?</h3>
-<p>Ghost authorship is common: a 2011 survey of 896 corresponding authors found <strong>8% of top-journal articles</strong> involved it (likely an underestimate given 30% non-response), while a Danish ethics-committee study of industry trials put the figure at <strong>75%</strong>. Company statisticians, designers, and writers vanish from the author list. One Lancet editor called it "standard operating procedure."</p>
-<p>The tells, from leaked cases:</p>
-<ul>
-<li><strong>Publication-planning choreography.</strong> Before launch: prevalence papers ("the disease is common"), then "current treatments are dangerous" reviews, then the trial papers — a coordinated narrative arc, not independent science.</li>
-<li><strong>The Keller letter.</strong> In the paroxetine litigation, a manuscript arrived at an academic's desk with a cover note: <em>"Please retype on your letterhead and revise as you like."</em> The "author" hadn't written a word.</li>
-<li><strong>KOL selection memos.</strong> Leaked Lilly documents on Zyprexa laid out briefing aims — "prepare the market," "create a need" — with guidance on selecting and paying key opinion leaders to front the papers.</li>
-<li><strong>The authorship criteria are gameable.</strong> A ghostwriter can do 90% of the design, analysis, and drafting yet miss the all-three-criteria bar for authorship. No academic has ever been disciplined for guest authorship.</li>
-</ul>
-<p>The extreme endpoint: <strong>Elsevier was caught running six industry-sponsored journals made to look like real ones</strong> (the <em>Australasian Journal of Bone &amp; Joint Medicine</em> and friends) — marketing literature with peer-review branding. When a paper's conclusions feel like an ad, check the acknowledgments for "editorial assistance" from a named medical-communications firm, and check whether the first author's publication record in this drug area started suspiciously recently.</p>
-
-<h3 id="s2b-tamiflu">Case study: the Tamiflu saga</h3>
-<p>Everything in this section, in one story. The UK stockpiled Tamiflu for <strong>80% of the population</strong> — hundreds of millions of pounds — on Roche's claim of a <strong>67% reduction</strong> in complications. The Cochrane reviewers' 2008 analysis trusted a published meta-analysis pooling data from 10 trials. <strong>Only 2 of those 10 trials were themselves published.</strong></p>
-<p>What followed was a three-year battle for the data: Roche demanded a <strong>secret confidentiality agreement</strong> (forbidding researchers from even acknowledging its existence), then claimed another group already had the data, then handed over 7 short excerpts. Meanwhile the regulators disagreed with each other about the same drug: the <strong>FDA said no complication benefit; the CDC said benefit; the EMA said benefit; Japan made no claim</strong>. Same molecule, four verdicts — cross-regulator disagreement is itself a signal that the evidence is thin.</p>
-<p>When the clinical study reports finally emerged, they showed:</p>
-<ul>
-<li><strong>An enriched population:</strong> two-thirds of trial participants were flu-positive, vs ~one-third in peak flu season and ~one-eighth in normal practice. The benefits were measured in a population that barely exists in the real world.</li>
-<li><strong>A non-inert placebo:</strong> it contained dehydrocholic acid (a gallbladder stimulant) and was a <strong>different color</strong> from the drug — undermining both the blind and the safety comparison.</li>
-<li><strong>Hidden harms:</strong> the published paper said "no drug-related serious adverse events." The study report listed <strong>10 serious adverse events, 3 possibly drug-related.</strong></li>
-<li><strong>The largest phase 3 trial was never published at all.</strong></li>
-</ul>
-<div class="callout"><strong>The investor's lesson:</strong> <em>A multi-billion-dollar public-health decision rested on 2 published trials out of 10 — and the unpublished 8 contained the enrichment, the safety signals, and the non-inert placebo. Whenever you see a "settled" evidence base for a drug, ask the Tamiflu question: settled on how many of the trials?</em></div>
-
-<h3 id="s2b-missing-data">Missing data: the methods that make or break a trial</h3>
-<p>Patients drop out of trials. What the analysts do about it can matter more than the drug:</p>
-<ul>
-<li><strong>LOCF (last observation carried forward)</strong> — the dropout's last measurement is frozen and carried to the end. It has been "widely used in clinical trials for years" even though <strong>its validity has been challenged by researchers and the FDA</strong>, which prefers BOCF (baseline carried forward: dropouts count as no benefit). In Pfizer's pregabalin pain trials, LOCF <strong>overestimated the pain benefit by ~25%</strong> — and all four published papers used LOCF without acknowledging the issue.</li>
-<li><strong>The philosophical split:</strong> "When the data are missing, the data are missing — how can we make up data for the missing data?" versus the statistician's "we estimate under assumptions." Both sides have a point; the investor's job is to know <em>which</em> assumptions a given trial made.</li>
-<li><strong>Dropout asymmetry is the tell.</strong> If 25% dropped out of the drug arm vs 10% on placebo, the "efficacy" may be a dropout artifact — the sickest drug-arm patients vanished, flattering the average of those who remained.</li>
-<li><strong>The tipping-point question.</strong> The best sensitivity analysis asks: <em>how bad would the missing data have to be to overturn the conclusion?</em> If the answer is "barely bad at all," the result is fragile. If a paper has no tipping-point or sensitivity analysis on missing data, treat the headline effect as the optimistic case.</li>
-</ul>
-<div class="warn">If the primary analysis uses LOCF in a high-dropout trial, be skeptical — and if the paper doesn't report dropout rates <em>by arm</em>, assume the asymmetry is unfavorable.</div>
-
-<h3 id="s2b-dmc">Who picked the referee?</h3>
-<p>Data Monitoring Committees — the "independent" bodies that peek at interim data and can stop a trial — are <strong>appointed by the sponsor</strong>. Some sponsors direct or influence the DMC's function, and sometimes they succeed. An "independent" committee hired by the sponsor deserves the same skepticism as any other hired gun. Two questions: does the sponsor see interim <em>efficacy</em> data (not just safety)? And who exactly sat on the committee?</p>
-
-<h3 id="s2b-enrichment">Enrichment cuts both ways</h3>
-<p>Enrichment — selecting patients more likely to respond — is a legitimate design tool and a distortion vector, depending on direction:</p>
-<ul>
-<li><strong>Enriched "win" → discount for the real world.</strong> If the trial selected biomarker-positive, less-sick, fewer-comorbidity patients, the headline effect size doesn't generalize to all-comers. The Tamiflu enrichment (two-thirds flu-positive vs one-eighth in practice) is the template.</li>
-<li><strong>Unenriched "failure" → check the subgroup.</strong> A targeted drug tested in an unselected population can fail overall while working in the biomarker-positive slice — the treatment is effective for patients with positive disease targets, but the combined effect size buries it. (Herceptin/HER2 is the canonical example.) A "failed" trial of a targeted drug deserves a second look at the biomarker story before you write it off.</li>
-</ul>
-
-<h3 id="s2b-three-plus-three">The 3+3 problem</h3>
-<p>The classic phase 1 dose-escalation design (3 patients, then 3 more) is simple — and <strong>inefficient, systematically underestimating the maximum tolerated dose</strong>, especially when the starting dose was very low. Modern model-based designs (CRM) put more patients near the true MTD and estimate it more precisely with fewer patients.</p>
-<p>The investor read: if the phase 1 used 3+3 from a very low starting dose, the recommended phase 2 dose may sit <em>below</em> the true MTD — and a soft phase 2 readout may understate what the drug can do at the right dose. Conversely, a CRM-designed phase 1 gives more confidence the dose is right, so a phase 2 miss is more informative.</p>
-
-<h3 id="s2b-seeding">Seeding trials: marketing wearing a lab coat</h3>
-<p>Some "trials" are sales operations with protocols. The pattern:</p>
-<ul>
-<li><strong>ADVANTAGE</strong> (Vioxx): <strong>600 doctors, a handful of patients each</strong>. An internal memo said it was "executed in the spirit of the Merck marketing principles" — rationale: target family doctors, demonstrate the drug's value, <strong>track prescriptions afterward</strong>. The data was handled by the marketing division. The lead author later told the New York Times he had <strong>no role in collecting or analyzing</strong> the data.</li>
-<li><strong>STEPS</strong> (Neurontin): <strong>~4 patients per doctor</strong>; doctors supervised by <strong>sales reps</strong> who filled out forms and handed out promotional gifts during data collection. 73 serious adverse events, 997 patients with side effects, 11 deaths among 2,759 patients.</li>
-</ul>
-<p><strong>The detection heuristic:</strong> many sites × tiny patients-per-site, on a recently marketed drug, with vague or soft endpoints. If the "trial" looks designed to put the drug in front of prescribers rather than answer a question, it was.</p>
-
-<h3 id="s2b-fraud-forensics">Forensic statistics: know these exist</h3>
-<p>Outright fraud is rare; the tools for catching it are worth knowing because they teach you what "too clean" looks like:</p>
-<ul>
-<li><strong>Carlisle's randomization check.</strong> In a properly randomized trial, baseline characteristics should differ between arms by <em>chance</em> — a little messiness is expected. Data that's <em>too perfectly balanced</em> is suspicious: fraudsters can't imitate nature's disorder. Applied to 5,087 trials, ~5% had suspicious randomization. The extreme case: anesthesiologist Yoshitaka Fujii's invented trial data had odds of <strong>less than 1 in 10³³</strong> of being real.</li>
-<li><strong>The GRIM test.</strong> A reported mean must be arithmetically possible given the sample size and scale. In 71 psychology papers, <strong>half</strong> contained at least one impossible mean. (A mean of 3.08 from 20 people on a 0–10 whole-number scale is impossible — the increments only allow steps of 0.05.)</li>
-<li><strong>Statcheck.</strong> Recomputes p-values from the reported test statistics and degrees of freedom. Across 30,000+ papers, <strong>~50% had at least one numerical inconsistency</strong> and 13% had mistakes serious enough to flip conclusions — and the errors skewed <em>in the authors' favor</em>.</li>
-<li><strong>Zombie citations.</strong> 83% of post-retraction citations are positive and don't mention the retraction. A paper that's been retracted keeps getting cited as evidence for years.</li>
-</ul>
-<p>You will probably never run these yourself. But knowing they exist changes how you read: when a small company's pivotal data looks <em>implausibly clean</em> — every endpoint hit, no messy subgroups, baseline tables balanced to the decimal — remember that real trial data is lumpy, and perfect balance is a signal, not a virtue.</p>
-
-<h3 id="s2b-adaptive-alpha">Adaptive designs and the alpha bill</h3>
-<p>Seamless phase 2/3 and adaptive designs trade statistical rigor for speed — and the bill is real. The arithmetic: two separate trials hold the false-positive rate at roughly α₂ × α₃; a seamless design's actual false-positive rate is just α₃ alone — <strong>1/α₂ times larger</strong>. Same for power. That's the price of skipping the white space between phases, and it's only paid if the trial's combination method properly accounts for the adaptation.</p>
-<p>The investor questions: was the adaptation <strong>pre-specified</strong> with a proper Type I error adjustment (not invented after peeking)? And who saw the unblinded interim data — because operational bias (subtle changes in trial conduct after an interim look) doesn't show up in any p-value. An unblinded interim look without a pre-specified adjustment is a red flag; a pre-specified adaptive design with proper error control is just efficient drug development. Learn to tell them apart.</p>
-
-  <ul class="checklist">
-    <li><input type="checkbox"><span>I treat every published finding as a claim, not a fact — and I know the replication numbers (11% Amgen, 39%, 61%-null-in-Registered-Reports)</span></li>
-    <li><input type="checkbox"><span>I run the registry check (registered vs reported primary outcome) before trusting any readout</span></li>
-    <li><input type="checkbox"><span>I can spot p-hacking's two flavors and the p-clustering-under-0.05 fingerprint</span></li>
-    <li><input type="checkbox"><span>I run the design red-flag checks (comparator, population, timing, dropouts, composite, subgroups) on every pivotal trial</span></li>
-    <li><input type="checkbox"><span>I count protocol amendments and ask which direction the population moved</span></li>
-    <li><input type="checkbox"><span>I check the dropout method (LOCF vs BOCF/MMRM) and dropout asymmetry by arm</span></li>
-    <li><input type="checkbox"><span>I know the Tamiflu lesson: a "settled" evidence base can rest on 2 of 10 trials</span></li>
-    <li><input type="checkbox"><span>I can name the seeding-trial pattern (many sites × few patients) and the ghostwriting tells</span></li>
-</ul>
-  <div class="stage-status"></div>
-<h3>Do this now</h3>
-<ul class="checklist">
-  <li><input type="checkbox"><span>Pick a recent biotech readout: pull its ClinicalTrials.gov entry and compare the registered primary outcome against the reported one</span></li>
-  <li><input type="checkbox"><span>Find the dropout rate by arm in the latest 10-K trial description or paper — then check which imputation method the primary analysis used</span></li>
-</ul>
-<div class="quiz" data-quiz="s2b">
-  <h3>Stage 2B quiz</h3>
-  <p class="quiz-sub">Tap an answer — you get the explanation immediately. Get all 3 right to check off the quiz below.</p>
-  <div class="quiz-q" data-why="Turner 2008 compared the FDA&#x27;s files (38 positive, 36 negative) against the journals (48 &#x27;positive,&#x27; 3 negative) — 11 negative trials were rewritten as positive and 22 vanished.">
-    <p class="quiz-qtext"><strong>1.</strong> In Turner et al. 2008, 74 antidepressant trials were an even 38-positive / 36-negative split in the FDA&#x27;s files. What did the published literature show?</p>
-    <div class="quiz-opts">
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>Roughly the same even split</span></button>
-      <button type="button" class="quiz-opt" data-ok="1"><span class="quiz-letter">B</span><span>48 &#x27;positive&#x27; vs 3 negative — 11 negatives rewritten, 22 vanished</span></button>
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">C</span><span>74 positive — every trial published as a win</span></button>
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">D</span><span>36 negative vs 38 positive — journals favored negative results</span></button>
-    </div>
-    <p class="quiz-fb" hidden></p>
-  </div>
-  <div class="quiz-q" data-why="COMPare found only 9 of 67 trials fully reported their registered outcomes — 354 outcomes disappeared and 357 appeared. Always compare the registry entry against the paper.">
-    <p class="quiz-qtext"><strong>2.</strong> The COMPare project audited 67 trials in top journals against their registrations. How many reported everything as registered?</p>
-    <div class="quiz-opts">
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>61 — outcome switching is rare</span></button>
-      <button type="button" class="quiz-opt" data-ok="1"><span class="quiz-letter">B</span><span>9 — with 354 outcomes disappearing and 357 appearing</span></button>
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">C</span><span>33 — about half</span></button>
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">D</span><span>All 67 — registration solved the problem</span></button>
-    </div>
-    <p class="quiz-fb" hidden></p>
-  </div>
-  <div class="quiz-q" data-why="A 2010 review found truncated trials overstate benefit by ~25% on average — and 86% of cancer trials stopped early for benefit were used to support marketing approval.">
-    <p class="quiz-qtext"><strong>3.</strong> Trials stopped early for benefit overstate the true effect by roughly how much, on average?</p>
-    <div class="quiz-opts">
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">A</span><span>About 5% — early stopping barely matters</span></button>
-      <button type="button" class="quiz-opt" data-ok="1"><span class="quiz-letter">B</span><span>About 25%</span></button>
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">C</span><span>About 50%</span></button>
-      <button type="button" class="quiz-opt" data-ok="0"><span class="quiz-letter">D</span><span>They understate it — early data is conservative</span></button>
-    </div>
-    <p class="quiz-fb" hidden></p>
-  </div>
-</div>
-
-<ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s2b-done" tabindex="-1" aria-hidden="true"><span>Stage 2B quiz: all 3 answered correctly</span></li>
-</ul>
-</section>
 
 <!-- ============ STAGE 3 ============ -->
 <section class="stage" id="s3" data-stage="3">
@@ -1699,6 +1788,7 @@
 <li><a href="#gap-management">Management and insider signals</a></li>
 <li><a href="#s3-burn-rate-and-runway">Burn rate and runway</a></li>
 <li><a href="#s3-where-to-find-the-numbers">Where to find the numbers</a></li>
+<li><a href="#s3-payer-diligence">Payer diligence: who actually pays for this drug</a></li>
 </ul></details>
 
 
@@ -1749,6 +1839,7 @@
   <ul>
     <li>Map runway against the catalyst calendar: does cash cover the trial readout? A company with 9 months of cash and a 12-month readout <em>will</em> raise before data — price that in.</li>
     <li>Trials are the big expense. A Phase 3 can cost $40M+; check whether the guided trial fits the guided cash.</li>
+    <li>The 1–2 year rule <sup class="cite"><a href="#ref-7">[7]</a></sup>: a company should have 1–2 years of cash in the bank heading into any clinical readout. Without that buffer, they have to raise — and the raise overhang kills the pop.</li>
     <li>Declining stock price raises the cost of capital — raises get more dilutive exactly when the company is weakest.</li>
   </ul>
 
@@ -1767,6 +1858,14 @@
     <li><strong>8-K</strong> — material events, including financing announcements.</li>
     <li><strong>Prospectus / 424B</strong> filings — the fine print on offerings: how many shares, at what price, what warrants came along.</li>
     <li>Company presentations usually show "cash runway into [date]" — verify against the 10-Q; guidance is sometimes optimistic.</li>
+  </ul>
+
+  <h3 id="s3-payer-diligence">Payer diligence: who actually pays for this drug</h3>
+  <p>Approval without access is a story stock, not a business. Run the payer check before you model revenue (see also <a href="#gap-payer">Payer reality</a> in Stage 4):</p>
+  <ul>
+    <li><strong>The insurance-PDF trick</strong> <sup class="cite"><a href="#ref-7">[7]</a></sup>: search <em>"Drug Name Insurance Coverage filetype:pdf"</em> — payer coverage guidelines are public documents, and they show exactly what an insurer will and won't pay for.</li>
+    <li><strong>CMS formulary data and Medicaid pricing</strong> — tiered Part D coverage, prior-auth rules, cost comparisons. This is where "great drug nobody can get" shows up.</li>
+    <li><strong>Prescriber dynamics</strong> — prescribers don't pay, but they do decide. Doctors follow guidelines and have to be <em>forced</em> off standard of care; a drug that demands behavior change without a forcing mechanism is a slow ramp.</li>
   </ul>
 
   <ul class="checklist">
@@ -1913,6 +2012,9 @@
       <li><strong>Sponsor risk:</strong> has this team run pivotal trials before? Is the company funded through readout?</li>
     </ul>
   </details>
+<p><strong>Three risks, not one.</strong> A trial can succeed clinically and still be worth nothing — the FDA can say no, or payers can refuse to cover it. Frank David<sup class="cite"><a href="#ref-3">[3]</a></sup> puts these risks <em>outside</em> the clinical PoS framework: model <strong>clinical risk</strong> (does the trial succeed?), <strong>regulatory risk</strong> (does it get approved?), and <strong>market-access risk</strong> (does it get paid for?) as three separate things, not one blended PoS. A great readout on the wrong endpoint — or a clean win nobody reimburses — both fail, but for completely different reasons. One blended number hides which one is going to kill you.</p>
+<p><strong>Data can't fix broken science.</strong> The common refrain that "data trumps everything" isn't entirely true, David argues in the same essay. An untested anti-PD-1 antibody in non-small-cell lung cancer has high <em>data-driven</em> risk (no data yet) but low <em>scientific</em> risk — the biology is known to work there. A Phase 3 anti-amyloid antibody in Alzheimer's can carry persistently high scientific risk <em>despite</em> promising Phase 2 surrogate data, because the disease biology is poorly understood and the mechanism hasn't proven itself in the clinic. When the underlying science is uncertain, more data doesn't de-risk the trial. The same logic applies to base rates: never assume class-average PoS — a Phase 3 in ischemic stroke, one in Alzheimer's, and one in Dravet syndrome are nothing like the same bet just because all three are neurology. And the point of the whole bucket framework is concrete: the buckets exist to become numerical rNPV inputs — turning qualitative judgment into defensible model numbers.</p>
+<div class="callout"><strong>Base-rate heuristics — sanity checks for your model</strong> (Adu Subramanian<sup class="cite"><a href="#ref-10">[10]</a></sup>): before trusting your DCF, cross-check it against quick market base rates — <strong>3.5× price-to-peak sales; peak sales ~7 years after launch; ~10% discount rate (WACC); ~35% free-cash-flow margin; a Phase 3 program worth roughly 1.5× its peak sales.</strong> If your numbers are far from these, know why. These are market priors, not physics — but a model implying very different economics is making a claim it needs to defend.</div>
 <h3 id="bogdan-s3">3. The probability chain — why ~30% is the number that should be in your head</h3>
 <p>A Phase 2 asset's cash flows don't occur with "the success rate." They occur with the <em>product</em> of every rate still in front of them — and a program already in Phase 2 has survived Phase 1, so the 63% Phase-1 rate no longer applies. Using the book's benchmark rates (Ph2 42% → Ph3 75% → approval 95%):</p>
 <ul>
@@ -2220,19 +2322,23 @@
 
   <h3 id="s5-the-catalyst-map">The catalyst map</h3>
   <p>Every tradeable event falls into a few types. Learn to sort them by <strong>date quality</strong>:</p>
+  <p>Sharper definition, from Adu Subramanian<sup class="cite"><a href="#ref-7">[7]</a></sup>: a <strong>catalyst</strong> is a piece of news that changes the market's perception of a program's value — an event that answers an open question. If the news doesn't answer a question the market is actually asking, it's noise, not a catalyst.</p>
   <ul>
     <li><strong>Hard dates</strong> — PDUFA dates, AdCom meetings, conference presentations. On the calendar, tradeable.</li>
     <li><strong>Guidance windows</strong> — "topline H1 2027," "BLA submission Q4." Company-guided, no day. The window is real; the exact date isn't.</li>
     <li><strong>Inferred dates</strong> — derived from enrollment completion + trial duration, historical patterns. Honest estimates, flagged as such.</li>
   </ul>
   <p>Price the timing, not just the outcome: a readout guided for "Q4" that slips to January can kill an options position even if the data is eventually good. The date is part of the trade.</p>
+  <p>Read the <em>direction</em> of timing news, too. Subramanian's rule, from the same article: moving a readout <em>earlier</em> is a good sign — "companies don't hide bad data." Delays, slipped guidance, and vagueness about timing are the opposite tell. The date is part of the trade, and so is which way the date moves.</p>
 
   <h3 id="s5-anatomy-of-a-binary-trade">Anatomy of a binary trade</h3>
   <ul>
     <li><strong>The run-up:</strong> stocks often drift up into a catalyst as anticipation builds. Chasing the run-up is paying for optimism — know what the market already expects (the "priced-in" bar).</li>
     <li><strong>The event:</strong> data hits. The move depends on results <em>versus expectations</em>, not versus zero. Great data can sell off if perfection was priced in ("sell the news"). The six usual reasons good news sells off: the result was already priced in; the standard of care moved too; a competitor looks better; consensus expected even more; the data doesn't de-risk what matters next; the company needs cash and will raise into strength.</li>
+    <li><strong>The flip side:</strong> expectations cut both ways — just as great data can sell off, bad data can trade <em>up</em> if the bar was even lower. "Failed at a slower rate than expected" can be a win (Adu Subramanian<sup class="cite"><a href="#ref-10">[10]</a></sup>). The market trades data against the priced-in bar, never against zero.</li>
     <li><strong>IV crush:</strong> options are priced for the expected move. After the event, <span class="term" data-def="Implied Volatility: the market's forecast of how much a stock will move, baked into option prices.">implied volatility</span> collapses — so even if you pick the direction right, overpaying for the option can still lose money. Never buy event options without understanding what move is priced in.</li>
   </ul>
+  <p><strong>Data arrives in stages — and every stage is tradeable.</strong> Subramanian's acoramidis (BridgeBio, ATTR-CM) example, from the same article: Dec 2021 interim → Jun 2023 topline → Aug 2023 conference data → Jan 2024 peer-reviewed publication → Nov 2024 long-term extension data — the stock repriced at <em>each</em> step, not just the first. Don't treat the topline press release as the only event; the full dataset, the publication, and the extension each answered open questions and moved the price.</p>
 
   <h3 id="s5-expected-move">What the options are actually pricing in</h3>
   <p>The market tells you exactly what move it expects. The formula:</p>
@@ -2309,6 +2415,7 @@
 <li><strong>CVRs (contingent value rights)</strong> bridge valuation gaps: part of the deal price is paid only if a milestone hits (approval, sales threshold). A <span class="term" data-def="Contingent value right: deal consideration paid only if a milestone hits.">CVR</span>-heavy deal tells you the buyer and seller disagreed about the binary — price the CVR with your own PoS, not the headline deal value.</li>
 <li><strong>Deal structure matters:</strong> all-cash is clean; stock deals expose you to the acquirer's price; tender offers close faster than mergers.</li>
 <li><strong>What kills deals:</strong> emerging safety signals, financing desperation (buyers wait for the raise), and IP weakness discovered in diligence.</li>
+<li><strong>Partnerships are near-term stock killers, not free upside.</strong> A partnership signals <em>less</em> chance of an acquisition — the partner already has the access it wanted — and investors assign essentially zero value to the partnership itself (Adu Subramanian<sup class="cite"><a href="#ref-10">[10]</a></sup>). Don't buy the pop on a partnership announcement.</li>
 </ul>
 <div class="callout"><strong>The investor's question:</strong> <em>Is this company a plausible takeout target — scarce asset, clean IP, big-pharma-shaped hole in the pipeline — or is "takeout candidate" just message-board hope?</em></div>
 
@@ -2418,6 +2525,8 @@
 <details class="toc"><summary>In this stage</summary><ul>
 <li><a href="#s6-the-evidence-order">The evidence order</a></li>
 <li><a href="#s6-the-toolkit-tiered">The toolkit, tiered</a></li>
+<li><a href="#s6-kol-calls">Primary research: KOL calls</a></li>
+<li><a href="#s6-ai-research">AI-assisted research</a></li>
 <li><a href="#greenhalgh-s1">1. The three preliminary questions (the 60-second trash test)</a></li>
 <li><a href="#greenhalgh-s2">2. The sponsor-manipulation screen (Box 6.1)</a></li>
 <li><a href="#greenhalgh-s3">3. The negative-but-non-definitive rule (reading failed trials honestly)</a></li>
@@ -2441,6 +2550,16 @@
     <li><strong>Trade press</strong> — STAT, Endpoints, BioSpace, Fierce. Good for speed; verify against the above.</li>
   </ol>
   <div class="callout">The discipline: separate every claim into <strong>FACT</strong> (sourced, verified), <strong>INTERPRETATION</strong> (your read of the facts), <strong>GAP</strong> (what you don't know but need), and <strong>UNVERIFIED</strong> (single weak source, not yet corroborated). Never let an interpretation wear a fact's clothes — that's how bad theses survive contact with reality.</div>
+  <h3 id="s6-start-from-the-questions">Start from the questions, not the data</h3>
+  <p>Most beginners drown in information because they research everything. Don't. Before you open a single filing, write down the three questions that actually drive value <sup class="cite"><a href="#ref-7">[7]</a></sup>:</p>
+  <ol>
+    <li><strong>What do others believe?</strong> (the consensus — what the price assumes)</li>
+    <li><strong>What do you believe differently?</strong> (your edge — and it must be specific)</li>
+    <li><strong>When will views shift?</strong> (the catalyst that forces the repricing)</li>
+  </ol>
+  <p>If you can't state your differentiated view in two sentences, you don't have one yet — keep digging. "Borrowed conviction is like borrowed money: it costs more than you think."</p>
+  <p><strong>Look at the data, not the interpretation.</strong> Read the actual numbers in the table, not the company's adjectives about them. Index to the <em>trials</em>, not the drugs — the same molecule can look brilliant in one trial design and fail in another, and the design is where the truth lives.</p>
+  <p><strong>Know the data-release sequence.</strong> Results arrive in stages: press release first (spin-heavy, numbers-light), then conference presentation (the slides — this is where the real data usually appears), then the peer-reviewed paper (months later, most complete). Each step can move the stock; the biggest repricing often happens at the conference slides, not the PR.</p>
   <h3 id="s6-the-toolkit-tiered">The toolkit, tiered</h3>
   <p>The full research arsenal is enormous. Start with tier 1; add tier 2 as you need it.</p>
   <h4>Tier 1 — start here</h4>
@@ -2454,16 +2573,65 @@
   </ul>
   <details><summary>Tier 2 — the deeper arsenal</summary>
     <ul>
-      <li><strong>Registries:</strong> EU CTR, WHO ICTRP, ISRCTN (catches ex-US trials).</li>
+      <li><strong>Literature:</strong> PubMed, Google Scholar, <strong>Europe PMC</strong> (fuller free full-text + grant data), <strong>Semantic Scholar</strong> (AI citation mapping). <strong>Unpaywall</strong> finds free legal PDFs of paywalled papers.</li>
+      <li><strong>Journals:</strong> NEJM, The Lancet, JAMA (trial results); Nature, Science, Cell (breakthrough science); JCI (translational). Read the paper, not the press release about the paper.</li>
       <li><strong>Preprints:</strong> bioRxiv (biology) and medRxiv (clinical) — data months before peer review; treat as unverified until published.</li>
-      <li><strong>Biology tools:</strong> UniProt, Ensembl, Open Targets, AlphaFold/RCSB structures, PubChem.</li>
-      <li><strong>Disease/epi:</strong> OMIM, GeneCards, NORD, CDC WONDER for market sizing.</li>
-      <li><strong>Pipeline tracking:</strong> BioPharmCatalyst (PDUFA/readout calendar), BPIQ screening.</li>
-      <li><strong>Workflow:</strong> Zotero (reference manager), ConnectedPapers / ResearchRabbit (citation mapping), PubPeer (post-publication scrutiny).</li>
+      <li><strong>Registries:</strong> EU CTR, WHO ICTRP, ISRCTN (catches ex-US trials).</li>
+      <li><strong>Regulatory depth:</strong> <strong>open.fda.gov</strong> (API for adverse events, labels, recalls), FAERS Dashboard (no coding needed), AdCom briefing documents.</li>
+      <li><strong>Patents &amp; IP:</strong> <strong>Google Patents</strong> — 120M+ patents, free. Check expiry dates and claim scope before believing any moat story.</li>
+      <li><strong>Biology tools:</strong> UniProt, Ensembl, <strong>NCBI Gene</strong>, <strong>genome.ucsc.edu</strong> (visualization), Open Targets (target-disease scoring), AlphaFold/RCSB (3D structures), PubChem (chemistry), <strong>STRING-db</strong> (protein interactions), <strong>Reactome/KEGG</strong> (pathways).</li>
+      <li><strong>Disease/epi:</strong> OMIM (gene-to-disease), <strong>ClinVar</strong> (variant significance), GeneCards, NORD, <strong>reporter.nih.gov</strong> (every NIH grant — maps KOLs), CDC WONDER for market sizing.</li>
+      <li><strong>Pipeline &amp; catalysts:</strong> BioPharmCatalyst (PDUFA/readout calendar), BPIQ screening, <strong>ICER reports</strong> (cost-effectiveness — affects coverage and peak sales).</li>
+      <li><strong>News:</strong> STAT, Endpoints, BioSpace, <strong>Fierce Biotech</strong>, <strong>Pink Sheet</strong> (institutional FDA intelligence — CRLs, label negotiations).</li>
+      <li><strong>Workflow:</strong> Zotero (reference manager), ConnectedPapers / ResearchRabbit (citation mapping), PubPeer (post-publication scrutiny), <strong>ResearchGate</strong> (request full texts from authors).</li>
       <li><strong>Level up:</strong> <a href="https://adus.substack.com/p/biotech-analysis-from-0-to-1">Biotech analysis from 0 to 1</a> — a full research workflow (start from the value-driving questions); <a href="https://adus.substack.com/p/expert-kol-calls-a-guide-for-biotech">KOL calls done right</a> — ask <em>why</em>, never accept the conclusion; <a href="https://adus.substack.com/p/10-ways-to-use-ai-to-accelerate-your">AI for analysts</a> — NotebookLM on FDA docs is the highest-ROI workflow, but verify everything (~90% accuracy).</li>
       <li><strong>Bookshelf:</strong> the two Pharmagellan guides, <em>Intuitive Biostatistics</em>, <em>Basic PK/PD</em>, <em>Fundamentals of Clinical Trials</em>, then Rick Ng's <em>Drugs: From Discovery to Approval</em>, the skepticism shelf and the tomes (see Stage 0).</li>
     </ul>
   </details>
+<h3 id="s6-kol-calls">Primary research: KOL calls</h3>
+<p>Built from Adu Subramanian's "Expert (KOL) Calls" guide<sup class="cite"><a href="#ref-8">[8]</a></sup>. You won't do this on day one — a call costs real money. But understand how it works anyway: this is what institutional diligence looks like, what your process graduates to, and what you're trading against every time you touch a biotech name.</p>
+<p>The machinery: investors pay expert networks to find and schedule doctors. A typical call runs 30&ndash;60 minutes and costs around $1,000. <strong>GLG</strong> and <strong>Guidepoint</strong> run private one-to-one calls; <strong>Tegus</strong> and <strong>Slingshot Insights</strong> keep libraries of past-call transcripts you can read instead — the cheaper way in while you're learning.</p>
+<p>What a call actually buys you is <em>tacit knowledge</em> — the kind that never makes it into documents: how doctors really decide, what the guidelines leave out, how a treatment actually gets used. Adu's rule: before every call, ask "why am I spending $1,000 to talk to this person?" If the answer is "to learn the basics," don't make the call — do your homework first (even ChatGPT for the dumb questions). The call is only worth it for knowledge you can't get from documents.</p>
+<p>Screen ruthlessly: match the expert to your exact question.</p>
+<ul>
+  <li><strong>Disease basics</strong> (new field) — almost any practicing doctor will do.</li>
+  <li><strong>Launch evaluation</strong> (how a newly approved drug will actually sell) — community <em>and</em> academic doctors; sometimes experienced salespeople. This is where doctors reveal hidden utilization incentives — e.g., MDS patients come in for transfusions every two weeks while luspatercept is dosed every three, a real-world adoption friction no document would flag.</li>
+  <li><strong>Trial evaluation</strong> (interpreting a readout) — academic experts affiliated with the trial or the field.</li>
+  <li><strong>Predicting success</strong> (will the next trial hit?) — researchers with deep experience in the disease. The hardest ask, and the one doctors are worst at — see below.</li>
+</ul>
+<p><strong>Rare-disease KOLs are gold.</strong> The published literature is thin, so primary sources carry the whole unmet-need story. On Prader Willi syndrome: patients don't just "eat too much" — they "will literally jump off buildings chasing food." You'll never get that from a review article.</p>
+<p>During the call, one rule overrides everything: <strong>ask <em>why</em>, and never accept the conclusion.</strong> "I would use the drug in 50% of my patients" &rarr; why? "The trial was successful" &rarr; why? Their verdict is worthless to you; their reasoning is the asset, because reasoning transfers to the next situation and a bare conclusion doesn't. Work the funnel: start open ("what were your initial impressions of the trial?"), get specific ("why are you focused on that endpoint?"), then focused ("the company said they couldn't use that endpoint in the other trial — is that true?"). Challenge respectfully with data — doctors sometimes change their minds mid-call when shown something new. And expect value to be concentrated: a good 30-minute call yields one or two real insights, not twenty-five minutes of hits.</p>
+<p>Now the grain of salt. Doctors are not the oracles the price tags suggest:</p>
+<ul>
+  <li><strong>They can't predict trial success, and won't admit it.</strong> Falsely elevated confidence is the norm — Adu's line is that he wouldn't trust 90% of doctors to predict future trial success. Most read results on their lunch break and issue sweeping verdicts without ever reading the appendix or the competitor data.</li>
+  <li><strong>Science is gray.</strong> In ATTR cardiomyopathy, doctors' stated intended usage of each marketed drug ranges from 0% to 100% — and the numbers don't always sum to 100. Never treat one doctor's read as consensus.</li>
+  <li><strong>Some have scripts — and some fabricate.</strong> Learn to recognize the generic KOL call: warmup name-dropping, guideline recital, "cautiously optimistic," predicts success with no defined bar. It teaches you nothing while making you feel good that an MD confirms your priors. Cost: $1,000. And verify credentials — one famous five-star GLG "expert" that funds paid millions over turned out, per Walmart's letter to GLG, to not work at Walmart at all.</li>
+</ul>
+<p><strong>Compliance is real, not theater.</strong> The Black Edge case — an Alzheimer's researcher fed SAC Capital trial intel before a readout (the inspiration for <em>Billions</em>) — is why expert networks exist partly as compliance infrastructure. The line between material non-public information and non-obvious insight is thin. Never ask for non-public trial results, and treat anything that sounds like a leak as radioactive.</p>
+<p>Three caveats on the cheaper sources:</p>
+<ul>
+  <li><strong>Company-sponsored KOL events</strong> are management presentations with stethoscopes — the doctors are paid (or biased even when unpaid). Useful for understanding the positive case, and as a starting point. Nothing more.</li>
+  <li><strong>Sell-side KOL calls</strong> are commoditized — everyone sees them, and reading someone else's interpretation is not the same as doing the call.</li>
+  <li><strong>Surveys</strong> are noisy — doctors pay even less attention to surveys than to calls. Fine for broad trends, useless for model inputs.</li>
+</ul>
+<div class="callout"><strong>The beginner's position:</strong> start with the transcript libraries (Tegus, Slingshot) — far cheaper than live calls — and read calls on companies you follow. This is how the other side does diligence; the faster you understand their machinery, the less often you'll trade against it blind.</div>
+<h3 id="s6-ai-research">AI-assisted research</h3>
+<p>Built from Adu Subramanian's AI-for-analysts guide<sup class="cite"><a href="#ref-9">[9]</a></sup>. AI is a research tool, not a research process — the value is in how you aim it.</p>
+<p>The highest-ROI workflow: <strong>drop FDA review documents into NotebookLM and interrogate them.</strong> The FDA publishes hundreds of pages of reviews per approval — dense, jargon-heavy, and miserable to search. NotebookLM turns a 200-page review into something you can question directly ("extract all safety concerns the reviewers flagged"; "build me a timeline of the regulatory interactions"), with answers sourced to the exact line. Adu's example: on tafamidis, it surfaced the exact section where reviewers debated whether the mortality benefit belonged in the label — language that supported his thesis on acoramidis. That's hours of Ctrl+F hell collapsed into minutes.</p>
+<p><strong>Data extraction is ~90% accurate — so always verify.</strong> Upload a trial PDF, ask for the efficacy table as a CSV, paste it into your spreadsheet: it works well for tables. But graphs and units trip up LLMs, and a wrong number pasted into your model is worse than no number. Treat AI extraction as a fast first draft of your data entry, not a source.</p>
+<p>Practical workflows that earn their keep:</p>
+<ul>
+  <li><strong>Transcript comparison across quarters</strong> — feed in this quarter's and last quarter's earnings transcripts and ask what changed in management's commentary on timelines, metrics, and tone. Guidance shifts live in the diffs.</li>
+  <li><strong>10-K diffing year-over-year</strong> — compare Risk Factors and MD&amp;A across years; ask what risks were added or removed, and whether the language around key initiatives got more or less confident.</li>
+  <li><strong>Timelines of events</strong> — regulatory history, clinical holds, competitor approvals: ask for a chronology and compress years of history into one page.</li>
+</ul>
+<p>Three rules before you trust any of it:</p>
+<ul>
+  <li><strong>Prompt it to disagree with you.</strong> An LLM's default is to agree — it's a confirmation-bias machine. "I think X is true: tell me why I'm wrong" is a better prompt than "is X true?"</li>
+  <li><strong>Sometimes effort is the point.</strong> Doing it manually once in a while builds the mental models that judgment runs on. Outsource all the reading and you've outsourced the thinking.</li>
+  <li><strong>AI has never produced a novel insight.</strong> It processes collective intelligence — genuinely useful — but it can't synthesize what nobody's written down, and it can't be skeptical for you. Judgment stays human.</li>
+</ul>
+<div class="callout"><strong>The discipline:</strong> define your questions before you prompt. Finding answers is easy — "asking the right questions is the hard part." A 60-page AI report you haven't read is just an unverified document: treat AI output like company PR until you've checked it. Corroborate, don't consume.</div>
 <h3 id="greenhalgh-s1">1. The three preliminary questions (the 60-second trash test)</h3>
 <p>Before reading any paper a company cites, Greenhalgh's "science of trashing papers" starts with three questions:</p>
 <ol>
@@ -2643,6 +2811,21 @@
     <li><strong>Trade it</strong> (Stage 5): date quality, what's priced in, defined-risk structure, max-loss sizing.</li>
     <li><strong>Journal it</strong>: write the thesis down <em>before</em> the event — date, PoS, expected move both ways, exit plan. After the readout, grade yourself: was the process right even if the outcome wasn't?</li>
   </ol>
+  <h3 id="cap-model-workup">Model workup: what "complete" looks like</h3>
+  <p>Adu Subramanian's workup of Cidara's CD388 — a long-acting flu antiviral<sup class="cite"><a href="#ref-7">[7]</a></sup> — is the shape a pre-trade workup should take. Run this skeleton on any binary:</p>
+  <ol>
+    <li><strong>Catalyst ID</strong> — name the event and its date: which readout, what indication, what's actually being measured.</li>
+    <li><strong>Background</strong> — the 60-second version: what the drug is, what it targets, why anyone thinks it works.</li>
+    <li><strong>The key question</strong> — one sentence: the open question the event answers (for CD388: does it prevent flu well enough to matter?).</li>
+    <li><strong>The sub-questions</strong> — the three things you must resolve to answer it:
+      <ul>
+        <li><em>Efficacy threshold:</em> what counts as a win — and is the trial's bar the same bar the market is pricing?</li>
+        <li><em>The math:</em> does the mechanism survive arithmetic? (CD388: serum EC50 of ~10 nM vs. tissue concentration after ~30% respiratory penetration in mice.)</li>
+        <li><em>Trial context vs. competitors:</em> how do the design, endpoint definitions, and bar compare to the standard of care and prior attempts?</li>
+      </ul>
+    </li>
+    <li><strong>Conclusion with caveats</strong> — your call, with the conditions under which it's wrong stated up front. The caveats are the point: they become your post-readout grade sheet.</li>
+  </ol>
   <div class="callout">Do this three times on paper. If your process is sound and your journaling is honest, you're ready to size real positions. If you keep skipping steps, the market will charge you tuition — this primer exists so you pay it in effort instead of dollars.</div>
   <ul class="checklist">
     <li><input type="checkbox"><span>I've completed one full paper binary, journal included</span></li>
@@ -2706,6 +2889,23 @@
 <ul class="checklist quiz-check">
   <li data-quiz-lock="1"><input type="checkbox" id="quiz-cap-done" tabindex="-1" aria-hidden="true"><span>Capstone quiz: all 4 answered correctly</span></li>
 </ul>
+</section>
+<!-- ============ REFERENCES ============ -->
+<section class="stage" id="references" data-stage="ref">
+  <div class="stage-head"><span class="stage-num">REF</span><h2>References</h2></div>
+  <p class="stage-sub">Every outside insight in this primer, credited. Click a <sup class="cite"><a href="#ref-1">[1]</a></sup> number anywhere to jump here.</p>
+  <ol>
+    <li id="ref-1">Frank David, "How to learn about biotech and pharma," <em>Pharmagellan Blog</em>. <a href="https://www.pharmagellan.com/blog/how-to-learn-about-biotech-and-pharma">pharmagellan.com</a></li>
+    <li id="ref-2">Frank David, "Red flags in biotech press releases," <em>Pharmagellan Blog</em>. <a href="https://www.pharmagellan.com/blog/red-flags-biotech-pr">pharmagellan.com</a></li>
+    <li id="ref-3">Frank David, "How to think about drug development risk (clinical PoS)," <em>Pharmagellan Blog</em>. <a href="https://www.pharmagellan.com/blog/clinical-pos">pharmagellan.com</a></li>
+    <li id="ref-4">Frank David, "Introductory resources for analyzing biotech clinical trial results," <em>Pharmagellan Blog</em>. <a href="https://www.pharmagellan.com/blog/clinical-trial-resources">pharmagellan.com</a></li>
+    <li id="ref-5">Frank S. David, <em>The Pharmagellan Guide to Analyzing Biotech Clinical Trials</em> (Pharmagellan).</li>
+    <li id="ref-6">Frank S. David, Seth Robey, Andrew Matthews, <em>The Pharmagellan Guide to Biotech Forecasting and Valuation</em> (Pharmagellan, 2016).</li>
+    <li id="ref-7">Adu Subramanian, "Biotech Analysis: From 0 to 1," <em>Substack</em>. <a href="https://adus.substack.com/p/biotech-analysis-from-0-to-1">adus.substack.com</a></li>
+    <li id="ref-8">Adu Subramanian, "Expert (KOL) Calls: A Guide for Biotech," <em>Substack</em>. <a href="https://adus.substack.com/p/expert-kol-calls-a-guide-for-biotech">adus.substack.com</a></li>
+    <li id="ref-9">Adu Subramanian, "AI for Research: A Practical Guide for Analysts," <em>Substack</em>. <a href="https://adus.substack.com/p/10-ways-to-use-ai-to-accelerate-your">adus.substack.com</a></li>
+    <li id="ref-10">Adu Subramanian, "Some Tacit Knowledge in Biotech," <em>Substack Notes</em>. <a href="https://substack.com/@adus/note/p-165586456">substack.com</a></li>
+  </ol>
 </section>
 <footer>
   <h2 id="sources">Sources</h2>
