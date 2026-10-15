@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
+<meta name="description" content="A free beginner-to-intermediate primer on biotech investing: how drugs get approved, how to read trial data without getting spun, valuation, and how to trade binary catalysts.">
+<link rel="canonical" href="https://risdiplam.github.io/biotech-primer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Biotech Investing Primer — Zero to Hero">
+<meta property="og:description" content="A free beginner-to-intermediate primer on biotech investing: how drugs get approved, how to read trial data without getting spun, valuation, and how to trade binary catalysts.">
+<meta property="og:url" content="https://risdiplam.github.io/biotech-primer/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Biotech Investing Primer — Zero to Hero">
+<meta name="twitter:description" content="A free beginner-to-intermediate primer on biotech investing: how drugs get approved, how to read trial data without getting spun, valuation, and how to trade binary catalysts.">
+<meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0e11" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+
 <title>Biotech Investing Primer — Zero to Hero</title>
 <style>
   :root{
@@ -309,9 +322,23 @@
   details.toc a:hover{text-decoration:underline}
   nav.stages a, .quiz-opt, .checklist li, .calc button, .iconbtn, #drawer a.drow{
     transition:background-color .15s, border-color .15s, color .15s}
+
+  /* release polish v2.1: skip link, tap targets, print */
+  .skip-link{position:absolute; left:-9999px; top:0; z-index:120; background:var(--accent);
+    color:#fff; padding:10px 18px; border-radius:0 0 8px 0; font-size:14px; text-decoration:none}
+  .skip-link:focus{left:0}
+  .iconbtn{width:40px; height:40px}
+  .checklist li{min-height:44px}
+  @media print{
+    .topbar,#drawer,#scrim,#toTop,#resumePill,#tocSide,.h3toggle,#jsbanner{display:none !important}
+    body{font-size:12.5px}
+    section.stage{border:none; padding:10px 0; margin:10px 0}
+    a{color:inherit; text-decoration:none}
+  }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div id="jsbanner" style="background:#fef3e2;border-bottom:1px solid #e5e7eb;padding:10px 22px;font-size:14px;color:#92400e;text-align:center">Interactive features (checklists, calculators, progress tracking) need JavaScript — download this file and open it in your browser for the full experience.</div>
 <script>document.getElementById('jsbanner').style.display='none';</script>
 
@@ -331,13 +358,13 @@
   </div>
 </div>
 
-<div class="wrap content-grid">
+<div class="wrap content-grid" id="main" tabindex="-1">
 <div class="hero">
   <div class="kicker">A beginner-to-intermediate gauntlet</div>
   <h1>Biotech Investing, Zero to Hero</h1>
   <p class="lede">Biotech is the only sector where a single press release can double a stock or cut it in half before lunch. This primer takes you from total beginner to genuinely competent biotech trader — how drugs get approved, how to read trial data without getting spun, where the money comes from, how to value a company that has no revenue, and how to trade the binary events that move these stocks.</p>
   <p class="lede">Work the stages in order. Each ends with a checklist — you're done with a stage when you can honestly check every box.</p>
-  <div class="meta">v2 · Updated October 11, 2026 · progress saves automatically in this browser</div>
+  <div class="meta">v2.1 · Updated October 15, 2026 · progress saves automatically in this browser</div>
 </div>
 
 
@@ -446,17 +473,17 @@
   <div class="warn">The one rule of this primer: never trust a single source. Company press releases are marketing. Analyst notes have incentives. Even this primer is a starting point, not gospel. Stage 6 gives you the full evidence discipline — but start practicing it now: every claim needs a source, and sources have a pecking order.</div>
 
   <ul class="checklist">
-    <li><input type="checkbox"><span>I can explain in one minute why biotech stocks move differently from normal stocks</span></li>
-    <li><input type="checkbox"><span>I've started the Khan Academy science ladder (or placed myself on it honestly)</span></li>
-    <li><input type="checkbox"><span>I know the difference between investing through a binary and trading around one</span></li>
+    <li><input type="checkbox" data-cid="s0-i-can-explain-in-one-minute-why-biotech-stoc-34ff87"><span>I can explain in one minute why biotech stocks move differently from normal stocks</span></li>
+    <li><input type="checkbox" data-cid="s0-i-ve-started-the-khan-academy-science-ladder-af6334"><span>I've started the Khan Academy science ladder (or placed myself on it honestly)</span></li>
+    <li><input type="checkbox" data-cid="s0-i-know-the-difference-between-investing-thro-9358e5"><span>I know the difference between investing through a binary and trading around one</span></li>
   
-    <li><input type="checkbox"><span>I can sketch the five-stage drug development map and the attrition funnel from memory</span></li>
+    <li><input type="checkbox" data-cid="s0-i-can-sketch-the-five-stage-drug-development-a825b4"><span>I can sketch the five-stage drug development map and the attrition funnel from memory</span></li>
 </ul>
   <div class="stage-status"></div>
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>Write down in one sentence which game you lean toward now — through the binary or around it — and why (you'll lock it in at Stage 5)</span></li>
-  <li><input type="checkbox"><span>Recite the five drug-development stages from memory (discovery → preclinical → clinical → manufacturing → approval)</span></li>
+  <li><input type="checkbox" data-cid="s0-write-down-in-one-sentence-which-game-you-le-330af0"><span>Write down in one sentence which game you lean toward now — through the binary or around it — and why (you'll lock it in at Stage 5)</span></li>
+  <li><input type="checkbox" data-cid="s0-recite-the-five-drug-development-stages-from-711831"><span>Recite the five drug-development stages from memory (discovery → preclinical → clinical → manufacturing → approval)</span></li>
 </ul>
 <div class="quiz" data-quiz="s0">
   <h3>Stage 0 quiz</h3>
@@ -514,7 +541,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s0-done" tabindex="-1" aria-hidden="true"><span>Stage 0 quiz: all 5 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s0-done" tabindex="-1" aria-hidden="true" data-cid="quiz-s0-done"><span>Stage 0 quiz: all 5 answered correctly</span></li>
 </ul>
 </section>
 <!-- ============ STAGE 1 ============ -->
@@ -844,20 +871,20 @@
 
 
   <ul class="checklist">
-    <li><input type="checkbox"><span>I can describe what each phase is trying to prove and roughly how big it is</span></li>
-    <li><input type="checkbox"><span>I know the IND → NDA/BLA → approval-or-CRL sequence cold</span></li>
-    <li><input type="checkbox"><span>I can explain what an AdCom is and why its briefing documents matter</span></li>
-    <li><input type="checkbox"><span>I know which special pathways change the evidence bar (only accelerated approval) vs just the timeline</span></li>
+    <li><input type="checkbox" data-cid="s1-i-can-describe-what-each-phase-is-trying-to-72825c"><span>I can describe what each phase is trying to prove and roughly how big it is</span></li>
+    <li><input type="checkbox" data-cid="s1-i-know-the-ind-nda-bla-approval-or-crl-seque-33cdff"><span>I know the IND → NDA/BLA → approval-or-CRL sequence cold</span></li>
+    <li><input type="checkbox" data-cid="s1-i-can-explain-what-an-adcom-is-and-why-its-b-d66cf9"><span>I can explain what an AdCom is and why its briefing documents matter</span></li>
+    <li><input type="checkbox" data-cid="s1-i-know-which-special-pathways-change-the-evi-4aa320"><span>I know which special pathways change the evidence bar (only accelerated approval) vs just the timeline</span></li>
   
-    <li><input type="checkbox"><span>I can explain what PK/PD tells you about dose-selection risk</span></li>
-    <li><input type="checkbox"><span>I know the difference between a patent and regulatory exclusivity, and where to check each</span></li>
-    <li><input type="checkbox"><span>I can name the IND-enabling package components and what the CMC section covers</span></li>
+    <li><input type="checkbox" data-cid="s1-i-can-explain-what-pk-pd-tells-you-about-dos-d8064b"><span>I can explain what PK/PD tells you about dose-selection risk</span></li>
+    <li><input type="checkbox" data-cid="s1-i-know-the-difference-between-a-patent-and-r-5f2d4d"><span>I know the difference between a patent and regulatory exclusivity, and where to check each</span></li>
+    <li><input type="checkbox" data-cid="s1-i-can-name-the-ind-enabling-package-componen-60c0e7"><span>I can name the IND-enabling package components and what the CMC section covers</span></li>
 </ul>
   <div class="stage-status"></div>
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>Pull up any biotech pipeline slide and name the modality and trial phase of the lead program</span></li>
-  <li><input type="checkbox"><span>Find one upcoming PDUFA date on the FDA calendar for a drug you follow</span></li>
+  <li><input type="checkbox" data-cid="s1-pull-up-any-biotech-pipeline-slide-and-name-04e621"><span>Pull up any biotech pipeline slide and name the modality and trial phase of the lead program</span></li>
+  <li><input type="checkbox" data-cid="s1-find-one-upcoming-pdufa-date-on-the-fda-cale-3e64af"><span>Find one upcoming PDUFA date on the FDA calendar for a drug you follow</span></li>
 </ul>
 <div class="quiz" data-quiz="s1">
   <h3>Stage 1 quiz</h3>
@@ -915,7 +942,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s1-done" tabindex="-1" aria-hidden="true"><span>Stage 1 quiz: all 5 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s1-done" tabindex="-1" aria-hidden="true" data-cid="quiz-s1-done"><span>Stage 1 quiz: all 5 answered correctly</span></li>
 </ul>
 </section>
 <!-- ============ STAGE 2 ============ -->
@@ -1000,11 +1027,11 @@
 <h3 id="s2-data-quality-checks">The five data-quality checks</h3>
 <p>Adu Subramanian's checklist<sup class="cite"><a href="#ref-10">[10]</a></sup> — run all five before you trust any trial number:</p>
 <ul class="checklist">
-<li><input type="checkbox"><span><strong>BICR vs investigator-assessed.</strong> Was the endpoint read by blinded independent central review (BICR), or by the site's own investigators? Investigators with a stake in the trial read scans more generously. If the investigator-assessed number is the headline, go find the BICR number.</span></li>
-<li><input type="checkbox"><span><strong>ITT vs per-protocol.</strong> Intention-to-treat counts everyone randomized; per-protocol counts only the ones who took the drug properly. Per-protocol always looks better — it's missing the people who quit. The company shows the flattering one.</span></li>
-<li><input type="checkbox"><span><strong>Protocol changes mid-trial.</strong> Every amendment is a chance to move the goalposts — enrich for easier patients, drop inconvenient sites, narrow the endpoint. Check the registry's history tab.</span></li>
-<li><input type="checkbox"><span><strong>Censoring balance.</strong> Who dropped out of each arm, and when? Unequal censoring can manufacture a PFS benefit out of nothing. If dropout-by-arm isn't shown, assume it's bad.</span></li>
-<li><input type="checkbox"><span><strong>Pre-specified vs post hoc.</strong> Was the winning analysis written down before the data existed? If not, it's a hypothesis wearing a result's clothes.</span></li>
+<li><input type="checkbox" data-cid="s2-bicr-vs-investigator-assessed-was-the-endpoi-967b39"><span><strong>BICR vs investigator-assessed.</strong> Was the endpoint read by blinded independent central review (BICR), or by the site's own investigators? Investigators with a stake in the trial read scans more generously. If the investigator-assessed number is the headline, go find the BICR number.</span></li>
+<li><input type="checkbox" data-cid="s2-itt-vs-per-protocol-intention-to-treat-count-d0a56f"><span><strong>ITT vs per-protocol.</strong> Intention-to-treat counts everyone randomized; per-protocol counts only the ones who took the drug properly. Per-protocol always looks better — it's missing the people who quit. The company shows the flattering one.</span></li>
+<li><input type="checkbox" data-cid="s2-protocol-changes-mid-trial-every-amendment-i-b65a86"><span><strong>Protocol changes mid-trial.</strong> Every amendment is a chance to move the goalposts — enrich for easier patients, drop inconvenient sites, narrow the endpoint. Check the registry's history tab.</span></li>
+<li><input type="checkbox" data-cid="s2-censoring-balance-who-dropped-out-of-each-ar-37af76"><span><strong>Censoring balance.</strong> Who dropped out of each arm, and when? Unequal censoring can manufacture a PFS benefit out of nothing. If dropout-by-arm isn't shown, assume it's bad.</span></li>
+<li><input type="checkbox" data-cid="s2-pre-specified-vs-post-hoc-was-the-winning-an-ea1a43"><span><strong>Pre-specified vs post hoc.</strong> Was the winning analysis written down before the data existed? If not, it's a hypothesis wearing a result's clothes.</span></li>
 </ul>
 <h3 id="gap-cns">CNS: the brain's delivery problem and the endpoint problem</h3>
 <p>Neurology is where good science goes to die slowly and expensively. Two structural reasons:</p>
@@ -1364,12 +1391,12 @@
   <h3 id="s2-topline-pr-checklist">The topline press-release checklist</h3>
   <p>Topline PRs are marketing documents with data in them. Read for what's <em>missing</em>:</p>
   <ul class="checklist">
-    <li><input type="checkbox"><span>n per arm and the actual numbers — "met the primary endpoint" without the effect size is a sentence, not a result</span></li>
-    <li><input type="checkbox"><span>p-values and confidence intervals — "statistically significant" without numbers is a flag</span></li>
-    <li><input type="checkbox"><span>Baseline characteristics — were the arms balanced? Small imbalances in small trials move results</span></li>
-    <li><input type="checkbox"><span>Safety detail — "generally well tolerated" means nothing; look for discontinuation rates, SAEs, specific adverse events</span></li>
-    <li><input type="checkbox"><span>The control arm's performance — did the drug win, or did the control underperform historical norms?</span></li>
-    <li><input type="checkbox"><span>Secondaries — if the primary hit but every secondary missed, the picture is weaker than the headline</span></li>
+    <li><input type="checkbox" data-cid="s2-n-per-arm-and-the-actual-numbers-met-the-pri-b3d335"><span>n per arm and the actual numbers — "met the primary endpoint" without the effect size is a sentence, not a result</span></li>
+    <li><input type="checkbox" data-cid="s2-p-values-and-confidence-intervals-statistica-d2a51b"><span>p-values and confidence intervals — "statistically significant" without numbers is a flag</span></li>
+    <li><input type="checkbox" data-cid="s2-baseline-characteristics-were-the-arms-balan-82ded9"><span>Baseline characteristics — were the arms balanced? Small imbalances in small trials move results</span></li>
+    <li><input type="checkbox" data-cid="s2-safety-detail-generally-well-tolerated-means-4d0fb9"><span>Safety detail — "generally well tolerated" means nothing; look for discontinuation rates, SAEs, specific adverse events</span></li>
+    <li><input type="checkbox" data-cid="s2-the-control-arm-s-performance-did-the-drug-w-17fafe"><span>The control arm's performance — did the drug win, or did the control underperform historical norms?</span></li>
+    <li><input type="checkbox" data-cid="s2-secondaries-if-the-primary-hit-but-every-sec-5a3919"><span>Secondaries — if the primary hit but every secondary missed, the picture is weaker than the headline</span></li>
   </ul>
 <h3 id="prasad-s4">Prasad · 4. Reading an oncology readout — the design games</h3>
 <p>Beyond the endpoints, oncology trials have their own repertoire of design choices that move the numbers. Check each one:</p>
@@ -1432,20 +1459,20 @@
 
 
   <ul class="checklist">
-    <li><input type="checkbox"><span>I can define primary vs secondary endpoints and name the common oncology measures</span></li>
-    <li><input type="checkbox"><span>I know what a p-value does and doesn't tell me, and why p&lt;0.05 isn't the same as meaningful</span></li>
-    <li><input type="checkbox"><span>I check ClinicalTrials.gov for endpoint switching before trusting a press release</span></li>
-    <li><input type="checkbox"><span>I can list five spin patterns and five trial-design red flags from memory</span></li>
+    <li><input type="checkbox" data-cid="s2-i-can-define-primary-vs-secondary-endpoints-7ad15e"><span>I can define primary vs secondary endpoints and name the common oncology measures</span></li>
+    <li><input type="checkbox" data-cid="s2-i-know-what-a-p-value-does-and-doesn-t-tell-027871"><span>I know what a p-value does and doesn't tell me, and why p&lt;0.05 isn't the same as meaningful</span></li>
+    <li><input type="checkbox" data-cid="s2-i-check-clinicaltrials-gov-for-endpoint-swit-debc51"><span>I check ClinicalTrials.gov for endpoint switching before trusting a press release</span></li>
+    <li><input type="checkbox" data-cid="s2-i-can-list-five-spin-patterns-and-five-trial-4d356c"><span>I can list five spin patterns and five trial-design red flags from memory</span></li>
   
-    <li><input type="checkbox"><span>I've worked through the p-value / CI / power sections and can spot the common traps</span></li>
-    <li><input type="checkbox"><span>I can explain surrogate validation and what the 66% / 14% numbers mean</span></li>
-    <li><input type="checkbox"><span>I know how to read a failed trial's confidence interval (negative vs non-definitive)</span></li>
+    <li><input type="checkbox" data-cid="s2-i-ve-worked-through-the-p-value-ci-power-sec-f09902"><span>I've worked through the p-value / CI / power sections and can spot the common traps</span></li>
+    <li><input type="checkbox" data-cid="s2-i-can-explain-surrogate-validation-and-what-ebfc3d"><span>I can explain surrogate validation and what the 66% / 14% numbers mean</span></li>
+    <li><input type="checkbox" data-cid="s2-i-know-how-to-read-a-failed-trial-s-confiden-60ca48"><span>I know how to read a failed trial's confidence interval (negative vs non-definitive)</span></li>
 </ul>
   <div class="stage-status"></div>
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>Take the last biotech press release you saw: find the primary endpoint, the p-value, and the confidence interval</span></li>
-  <li><input type="checkbox"><span>Ask whether the endpoint was a surrogate — and if so, whether it's ever been validated against a clinical outcome</span></li>
+  <li><input type="checkbox" data-cid="s2-take-the-last-biotech-press-release-you-saw-14c804"><span>Take the last biotech press release you saw: find the primary endpoint, the p-value, and the confidence interval</span></li>
+  <li><input type="checkbox" data-cid="s2-ask-whether-the-endpoint-was-a-surrogate-and-442be7"><span>Ask whether the endpoint was a surrogate — and if so, whether it's ever been validated against a clinical outcome</span></li>
 </ul>
 <div class="quiz" data-quiz="s2">
   <h3>Stage 2 quiz</h3>
@@ -1503,7 +1530,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s2-done" tabindex="-1" aria-hidden="true"><span>Stage 2 quiz: all 5 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s2-done" tabindex="-1" aria-hidden="true" data-cid="quiz-s2-done"><span>Stage 2 quiz: all 5 answered correctly</span></li>
 </ul>
 
 <div class="part-divider" id="s2-part2">
@@ -1552,11 +1579,11 @@
 </ul>
 <p>The check takes five minutes and you should run it before trusting any readout:</p>
 <ul class="checklist">
-<li><input type="checkbox"><span>Pull the trial's ClinicalTrials.gov entry (NCT number is usually in the press release or paper)</span></li>
-<li><input type="checkbox"><span>Read the <em>registered</em> primary outcome — the one specified before the trial started</span></li>
-<li><input type="checkbox"><span>Compare it against the <em>reported</em> primary in the paper or PR — same measure, same timepoint?</span></li>
-<li><input type="checkbox"><span>If they differ, or the headline leads with a secondary: assume the registered primary missed, and discount everything accordingly</span></li>
-<li><input type="checkbox"><span>Check the "History of Changes" tab — late changes to the primary outcome are outcome switching with a paper trail</span></li>
+<li><input type="checkbox" data-cid="s2-pull-the-trial-s-clinicaltrials-gov-entry-nc-d4e012"><span>Pull the trial's ClinicalTrials.gov entry (NCT number is usually in the press release or paper)</span></li>
+<li><input type="checkbox" data-cid="s2-read-the-registered-primary-outcome-the-one-e4d7f6"><span>Read the <em>registered</em> primary outcome — the one specified before the trial started</span></li>
+<li><input type="checkbox" data-cid="s2-compare-it-against-the-reported-primary-in-t-eb39b2"><span>Compare it against the <em>reported</em> primary in the paper or PR — same measure, same timepoint?</span></li>
+<li><input type="checkbox" data-cid="s2-if-they-differ-or-the-headline-leads-with-a-8d2371"><span>If they differ, or the headline leads with a secondary: assume the registered primary missed, and discount everything accordingly</span></li>
+<li><input type="checkbox" data-cid="s2-check-the-history-of-changes-tab-late-change-b4b4ad"><span>Check the "History of Changes" tab — late changes to the primary outcome are outcome switching with a paper trail</span></li>
 </ul>
 <div class="warn">Positive outcomes are more than twice as likely to survive from registration to publication as negative ones. A "positive" trial whose registered primary quietly changed is not a positive trial — it's a negative trial wearing a costume.</div>
 
@@ -1611,12 +1638,12 @@
 <li><strong>Equivalence claims from superiority trials.</strong> "No significant difference" is not "equivalent" — proving equivalence needs a much bigger trial. When a company claims its drug is "just as good" off a failed superiority comparison, the statistics don't support the sentence.</li>
 </ul>
 <ul class="checklist">
-<li><input type="checkbox"><span>Comparator check: is the control what a doctor would actually prescribe today, at a fair dose?</span></li>
-<li><input type="checkbox"><span>Population check: what fraction of real patients would have been eligible? (Under 20% is a flag)</span></li>
-<li><input type="checkbox"><span>Timing check: was the trial stopped early for benefit, or reported on a longer window than the protocol specified?</span></li>
-<li><input type="checkbox"><span>Dropout check: dropout rate by arm, and which analysis (ITT vs per-protocol) is shown</span></li>
-<li><input type="checkbox"><span>Composite check: if the primary is a composite, which component drove the result?</span></li>
-<li><input type="checkbox"><span>Subgroup check: was the winning subgroup pre-specified? If not, it's a hypothesis, not a result</span></li>
+<li><input type="checkbox" data-cid="s2-comparator-check-is-the-control-what-a-docto-a81fbc"><span>Comparator check: is the control what a doctor would actually prescribe today, at a fair dose?</span></li>
+<li><input type="checkbox" data-cid="s2-population-check-what-fraction-of-real-patie-bc183a"><span>Population check: what fraction of real patients would have been eligible? (Under 20% is a flag)</span></li>
+<li><input type="checkbox" data-cid="s2-timing-check-was-the-trial-stopped-early-for-8aeab7"><span>Timing check: was the trial stopped early for benefit, or reported on a longer window than the protocol specified?</span></li>
+<li><input type="checkbox" data-cid="s2-dropout-check-dropout-rate-by-arm-and-which-ed23c4"><span>Dropout check: dropout rate by arm, and which analysis (ITT vs per-protocol) is shown</span></li>
+<li><input type="checkbox" data-cid="s2-composite-check-if-the-primary-is-a-composit-16b49f"><span>Composite check: if the primary is a composite, which component drove the result?</span></li>
+<li><input type="checkbox" data-cid="s2-subgroup-check-was-the-winning-subgroup-pre-ae4b65"><span>Subgroup check: was the winning subgroup pre-specified? If not, it's a hypothesis, not a result</span></li>
 </ul>
 
 <h3 id="s2b-protocol-amendments">The moving target: protocol amendments</h3>
@@ -1726,20 +1753,20 @@
 <p>The investor questions: was the adaptation <strong>pre-specified</strong> with a proper Type I error adjustment (not invented after peeking)? And who saw the unblinded interim data — because operational bias (subtle changes in trial conduct after an interim look) doesn't show up in any p-value. An unblinded interim look without a pre-specified adjustment is a red flag; a pre-specified adaptive design with proper error control is just efficient drug development. Learn to tell them apart.</p>
 
   <ul class="checklist">
-    <li><input type="checkbox"><span>I treat every published finding as a claim, not a fact — and I know the replication numbers (11% Amgen, 39%, 61%-null-in-Registered-Reports)</span></li>
-    <li><input type="checkbox"><span>I run the registry check (registered vs reported primary outcome) before trusting any readout</span></li>
-    <li><input type="checkbox"><span>I can spot p-hacking's two flavors and the p-clustering-under-0.05 fingerprint</span></li>
-    <li><input type="checkbox"><span>I run the design red-flag checks (comparator, population, timing, dropouts, composite, subgroups) on every pivotal trial</span></li>
-    <li><input type="checkbox"><span>I count protocol amendments and ask which direction the population moved</span></li>
-    <li><input type="checkbox"><span>I check the dropout method (LOCF vs BOCF/MMRM) and dropout asymmetry by arm</span></li>
-    <li><input type="checkbox"><span>I know the Tamiflu lesson: a "settled" evidence base can rest on 2 of 10 trials</span></li>
-    <li><input type="checkbox"><span>I can name the seeding-trial pattern (many sites × few patients) and the ghostwriting tells</span></li>
+    <li><input type="checkbox" data-cid="s2-i-treat-every-published-finding-as-a-claim-n-11636b"><span>I treat every published finding as a claim, not a fact — and I know the replication numbers (11% Amgen, 39%, 61%-null-in-Registered-Reports)</span></li>
+    <li><input type="checkbox" data-cid="s2-i-run-the-registry-check-registered-vs-repor-cf8172"><span>I run the registry check (registered vs reported primary outcome) before trusting any readout</span></li>
+    <li><input type="checkbox" data-cid="s2-i-can-spot-p-hacking-s-two-flavors-and-the-p-bdd781"><span>I can spot p-hacking's two flavors and the p-clustering-under-0.05 fingerprint</span></li>
+    <li><input type="checkbox" data-cid="s2-i-run-the-design-red-flag-checks-comparator-18d95a"><span>I run the design red-flag checks (comparator, population, timing, dropouts, composite, subgroups) on every pivotal trial</span></li>
+    <li><input type="checkbox" data-cid="s2-i-count-protocol-amendments-and-ask-which-di-270eb4"><span>I count protocol amendments and ask which direction the population moved</span></li>
+    <li><input type="checkbox" data-cid="s2-i-check-the-dropout-method-locf-vs-bocf-mmrm-d63c0c"><span>I check the dropout method (LOCF vs BOCF/MMRM) and dropout asymmetry by arm</span></li>
+    <li><input type="checkbox" data-cid="s2-i-know-the-tamiflu-lesson-a-settled-evidence-4d6936"><span>I know the Tamiflu lesson: a "settled" evidence base can rest on 2 of 10 trials</span></li>
+    <li><input type="checkbox" data-cid="s2-i-can-name-the-seeding-trial-pattern-many-si-92d940"><span>I can name the seeding-trial pattern (many sites × few patients) and the ghostwriting tells</span></li>
 </ul>
   
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>Pick a recent biotech readout: pull its ClinicalTrials.gov entry and compare the registered primary outcome against the reported one</span></li>
-  <li><input type="checkbox"><span>Find the dropout rate by arm in the latest 10-K trial description or paper — then check which imputation method the primary analysis used</span></li>
+  <li><input type="checkbox" data-cid="s2-pick-a-recent-biotech-readout-pull-its-clini-0af768"><span>Pick a recent biotech readout: pull its ClinicalTrials.gov entry and compare the registered primary outcome against the reported one</span></li>
+  <li><input type="checkbox" data-cid="s2-find-the-dropout-rate-by-arm-in-the-latest-1-628c6c"><span>Find the dropout rate by arm in the latest 10-K trial description or paper — then check which imputation method the primary analysis used</span></li>
 </ul>
 <div class="quiz" data-quiz="s2-skepticism">
   <h3>Data-skepticism quiz</h3>
@@ -1777,7 +1804,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s2-skepticism-done" tabindex="-1" aria-hidden="true"><span>Data-skepticism quiz: all 3 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s2-skepticism-done" tabindex="-1" aria-hidden="true" data-cid="quiz-s2-skepticism-done"><span>Data-skepticism quiz: all 3 answered correctly</span></li>
 </ul>
 
 <p class="toc-next">Next: <a href="#s3">→ Stage 3: Where the Money Comes From</a></p>
@@ -1874,20 +1901,20 @@
   </ul>
 
   <ul class="checklist">
-    <li><input type="checkbox"><span>I always use fully diluted shares for market cap, and I can compute EV</span></li>
-    <li><input type="checkbox"><span>I can explain how dilution destroys returns even when the thesis is right</span></li>
-    <li><input type="checkbox"><span>I can compute runway from a 10-Q and map it against upcoming catalysts</span></li>
-    <li><input type="checkbox"><span>I know where to find offering terms (424B) and what an ATM is</span></li>
+    <li><input type="checkbox" data-cid="s3-i-always-use-fully-diluted-shares-for-market-1bed4c"><span>I always use fully diluted shares for market cap, and I can compute EV</span></li>
+    <li><input type="checkbox" data-cid="s3-i-can-explain-how-dilution-destroys-returns-b16642"><span>I can explain how dilution destroys returns even when the thesis is right</span></li>
+    <li><input type="checkbox" data-cid="s3-i-can-compute-runway-from-a-10-q-and-map-it-32910c"><span>I can compute runway from a 10-Q and map it against upcoming catalysts</span></li>
+    <li><input type="checkbox" data-cid="s3-i-know-where-to-find-offering-terms-424b-and-392b0d"><span>I know where to find offering terms (424B) and what an ATM is</span></li>
   
-    <li><input type="checkbox"><span>I can name the financing structures (PIPE, ATM, convertible, warrants) and where to find their terms</span></li>
-    <li><input type="checkbox"><span>I've checked Form 4s and the proxy statement for a real company</span></li>
+    <li><input type="checkbox" data-cid="s3-i-can-name-the-financing-structures-pipe-atm-30f3e0"><span>I can name the financing structures (PIPE, ATM, convertible, warrants) and where to find their terms</span></li>
+    <li><input type="checkbox" data-cid="s3-i-ve-checked-form-4s-and-the-proxy-statement-ed0b66"><span>I've checked Form 4s and the proxy statement for a real company</span></li>
 </ul>
   <div class="stage-status"></div>
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>Pick a pre-revenue biotech and compute its runway: cash ÷ quarterly burn, in quarters</span></li>
-  <li><input type="checkbox"><span>Find the fully diluted share count (not the basic count) in its latest 10-Q</span></li>
-  <li><input type="checkbox"><span>Pull the latest proxy (DEF 14A) and recent Form 4s for a company you follow — note any insider open-market buys and how the CEO is paid</span></li>
+  <li><input type="checkbox" data-cid="s3-pick-a-pre-revenue-biotech-and-compute-its-r-f2ea24"><span>Pick a pre-revenue biotech and compute its runway: cash ÷ quarterly burn, in quarters</span></li>
+  <li><input type="checkbox" data-cid="s3-find-the-fully-diluted-share-count-not-the-b-066085"><span>Find the fully diluted share count (not the basic count) in its latest 10-Q</span></li>
+  <li><input type="checkbox" data-cid="s3-pull-the-latest-proxy-def-14a-and-recent-for-609261"><span>Pull the latest proxy (DEF 14A) and recent Form 4s for a company you follow — note any insider open-market buys and how the CEO is paid</span></li>
 </ul>
 <div class="quiz" data-quiz="s3">
   <h3>Stage 3 quiz</h3>
@@ -1945,7 +1972,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s3-done" tabindex="-1" aria-hidden="true"><span>Stage 3 quiz: all 5 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s3-done" tabindex="-1" aria-hidden="true" data-cid="quiz-s3-done"><span>Stage 3 quiz: all 5 answered correctly</span></li>
 </ul>
 </section>
 <!-- ============ STAGE 4 ============ -->
@@ -2230,20 +2257,20 @@
 <li><strong>Sensitivity shown?</strong> ± on growth, discount rate, peak sales. If the valuation survives only one exact parameter set, it's a story, not a model.</li>
 </ol>
   <ul class="checklist">
-    <li><input type="checkbox"><span>I can explain value vs price, and terms vs odds</span></li>
-    <li><input type="checkbox"><span>I can compute a PoS-weighted expected value and defend my PoS with the risk buckets</span></li>
-    <li><input type="checkbox"><span>I know the base-rate PoS by phase and why to distrust optimistic sell-side estimates</span></li>
-    <li><input type="checkbox"><span>I can sketch a bottom-up peak sales build (patients × share × price)</span></li>
+    <li><input type="checkbox" data-cid="s4-i-can-explain-value-vs-price-and-terms-vs-od-133fab"><span>I can explain value vs price, and terms vs odds</span></li>
+    <li><input type="checkbox" data-cid="s4-i-can-compute-a-pos-weighted-expected-value-1fea4d"><span>I can compute a PoS-weighted expected value and defend my PoS with the risk buckets</span></li>
+    <li><input type="checkbox" data-cid="s4-i-know-the-base-rate-pos-by-phase-and-why-to-d7aaed"><span>I know the base-rate PoS by phase and why to distrust optimistic sell-side estimates</span></li>
+    <li><input type="checkbox" data-cid="s4-i-can-sketch-a-bottom-up-peak-sales-build-pa-514687"><span>I can sketch a bottom-up peak sales build (patients × share × price)</span></li>
   
-    <li><input type="checkbox"><span>I can build an rNPV with a probability chain and defend the discount rate</span></li>
-    <li><input type="checkbox"><span>I know how the IRA and payer access affect out-year revenue</span></li>
-    <li><input type="checkbox"><span>I can model loss of exclusivity for small molecules vs biologics</span></li>
+    <li><input type="checkbox" data-cid="s4-i-can-build-an-rnpv-with-a-probability-chain-616a96"><span>I can build an rNPV with a probability chain and defend the discount rate</span></li>
+    <li><input type="checkbox" data-cid="s4-i-know-how-the-ira-and-payer-access-affect-o-df48d2"><span>I know how the IRA and payer access affect out-year revenue</span></li>
+    <li><input type="checkbox" data-cid="s4-i-can-model-loss-of-exclusivity-for-small-mo-9a7c07"><span>I can model loss of exclusivity for small molecules vs biologics</span></li>
 </ul>
   <div class="stage-status"></div>
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>Build a one-line rNPV for a single-asset company: PoS × upside + (1 − PoS) × downside, discounted</span></li>
-  <li><input type="checkbox"><span>Check your own math for double-counting: is technical risk in the probabilities AND the discount rate?</span></li>
+  <li><input type="checkbox" data-cid="s4-build-a-one-line-rnpv-for-a-single-asset-com-11b85b"><span>Build a one-line rNPV for a single-asset company: PoS × upside + (1 − PoS) × downside, discounted</span></li>
+  <li><input type="checkbox" data-cid="s4-check-your-own-math-for-double-counting-is-t-7f896e"><span>Check your own math for double-counting: is technical risk in the probabilities AND the discount rate?</span></li>
 </ul>
 <div class="quiz" data-quiz="s4">
   <h3>Stage 4 quiz</h3>
@@ -2301,7 +2328,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s4-done" tabindex="-1" aria-hidden="true"><span>Stage 4 quiz: all 5 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s4-done" tabindex="-1" aria-hidden="true" data-cid="quiz-s4-done"><span>Stage 4 quiz: all 5 answered correctly</span></li>
 </ul>
 </section>
 <!-- ============ STAGE 5 ============ -->
@@ -2438,13 +2465,13 @@
   </ul>
 
   <ul class="checklist">
-    <li><input type="checkbox"><span>I sort every catalyst by date quality (hard / guidance / inferred) before trading it</span></li>
-    <li><input type="checkbox"><span>I can explain IV crush and why direction-right can still mean money-lost</span></li>
-    <li><input type="checkbox"><span>I size every binary by max loss as a fixed fraction of the account</span></li>
-    <li><input type="checkbox"><span>I only use defined-risk structures for binary exposure</span></li>
-    <li><input type="checkbox"><span>I've picked a primary style (through vs around the binary) and know what it demands</span></li>
+    <li><input type="checkbox" data-cid="s5-i-sort-every-catalyst-by-date-quality-hard-g-97b491"><span>I sort every catalyst by date quality (hard / guidance / inferred) before trading it</span></li>
+    <li><input type="checkbox" data-cid="s5-i-can-explain-iv-crush-and-why-direction-rig-b11a55"><span>I can explain IV crush and why direction-right can still mean money-lost</span></li>
+    <li><input type="checkbox" data-cid="s5-i-size-every-binary-by-max-loss-as-a-fixed-f-fbd868"><span>I size every binary by max loss as a fixed fraction of the account</span></li>
+    <li><input type="checkbox" data-cid="s5-i-only-use-defined-risk-structures-for-binar-706353"><span>I only use defined-risk structures for binary exposure</span></li>
+    <li><input type="checkbox" data-cid="s5-i-ve-picked-a-primary-style-through-vs-aroun-031153"><span>I've picked a primary style (through vs around the binary) and know what it demands</span></li>
   
-    <li><input type="checkbox"><span>I can explain CVRs and when takeout is a plausible path vs message-board hope</span></li>
+    <li><input type="checkbox" data-cid="s5-i-can-explain-cvrs-and-when-takeout-is-a-pla-97cfb9"><span>I can explain CVRs and when takeout is a plausible path vs message-board hope</span></li>
 </ul>
   <div class="stage-status"></div>
 
@@ -2461,20 +2488,20 @@
   <h3 id="s5-pre-trade-checklist">The pre-trade checklist</h3>
   <p>Run this before every binary position. If any answer is "I don't know," that's the next hour of work:</p>
   <ul class="checklist">
-    <li><input type="checkbox"><span>Date quality: hard or guidance? Does my expiry clear the <em>latest plausible</em> event date?</span></li>
-    <li><input type="checkbox"><span>Liquidity: open interest, volume, bid-ask — can I get in and out without donating 20% to the spread?</span></li>
-    <li><input type="checkbox"><span>Expected move: does my structure profit at a realistic outcome, or does it need a bigger move than the market already prices in?</span></li>
-    <li><input type="checkbox"><span>Loss-to-floor: if this goes to zero overnight, is the account intact?</span></li>
-    <li><input type="checkbox"><span>Correlation: does this share a failure mode or catalyst window with an existing position?</span></li>
-    <li><input type="checkbox"><span>Kill scenarios named: IV crush, event delayed past expiry, gap against me — which one gets me here?</span></li>
-    <li><input type="checkbox"><span>Both branches pre-committed in writing: dip-buy level, pop-branch plan, exit triggers</span></li>
+    <li><input type="checkbox" data-cid="s5-date-quality-hard-or-guidance-does-my-expiry-5290a0"><span>Date quality: hard or guidance? Does my expiry clear the <em>latest plausible</em> event date?</span></li>
+    <li><input type="checkbox" data-cid="s5-liquidity-open-interest-volume-bid-ask-can-i-8f2747"><span>Liquidity: open interest, volume, bid-ask — can I get in and out without donating 20% to the spread?</span></li>
+    <li><input type="checkbox" data-cid="s5-expected-move-does-my-structure-profit-at-a-93b884"><span>Expected move: does my structure profit at a realistic outcome, or does it need a bigger move than the market already prices in?</span></li>
+    <li><input type="checkbox" data-cid="s5-loss-to-floor-if-this-goes-to-zero-overnight-9bc9c1"><span>Loss-to-floor: if this goes to zero overnight, is the account intact?</span></li>
+    <li><input type="checkbox" data-cid="s5-correlation-does-this-share-a-failure-mode-o-87fd36"><span>Correlation: does this share a failure mode or catalyst window with an existing position?</span></li>
+    <li><input type="checkbox" data-cid="s5-kill-scenarios-named-iv-crush-event-delayed-4c2f46"><span>Kill scenarios named: IV crush, event delayed past expiry, gap against me — which one gets me here?</span></li>
+    <li><input type="checkbox" data-cid="s5-both-branches-pre-committed-in-writing-dip-b-139c9f"><span>Both branches pre-committed in writing: dip-buy level, pop-branch plan, exit triggers</span></li>
   </ul>
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>For an upcoming binary, compare the options-implied move against the move you'd expect from the (1−p)/p jump</span></li>
-  <li><input type="checkbox"><span>Size a position max-loss-first: 1% of your account on a defined-risk structure, on paper</span></li>
-  <li><input type="checkbox"><span>Run the expected-move formula on a real options chain and check whether your thesis clears the priced-in move</span></li>
-  <li><input type="checkbox"><span>Write a pre-trade plan for a hypothetical binary: entry trigger, dip-buy level, pop-branch plan, and exit — both branches, before the event</span></li>
+  <li><input type="checkbox" data-cid="s5-for-an-upcoming-binary-compare-the-options-i-aa52d6"><span>For an upcoming binary, compare the options-implied move against the move you'd expect from the (1−p)/p jump</span></li>
+  <li><input type="checkbox" data-cid="s5-size-a-position-max-loss-first-1-of-your-acc-448819"><span>Size a position max-loss-first: 1% of your account on a defined-risk structure, on paper</span></li>
+  <li><input type="checkbox" data-cid="s5-run-the-expected-move-formula-on-a-real-opti-e80e9e"><span>Run the expected-move formula on a real options chain and check whether your thesis clears the priced-in move</span></li>
+  <li><input type="checkbox" data-cid="s5-write-a-pre-trade-plan-for-a-hypothetical-bi-27c7e8"><span>Write a pre-trade plan for a hypothetical binary: entry trigger, dip-buy level, pop-branch plan, and exit — both branches, before the event</span></li>
 </ul>
 <div class="quiz" data-quiz="s5">
   <h3>Stage 5 quiz</h3>
@@ -2522,7 +2549,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s5-done" tabindex="-1" aria-hidden="true"><span>Stage 5 quiz: all 4 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s5-done" tabindex="-1" aria-hidden="true" data-cid="quiz-s5-done"><span>Stage 5 quiz: all 4 answered correctly</span></li>
 </ul>
 </section>
 <!-- ============ STAGE 6 ============ -->
@@ -2746,19 +2773,19 @@
 <div class="callout"><strong>The investor's question:</strong> <em>For any name you own: have you read the proxy, checked 13D/G for smart-money accumulation, and scanned recent Form 4s?</em></div>
 
   <ul class="checklist">
-    <li><input type="checkbox"><span>I follow the evidence order and can name all six tiers</span></li>
-    <li><input type="checkbox"><span>I separate FACT / INTERPRETATION / GAP / UNVERIFIED in my notes</span></li>
-    <li><input type="checkbox"><span>I've set up the Tier 1 toolkit and run a real company through it</span></li>
-    <li><input type="checkbox"><span>I maintain a watchlist organized by catalyst date, not by ticker affection</span></li>
+    <li><input type="checkbox" data-cid="s6-i-follow-the-evidence-order-and-can-name-all-897067"><span>I follow the evidence order and can name all six tiers</span></li>
+    <li><input type="checkbox" data-cid="s6-i-separate-fact-interpretation-gap-unverifie-9668c8"><span>I separate FACT / INTERPRETATION / GAP / UNVERIFIED in my notes</span></li>
+    <li><input type="checkbox" data-cid="s6-i-ve-set-up-the-tier-1-toolkit-and-run-a-rea-7605b6"><span>I've set up the Tier 1 toolkit and run a real company through it</span></li>
+    <li><input type="checkbox" data-cid="s6-i-maintain-a-watchlist-organized-by-catalyst-b856b7"><span>I maintain a watchlist organized by catalyst date, not by ticker affection</span></li>
   
-    <li><input type="checkbox"><span>I've run the three-question trash test and the sponsor-manipulation screen on a real paper</span></li>
-    <li><input type="checkbox"><span>I can read the key SEC filings beyond the 10-Q (proxy, S-1/S-3, 13D/G, Form 4)</span></li>
+    <li><input type="checkbox" data-cid="s6-i-ve-run-the-three-question-trash-test-and-t-c9d655"><span>I've run the three-question trash test and the sponsor-manipulation screen on a real paper</span></li>
+    <li><input type="checkbox" data-cid="s6-i-can-read-the-key-sec-filings-beyond-the-10-e72424"><span>I can read the key SEC filings beyond the 10-Q (proxy, S-1/S-3, 13D/G, Form 4)</span></li>
 </ul>
   <div class="stage-status"></div>
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>Pull the latest 10-Q of a company you follow and find cash + quarterly burn in under five minutes</span></li>
-  <li><input type="checkbox"><span>Take the last press release you read and label one FACT, one INTERPRETATION, and one GAP</span></li>
+  <li><input type="checkbox" data-cid="s6-pull-the-latest-10-q-of-a-company-you-follow-8d8a05"><span>Pull the latest 10-Q of a company you follow and find cash + quarterly burn in under five minutes</span></li>
+  <li><input type="checkbox" data-cid="s6-take-the-last-press-release-you-read-and-lab-1ea2cf"><span>Take the last press release you read and label one FACT, one INTERPRETATION, and one GAP</span></li>
 </ul>
 <div class="quiz" data-quiz="s6">
   <h3>Stage 6 quiz</h3>
@@ -2806,7 +2833,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s6-done" tabindex="-1" aria-hidden="true"><span>Stage 6 quiz: all 4 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-s6-done" tabindex="-1" aria-hidden="true" data-cid="quiz-s6-done"><span>Stage 6 quiz: all 4 answered correctly</span></li>
 </ul>
 </section>
 <!-- ============ CAPSTONE ============ -->
@@ -2840,18 +2867,18 @@
   </ol>
   <div class="callout">Do this three times on paper. If your process is sound and your journaling is honest, you're ready to size real positions. If you keep skipping steps, the market will charge you tuition — this primer exists so you pay it in effort instead of dollars.</div>
   <ul class="checklist">
-    <li><input type="checkbox"><span>I've completed one full paper binary, journal included</span></li>
-    <li><input type="checkbox"><span>I've completed three — and reviewed what my process got right and wrong</span></li>
+    <li><input type="checkbox" data-cid="cap-i-ve-completed-one-full-paper-binary-journal-bbe75a"><span>I've completed one full paper binary, journal included</span></li>
+    <li><input type="checkbox" data-cid="cap-i-ve-completed-three-and-reviewed-what-my-pr-1a11cd"><span>I've completed three — and reviewed what my process got right and wrong</span></li>
   
-    <li><input type="checkbox"><span>I've run the five-minute readout checklist (Stage 2) on a real trial readout</span></li>
-    <li><input type="checkbox"><span>I've run the ten-minute checklist for reading a protocol (Stage 1) against a ClinicalTrials.gov entry and press release</span></li>
-    <li><input type="checkbox"><span>I've run the ten-minute valuation audit (Stage 4) on a real company valuation</span></li>
+    <li><input type="checkbox" data-cid="cap-i-ve-run-the-five-minute-readout-checklist-s-f10b63"><span>I've run the five-minute readout checklist (Stage 2) on a real trial readout</span></li>
+    <li><input type="checkbox" data-cid="cap-i-ve-run-the-ten-minute-checklist-for-readin-c5478f"><span>I've run the ten-minute checklist for reading a protocol (Stage 1) against a ClinicalTrials.gov entry and press release</span></li>
+    <li><input type="checkbox" data-cid="cap-i-ve-run-the-ten-minute-valuation-audit-stag-965b99"><span>I've run the ten-minute valuation audit (Stage 4) on a real company valuation</span></li>
 </ul>
   <div class="stage-status"></div>
 <h3>Do this now</h3>
 <ul class="checklist">
-  <li><input type="checkbox"><span>Write your first paper-trade journal entry: date, PoS, expected move both ways, exit plan — before the event</span></li>
-  <li><input type="checkbox"><span>Schedule the post-readout review now, before the binary resolves</span></li>
+  <li><input type="checkbox" data-cid="cap-write-your-first-paper-trade-journal-entry-d-9dbc06"><span>Write your first paper-trade journal entry: date, PoS, expected move both ways, exit plan — before the event</span></li>
+  <li><input type="checkbox" data-cid="cap-schedule-the-post-readout-review-now-before-f0ac4c"><span>Schedule the post-readout review now, before the binary resolves</span></li>
 </ul>
 <div class="quiz" data-quiz="cap">
   <h3>Capstone quiz</h3>
@@ -2899,7 +2926,7 @@
 </div>
 
 <ul class="checklist quiz-check">
-  <li data-quiz-lock="1"><input type="checkbox" id="quiz-cap-done" tabindex="-1" aria-hidden="true"><span>Capstone quiz: all 4 answered correctly</span></li>
+  <li data-quiz-lock="1"><input type="checkbox" id="quiz-cap-done" tabindex="-1" aria-hidden="true" data-cid="quiz-cap-done"><span>Capstone quiz: all 4 answered correctly</span></li>
 </ul>
 </section>
 <!-- ============ REFERENCES ============ -->
@@ -2921,7 +2948,7 @@
 </section>
 <footer>
   <h2 id="sources">Sources</h2>
-<p>All figures in this primer are original recreations drawn from the data and concepts in the works below — no textbook artwork is reproduced. Figures illustrating real trial, market, or company data are adapted from the cited sources; schematic teaching figures present the authors' concepts in our own rendering.</p>
+<p>All figures in this primer are our own recreations, adapted from the data and concepts in the works below and credited on-page as “Adapted from” the cited source — no textbook artwork is reproduced.</p>
 <ul>
 <li><em>Biotech Investing Basics</em> — Bay Bridge Bio.</li>
 <li><em>Ultimate Biotech Research</em> — toolkit compendium.</li>
@@ -2939,7 +2966,7 @@
 <li><em>Controversial Statistical Issues in Clinical Trials</em> — ed. Shein-Chung Chow.</li>
 <li>ICH E8 — General Considerations for Clinical Studies (trial phase/type framework).</li>
 </ul>
-  <p>v2 · October 2026 (updated October 11, 2026) — the full gauntlet: seven textbook modules integrated across every stage, financing and IP sections added, checklists wired throughout. No part of this primer is investment advice — it's an educational framework. Do your own diligence.</p>
+  <p>v2.1 · October 2026 (updated October 15, 2026) — the full gauntlet: seven textbook modules integrated across every stage, financing and IP sections added, checklists wired throughout. No part of this primer is investment advice — it's an educational framework. Do your own diligence.</p>
 </footer>
 <aside id="tocSide" aria-label="On this page"><div class="tocside-inner"><h4>On this page</h4><div id="tocSideList"></div></div></aside>
 </div>
@@ -2954,14 +2981,47 @@
 <script>
 
 var KEY='biotech-primer-v2';
-function boxes(){ return Array.prototype.slice.call(document.querySelectorAll('.checklist input')); }
+var CHECK_KEY='biotech-primer-v3-checks';
+function cidFor(b){
+  var cid=b.getAttribute('data-cid')||b.id;
+  if(cid) return cid;
+  var sec=b.closest('section.stage'), li=b.closest('li');
+  var stage=sec?sec.id:'misc';
+  var txt=li?li.textContent.replace(/\s+/g,' ').trim().toLowerCase():'';
+  var h=0; for(var k=0;k<txt.length;k++){ h=((h<<5)-h+txt.charCodeAt(k))|0; }
+  cid=stage+'-auto-'+Math.abs(h).toString(36);
+  b.setAttribute('data-cid',cid);
+  return cid;
+}
+function boxes(){
+  var bs=Array.prototype.slice.call(document.querySelectorAll('.checklist input'));
+  bs.forEach(function(b){
+    if(!b.getAttribute('aria-label')){
+      var li=b.closest('li');
+      var label=li?li.textContent.replace(/\s+/g,' ').trim().slice(0,200):'';
+      if(label) b.setAttribute('aria-label',label);
+    }
+  });
+  return bs;
+}
 function save(){
-  var s={}; boxes().forEach(function(b,i){ s[i]=b.checked; });
-  try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){}
+  var s={}; boxes().forEach(function(b){ s[cidFor(b)]=!!b.checked; });
+  try{ localStorage.setItem(CHECK_KEY, JSON.stringify(s)); }catch(e){}
 }
 function load(){
-  var s={}; try{ s=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
-  boxes().forEach(function(b,i){ b.checked=!!s[i]; b.closest('li').classList.toggle('checked',b.checked); });
+  var s=null;
+  try{ s=JSON.parse(localStorage.getItem(CHECK_KEY)||'null'); }catch(e){}
+  if(!s || typeof s!=='object'){
+    /* one-time migration: legacy store was positional (index -> checked).
+       Map each legacy index onto the stable cid of the box now at that
+       position, so existing progress carries forward exactly as last seen
+       and never shifts again. */
+    var legacy={};
+    try{ legacy=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+    s={};
+    boxes().forEach(function(b,i){ if(legacy[i]) s[cidFor(b)]=true; });
+  }
+  boxes().forEach(function(b){ b.checked=!!s[cidFor(b)]; b.closest('li').classList.toggle('checked',b.checked); });
   refresh();
 }
 function refresh(){
